@@ -129,7 +129,6 @@ h2 {
   border-radius: 12px;
   margin-top: 24px;
   height: auto;
-  border-right: #b08b29 12px solid;
   object-fit: cover;
 }
 
@@ -185,7 +184,7 @@ h2 {
   text-align: center;
   margin: auto;
   margin-top: 50px;
-  width: 85%;
+ 
 }
 
 .title1 {

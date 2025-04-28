@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZUHD Academy - Responsive Navigation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/zuhd acdmic/academy.html"> 
-    <link rel="stylesheet" href="/about.html"> 
-    <link rel="stylesheet" href="/workshop/workshops.html">
-    <link rel="stylesheet" href="/mosque/mosque-landing-page.html">
-    <link rel="stylesheet" href="Maktab/index.html">
-    <link rel="stylesheet" href="scolar/scholars.html">
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
@@ -20,30 +14,62 @@
     --text-light: #080808;
 }
 
-/* Logo Rotation Animation */
+/* Custom Pattern Logo Animation */
 .logo-container {
     perspective: 1000px;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.logo-3d-container {
+    transform-style: preserve-3d;
+    width: 90px;
+    height: 70px;
+    position: relative;
+    animation: customLogoPattern 8s infinite ease-in-out;
 }
 
 .rotating-image {
-    width:90px; /* Set a fixed width */
-    height: 70px; /* Maintain aspect ratio */
-    transform-style: preserve-3d;
-    animation: fullRotate 6s linear infinite;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: visible;
+    transform: translateZ(2px);
 }
 
-@keyframes fullRotate {
+/* Animation matching the pattern: 90° → 0° → 0° → -90° → 90° → 0° → 0° → -90° */
+@keyframes customLogoPattern {
     0% {
         transform: rotateY(0deg);
     }
+    12.5% {
+        transform: rotateY(90deg);
+    }
+    25% {
+        transform: rotateY(0deg);
+    }
+    37.5% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-90deg);
+    }
+    62.5% {
+        transform: rotateY(90deg);
+    }
+    75% {
+        transform: rotateY(0deg);
+    }
+    87.5% {
+        transform: rotateY(0deg);
+    }
     100% {
-        transform: rotateY(360deg);
+        transform: rotateY(-90deg);
     }
 }
-/* End Logo Animation */
 
+/* Rest of your CSS remains the same */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -262,13 +288,13 @@
         justify-content: space-between;
     }
     
-    .rotating-image {
+    .logo-3d-container {
         width: 80px; /* Smaller on mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
-    .rotating-image {
+    .logo-3d-container {
         width: 60px; /* Even smaller on small screens */
     }
     
@@ -282,7 +308,9 @@
     <!-- Navbar -->
     <nav class="navbar">
         <a href="/index.html" class="logo-container">
-            <img src="/zuhdlogo.png" alt="Rotating Logo" class="rotating-image"> 
+            <div class="logo-3d-container">
+                <img src="/zuhdlogo.png" alt="ZUHD Logo" class="rotating-image">
+            </div>
         </a>
         <div class="nav-menu">
             <div class="nav-links">
@@ -301,6 +329,7 @@
         <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
             <i class="fas fa-bars"></i>
         </button>
+        
         <!-- Mobile Sidebar -->
         <div class="overlay"></div>
         <div class="sidebar">
