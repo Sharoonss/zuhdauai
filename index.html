@@ -99,84 +99,137 @@
             display: block !important;
         }
 
-        iframe {
-    max-width: 100%; /* Makes the video responsive */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    margin: 20px auto; /* Centers the video with margin */
-    display: flex; /* Helps with centering */
-}
-.reminders-video{
-  display:flex;
-}
-
-.reminders-section {
-      width: 100%;
-      margin: 0px auto;
-      text-align: center;
+       /* Main container styles */
+  .reminders-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  .section-heading {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #0e0c0c;
+    font-weight: 600;
+  }
+  
+  .heading-highlight {
+    color: #ca9836;
+  }
+  
+  /* Slider container */
+  .reminders-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider-container {
+    display: flex;
+    transition: transform 0.8s ease;
+    width: 100%;
+  }
+  
+  /* Card styles */
+  .slider-item {
+    flex: 0 0 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Navigation buttons */
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .slider-nav:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #ca9836;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* Navigation dots */
+  .reminders-slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .reminder-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .reminder-dot.active {
+    background-color: #ca9836;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .slider-item {
+      flex: 0 0 50%; /* Show 2 cards at a time on tablets */
     }
     
     .section-heading {
-      font-size:45px;
-      margin-bottom: 30px;
-      color: #0e0c0c;
+      font-size: 40px;
     }
-    
-
-    
-    /* Slider container */
-    .reminders-video {
-      position: relative;
-      width: 100%;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    
-    .slider-container {
-      display: flex;
-      transition: transform 0.8s ease;
-      width: 100%;
-    }
-    
+  }
+  
+  @media (min-width: 992px) {
     .slider-item {
-      min-width: calc(33.333% - 20px);
-      padding: 10px;
+      flex: 0 0 33.333%; /* Show 3 cards at a time on desktop */
     }
     
-    /* Navigation dots */
-    .reminders-slider-dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
+    .section-heading {
+      font-size: 45px;
     }
-    
-    .reminder-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: #ccc;
-      margin: 0 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    .reminder-dot.active {
-      background-color:#ca9836;
-    }
-    
-    /* Make videos responsive */
-    iframe {
-      width: 100%;
-      height: 180px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .time { 
-        font-size: small !important;
-      }
-      .iconnn{
-        font-size: small;
-      }
+  }
     /* Responsive adjustments */
     @media (max-width: 992px) {
       .slider-item {
@@ -508,7 +561,7 @@
                         <div class="hero-slider__time">
                             <span>Every</span>
                             <span class="hero-slider__highlight">Friday</span>
-                            <span class="hero-slider__clock"><i class="fas fa-clock"></i> 2:15 PM</span>
+                            <span class="hero-slider__clock"><i class="fas fa-clock"></i> 2:05 PM</span>
                         </div>
                         <div class="hero-slider__location">
                             <i class="fas fa-map-marker-alt"></i>
@@ -598,7 +651,7 @@
             <h2>The Seerah <br> Series</h2>
             <p class="class-time">
               Day: <span class="time-highlight">Friday</span><br>
-              Time: <span class="time-highlight">2:15 PM</span>
+              Time: <span class="time-highlight">2:05 PM</span>
             </p>
           </div>
     
@@ -614,94 +667,154 @@
         </div>
       </div>
     </div>
-    <section class="partner-section">
-      <h2 class="title1">Our <span>Partners</span></h2>
-      <div class="carousel-container">
-        <div class="partner-container" id="partnerContainer">
-          <div class="partner-card">
-            <a href="https://www.zamzamacademy.com/" target="_blank" rel="noopener">
-              <img src="/partnerlogo/zamzam.png" alt="Zamzam Academy">
-            </a>
-          </div>
-          <div class="partner-card">
-            <a href="https://www.safaracademy.org/#3" target="_blank" rel="noopener">
-              <img src="/partnerlogo/web-safaracademylogo.png" alt="Bayyan Courses">
-            </a>
-          </div>
-          <div class="partner-card">
-            <a href="https://www.whitethread.org/" target="_blank" rel="noopener">
-              <img src="/partnerlogo/White-thread-logo.png" alt="Safar Academy">
-            </a>
-          </div>
-          <div class="partner-card">
-            <a href="https://www.facebook.com/daarularqamaustralia/" target="_blank" rel="noopener">
-              <img src="/partnerlogo/da.png" alt="Partner 4">
-            </a>
-          </div>
-          <!-- Clone of first set for seamless looping -->
-          <div class="partner-card">
-            <a href="https://daruliftaa.com/" target="_blank" rel="noopener">
-              <img src="/partnerlogo/DarulIftaa-Logo.png" alt="Zamzam Academy">
-            </a>
-          </div>
-          <div class="partner-card">
-            <a href="https://saadnomaniacademy.com/" target="_blank" rel="noopener">
-              <img src="/partnerlogo/saad-nomani-Header-logo.png" alt="Bayyan Courses">
-            </a>
-          </div>
-          <div class="partner-card">
-            <a href="" target="_blank" rel="noopener">
-              <img src="/partnerlogo/logo.svg" alt="Safar Academy">
-            </a>
-          </div>
-          <div class="partner-card">
-            <a href="https://mensesmatters.org/" target="_blank" rel="noopener">
-              <img src="/partnerlogo/Menses-Matters-Cycle-logo_colour.png" alt="Partner 4">
-            </a>
-          </div>
-        </div>
+   
+<section class="partner-section">
+  <h2 class="section-heading">Our <span class="heading-highlight">Partners</span></h2>
+  
+  <div class="carousel-container">
+    <div class="partner-container" id="partnerContainer">
+      <!-- Partner 1 -->
+      <div class="partner-card">
+        <a href="https://www.zamzamacademy.com/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/zamzam.png" alt="Zamzam Academy">
+        </a>
       </div>
-    </section>
-<!-- Our Workshop Section -->
-<!-- Daily Reminders Section -->
- <section class="reminders-section">
-    <h2 class="section-heading">Daily <span class="heading-highlight">Reminders</span></h2>
-    <section class="reminders-video">
-      <div class="slider-container" id="sliderContainer">
-        <!-- Video 1 -->
-        <div class="slider-item">
-          <iframe width="695" height="391" src="https://www.youtube.com/embed/eumgk3KSsYs" title="&quot;Ramadan’s Bonus Round: Are You Truly Ready? | Dr. Maulana Sami Al-Hashmi&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        
-        <!-- Video 2 -->
-        <div class="slider-item">
-          <iframe width="695" height="391" src="https://www.youtube.com/embed/KIsBk76M8vA" title="📖 The Ultimate Goal of Knowledge: Understanding Allah SWT | Sheikh Yasir Al-Hanafi 🤍✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        
-        <!-- Video 3 -->
-        <div class="slider-item">
-          <iframe width="695" height="391" src="https://www.youtube.com/embed/mG5A1IUK2Aw" title="🌿 &quot;Bir Ghars: The Well of the Prophet ﷺ – A Forgotten Treasure of Medina&quot; 🌿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        
-        <!-- Video 4 -->
-        <div class="slider-item">
-          <iframe width="695" height="391" src="https://www.youtube.com/embed/XAuA9QtJFgQ" title="🔥 &quot;Abu Bakr (RA): Leadership, Loyalty &amp; The Lessons of Al-Hudaibiyyah&quot; 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        
-        <!-- Video 5 -->
-        <div class="slider-item">
-          <iframe width="695" height="391" src="https://www.youtube.com/embed/Al8TNDJTp4M" title="📖 &quot;When the Qur&#39;an Touches the Heart – A Life-Changing Reminder!&quot; ❤️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+      
+      <!-- Partner 2 -->
+      <div class="partner-card">
+        <a href="https://www.safaracademy.org/#3" target="_blank" rel="noopener">
+          <img src="/partnerlogo/web-safaracademylogo.png" alt="Safar Academy">
+        </a>
       </div>
-    </section>
-    
-    <div class="reminders-slider-dots" id="remindersDots">
-      <div class="reminder-dot active" data-index="0"></div>
-      <div class="reminder-dot" data-index="1"></div>
-      <div class="reminder-dot" data-index="2"></div>
+      
+      <!-- Partner 3 -->
+      <div class="partner-card">
+        <a href="https://www.whitethread.org/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/White-thread-logo.png" alt="White Thread Institute">
+        </a>
+      </div>
+      
+      <!-- Partner 4 -->
+      <div class="partner-card">
+        <a href="https://www.facebook.com/daarularqamaustralia/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/da.png" alt="Daarul Arqam">
+        </a>
+      </div>
+      
+      <!-- Partner 5 -->
+      <div class="partner-card">
+        <a href="https://daruliftaa.com/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/DarulIftaa-Logo.png" alt="Darul Iftaa">
+        </a>
+      </div>
+      
+      <!-- Partner 6 -->
+      <div class="partner-card">
+        <a href="https://saadnomaniacademy.com/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/saad-nomani-Header-logo.png" alt="Saad Nomani Academy">
+        </a>
+      </div>
+      
+      <!-- Partner 7 -->
+      <div class="partner-card">
+        <a href="#" target="_blank" rel="noopener">
+          <img src="/partnerlogo/logo.svg" alt="Partner Logo">
+        </a>
+      </div>
+      
+      <!-- Partner 8 -->
+      <div class="partner-card">
+        <a href="https://mensesmatters.org/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/Menses-Matters-Cycle-logo_colour.png" alt="Menses Matters">
+        </a>
+      </div>
+      
+      <!-- Clone first few cards for seamless infinite scroll effect -->
+      <div class="partner-card clone">
+        <a href="https://www.zamzamacademy.com/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/zamzam.png" alt="Zamzam Academy">
+        </a>
+      </div>
+      
+      <div class="partner-card clone">
+        <a href="https://www.safaracademy.org/#3" target="_blank" rel="noopener">
+          <img src="/partnerlogo/web-safaracademylogo.png" alt="Safar Academy">
+        </a>
+      </div>
+      
+      <div class="partner-card clone">
+        <a href="https://www.whitethread.org/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/White-thread-logo.png" alt="White Thread Institute">
+        </a>
+      </div>
+      
+      <div class="partner-card clone">
+        <a href="https://www.facebook.com/daarularqamaustralia/" target="_blank" rel="noopener">
+          <img src="/partnerlogo/da.png" alt="Daarul Arqam">
+        </a>
+      </div>
     </div>
-  </section>
-
+  </div>
+  
+  <div class="partner-dots" id="partnerDots">
+    <!-- Dots will be generated by JavaScript -->
+  </div>
+</section>
+<!-- Daily Reminders Section -->
+<section class="reminders-section">
+  <h2 class="section-heading">Daily <span class="heading-highlight">Reminders</span></h2>
+  
+  <div class="reminders-container">
+    <div class="slider-container" id="sliderContainer">
+      <!-- Video 1 -->
+      <div class="slider-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/eumgk3KSsYs" title="Ramadan's Bonus Round: Are You Truly Ready?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <!-- Video 2 -->
+      <div class="slider-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/KIsBk76M8vA" title="The Ultimate Goal of Knowledge: Understanding Allah SWT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <!-- Video 3 -->
+      <div class="slider-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/mG5A1IUK2Aw" title="Bir Ghars: The Well of the Prophet – A Forgotten Treasure of Medina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <!-- Video 4 -->
+      <div class="slider-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/XAuA9QtJFgQ" title="Abu Bakr (RA): Leadership, Loyalty & The Lessons of Al-Hudaibiyyah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <!-- Video 5 -->
+      <div class="slider-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/Al8TNDJTp4M" title="When the Qur'an Touches the Heart – A Life-Changing Reminder!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation arrows -->
+    <button class="slider-nav prev" id="prevButton">&#10094;</button>
+    <button class="slider-nav next" id="nextButton">&#10095;</button>
+  </div>
+  
+  <div class="reminders-slider-dots" id="remindersDots">
+    <div class="reminder-dot active" data-index="0"></div>
+    <div class="reminder-dot" data-index="1"></div>
+    <div class="reminder-dot" data-index="2"></div>
+    <div class="reminder-dot" data-index="3"></div>
+    <div class="reminder-dot" data-index="4"></div>
+  </div>
+</section>
     
         
     <div class="banner-container">
@@ -1196,81 +1309,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-      // Get DOM elements
-      const sliderContainer = document.getElementById('sliderContainer');
-      const dots = document.querySelectorAll('.reminder-dot');
-      
-      // Set initial state
-      let currentIndex = 0;
-      const totalSlides = document.querySelectorAll('.slider-item').length;
-      const visibleSlides = 3;
-      const maxIndex = totalSlides - visibleSlides;
-      let autoSlideInterval;
-      
-      // Function to update the slider position
-      function updateSlider() {
-        // Calculate the percentage to shift by for a single item
-        const slideWidth = 100 / visibleSlides;
-        sliderContainer.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-        
-        // Update the active dot
-        // We need to map the item index to dot index (3 items per dot)
-        const activeDotIndex = Math.min(Math.floor(currentIndex / visibleSlides), dots.length - 1);
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === activeDotIndex);
-        });
-      }
-      
-      // Function to move to the next slide
-      function nextSlide() {
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-        } else {
-          // Reset to beginning when reaching the end
-          currentIndex = 0;
-        }
-        updateSlider();
-      }
-      
-      // Function to start auto sliding
-      function startAutoSlide() {
-        // Move slide every 4 seconds
-        autoSlideInterval = setInterval(nextSlide, 4000);
-      }
-      
-      // Function to stop auto sliding
-      function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-      }
-      
-      // Add event listeners for dots
-      dots.forEach((dot) => {
-        dot.addEventListener('click', function() {
-          // Stop auto sliding temporarily when user interacts
-          stopAutoSlide();
-          
-          const dotIndex = parseInt(this.getAttribute('data-index'));
-          // Map dot index to item index
-          currentIndex = Math.min(dotIndex * visibleSlides, maxIndex);
-          updateSlider();
-          
-          // Resume auto sliding after a pause
-          setTimeout(startAutoSlide, 5000);
-        });
-      });
-      
-      // Pause auto-sliding when user hovers over the slider
-      sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-      sliderContainer.addEventListener('mouseleave', startAutoSlide);
-      
-      // Initial setup
-      updateSlider();
-      startAutoSlide();
-    });
-
-
-
     document.addEventListener('DOMContentLoaded', function() {
             const slider = document.querySelector('.swift-panorama__slider');
             const slides = document.querySelectorAll('.swift-panorama__slide');
@@ -1528,6 +1566,247 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('sliderContainer');
+    const dots = document.querySelectorAll('.reminder-dot');
+    const prevBtn = document.getElementById('prevButton');
+    const nextBtn = document.getElementById('nextButton');
+    
+    let currentIndex = 0;
+    let slidesToShow = 1;
+    
+    // Determine how many slides to show based on screen width
+    function updateSlidesToShow() {
+      if (window.innerWidth >= 992) {
+        slidesToShow = 3;
+      } else if (window.innerWidth >= 768) {
+        slidesToShow = 2;
+      } else {
+        slidesToShow = 1;
+      }
+      updateSlider();
+    }
+    
+    function updateSlider() {
+      // Calculate how many slides we can move to
+      const maxIndex = dots.length - slidesToShow;
+      
+      // If current index is out of bounds after resize, adjust it
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+      
+      // Update slider position
+      slider.style.transform = `translateX(-${currentIndex * (100 / slidesToShow)}%)`;
+      
+      // Update active dot
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+    
+    // Handle dots click
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
+    });
+    
+    // Handle prev button click
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    });
+    
+    // Handle next button click
+    nextBtn.addEventListener('click', () => {
+      const maxIndex = dots.length - slidesToShow;
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateSlider();
+      }
+    });
+    
+    // Update on window resize
+    window.addEventListener('resize', updateSlidesToShow);
+    
+    // Initialize
+    updateSlidesToShow();
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('partnerContainer');
+    const cards = document.querySelectorAll('.partner-card:not(.clone)');
+    const dotsContainer = document.getElementById('partnerDots');
+    
+    let currentIndex = 0;
+    let cardsPerView = calculateCardsPerView();
+    let totalSlides = Math.ceil(cards.length / cardsPerView);
+    let scrollSpeed = 30; // Lower is faster
+    let scrollPaused = false;
+    let cardWidth;
+    let offset = 0;
+    
+    // Generate navigation dots
+    function generateDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('partner-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateDots();
+          smoothScrollTo(i * cardsPerView * cardWidth);
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    // Calculate cards per view based on screen width
+    function calculateCardsPerView() {
+      if (window.innerWidth >= 1200) {
+        return 5; // Show 5 on large desktop
+      } else if (window.innerWidth >= 992) {
+        return 4; // Show 4 on desktop
+      } else if (window.innerWidth >= 768) {
+        return 3; // Show 3 on tablet
+      } else if (window.innerWidth >= 480) {
+        return 2; // Show 2 on large mobile
+      } else {
+        return 1; // Show 1 on small mobile
+      }
+    }
+    
+    // Update active dot
+    function updateDots() {
+      const dots = document.querySelectorAll('.partner-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+    
+    // Smooth scroll to position
+    function smoothScrollTo(targetOffset) {
+      // Temporarily disable auto-scroll during manual navigation
+      scrollPaused = true;
+      
+      let start = offset;
+      let change = targetOffset - start;
+      let startTime = performance.now();
+      let duration = 1000; // ms
+      
+      function animateScroll(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easing = easeInOutCubic(progress);
+        
+        offset = start + change * easing;
+        container.style.transform = `translateX(-${offset}px)`;
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          // Re-enable auto-scroll after animation completes
+          setTimeout(() => {
+            scrollPaused = false;
+          }, 1000);
+        }
+      }
+      
+      requestAnimationFrame(animateScroll);
+    }
+    
+    // Easing function for smoother animation
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    
+    // Initialize card sizes and positions
+    function initializeCarousel() {
+      // Calculate the width of a single card including gap
+      const cardElement = cards[0];
+      const cardStyle = window.getComputedStyle(cardElement);
+      const cardMargin = parseInt(cardStyle.marginRight) || 0;
+      cardWidth = cardElement.offsetWidth + cardMargin + 20; // 20px is the gap
+      
+      // Set initial position
+      offset = 0;
+      container.style.transform = `translateX(-${offset}px)`;
+    }
+    
+    // Handle continuous smooth scrolling animation
+    function autoScroll() {
+      if (scrollPaused) return;
+      
+      // Calculate total width of all original cards
+      const totalWidth = cards.length * cardWidth;
+      
+      // Increment offset for smooth scrolling effect
+      offset += 0.5; // Adjust speed by changing this value
+      
+      // Reset when we've scrolled past a full card
+      if (offset >= totalWidth) {
+        offset = 0;
+      }
+      
+      // Update current index for dots
+      currentIndex = Math.floor(offset / (cardWidth * cardsPerView)) % totalSlides;
+      updateDots();
+      
+      // Apply transform
+      container.style.transform = `translateX(-${offset}px)`;
+      
+      // Request next frame
+      requestAnimationFrame(autoScroll);
+    }
+    
+    // Handle resize
+    function handleResize() {
+      const newCardsPerView = calculateCardsPerView();
+      
+      if (newCardsPerView !== cardsPerView) {
+        cardsPerView = newCardsPerView;
+        totalSlides = Math.ceil(cards.length / cardsPerView);
+        
+        // Reset to first slide if current index is no longer valid
+        if (currentIndex >= totalSlides) {
+          currentIndex = 0;
+        }
+        
+        // Recalculate card width
+        initializeCarousel();
+        
+        // Regenerate dots
+        generateDots();
+        updateDots();
+      }
+    }
+    
+    // Pause scrolling on hover
+    container.addEventListener('mouseenter', () => {
+      scrollPaused = true;
+    });
+    
+    container.addEventListener('mouseleave', () => {
+      scrollPaused = false;
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Initialize
+    initializeCarousel();
+    generateDots();
+    requestAnimationFrame(autoScroll);
+  });
+  
    </script>
    <script src="https://static.elfsight.com/platform/platform.js" async></script>
      <script src="navbar.js"></script>
