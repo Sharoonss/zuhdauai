@@ -1519,59 +1519,6 @@ document.addEventListener('DOMContentLoaded', function() {
             initSlider();
         });
 
-
-//         // Partner Logo Carousel (improved smooth auto-scroll with clickable logos)
-// document.addEventListener('DOMContentLoaded', function() {
-//   const partnerContainer = document.getElementById('partnerContainer');
-//   if (partnerContainer) {
-//     let scrollPosition = 0;
-//     const scrollSpeed = 1; // Pixels per frame
-//     const firstCardWidth = partnerContainer.querySelector('.partner-card').offsetWidth 
-//                          + parseInt(getComputedStyle(partnerContainer).columnGap);
-//     let animationId = null;
-    
-//     // For smooth animation using requestAnimationFrame
-//     function scrollCarousel() {
-//       scrollPosition += scrollSpeed;
-      
-//       // Reset when we've scrolled the width of the first set of items
-//       if (scrollPosition >= firstCardWidth * 4) { // 4 is the number of unique cards
-//         scrollPosition = 0;
-//       }
-      
-//       partnerContainer.scrollLeft = scrollPosition;
-//       animationId = requestAnimationFrame(scrollCarousel);
-//     }
-    
-//     // Start the smooth animation
-//     animationId = requestAnimationFrame(scrollCarousel);
-    
-//     // Pause on hover for better user experience
-//     partnerContainer.addEventListener('mouseenter', function() {
-//       if (animationId) {
-//         cancelAnimationFrame(animationId);
-//         animationId = null;
-//       }
-//     });
-    
-//     partnerContainer.addEventListener('mouseleave', function() {
-//       if (!animationId) {
-//         animationId = requestAnimationFrame(scrollCarousel);
-//       }
-//     });
-    
-//     // Allow clicks on links despite the scrolling
-//     const partnerLinks = partnerContainer.querySelectorAll('.partner-card a');
-//     partnerLinks.forEach(link => {
-//       link.addEventListener('click', function(e) {
-//         // Don't stop propagation - we want the mouseenter event to fire
-//         // This allows natural pause when user hovers to click
-//       });
-//     });
-//   }
-// });
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.getElementById('sliderContainer');
     const dots = document.querySelectorAll('.reminder-dot');
