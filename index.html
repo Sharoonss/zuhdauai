@@ -1520,56 +1520,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        // Partner Logo Carousel (improved smooth auto-scroll with clickable logos)
-document.addEventListener('DOMContentLoaded', function() {
-  const partnerContainer = document.getElementById('partnerContainer');
-  if (partnerContainer) {
-    let scrollPosition = 0;
-    const scrollSpeed = 1; // Pixels per frame
-    const firstCardWidth = partnerContainer.querySelector('.partner-card').offsetWidth 
-                         + parseInt(getComputedStyle(partnerContainer).columnGap);
-    let animationId = null;
+//         // Partner Logo Carousel (improved smooth auto-scroll with clickable logos)
+// document.addEventListener('DOMContentLoaded', function() {
+//   const partnerContainer = document.getElementById('partnerContainer');
+//   if (partnerContainer) {
+//     let scrollPosition = 0;
+//     const scrollSpeed = 1; // Pixels per frame
+//     const firstCardWidth = partnerContainer.querySelector('.partner-card').offsetWidth 
+//                          + parseInt(getComputedStyle(partnerContainer).columnGap);
+//     let animationId = null;
     
-    // For smooth animation using requestAnimationFrame
-    function scrollCarousel() {
-      scrollPosition += scrollSpeed;
+//     // For smooth animation using requestAnimationFrame
+//     function scrollCarousel() {
+//       scrollPosition += scrollSpeed;
       
-      // Reset when we've scrolled the width of the first set of items
-      if (scrollPosition >= firstCardWidth * 4) { // 4 is the number of unique cards
-        scrollPosition = 0;
-      }
+//       // Reset when we've scrolled the width of the first set of items
+//       if (scrollPosition >= firstCardWidth * 4) { // 4 is the number of unique cards
+//         scrollPosition = 0;
+//       }
       
-      partnerContainer.scrollLeft = scrollPosition;
-      animationId = requestAnimationFrame(scrollCarousel);
-    }
+//       partnerContainer.scrollLeft = scrollPosition;
+//       animationId = requestAnimationFrame(scrollCarousel);
+//     }
     
-    // Start the smooth animation
-    animationId = requestAnimationFrame(scrollCarousel);
+//     // Start the smooth animation
+//     animationId = requestAnimationFrame(scrollCarousel);
     
-    // Pause on hover for better user experience
-    partnerContainer.addEventListener('mouseenter', function() {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-        animationId = null;
-      }
-    });
+//     // Pause on hover for better user experience
+//     partnerContainer.addEventListener('mouseenter', function() {
+//       if (animationId) {
+//         cancelAnimationFrame(animationId);
+//         animationId = null;
+//       }
+//     });
     
-    partnerContainer.addEventListener('mouseleave', function() {
-      if (!animationId) {
-        animationId = requestAnimationFrame(scrollCarousel);
-      }
-    });
+//     partnerContainer.addEventListener('mouseleave', function() {
+//       if (!animationId) {
+//         animationId = requestAnimationFrame(scrollCarousel);
+//       }
+//     });
     
-    // Allow clicks on links despite the scrolling
-    const partnerLinks = partnerContainer.querySelectorAll('.partner-card a');
-    partnerLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        // Don't stop propagation - we want the mouseenter event to fire
-        // This allows natural pause when user hovers to click
-      });
-    });
-  }
-});
+//     // Allow clicks on links despite the scrolling
+//     const partnerLinks = partnerContainer.querySelectorAll('.partner-card a');
+//     partnerLinks.forEach(link => {
+//       link.addEventListener('click', function(e) {
+//         // Don't stop propagation - we want the mouseenter event to fire
+//         // This allows natural pause when user hovers to click
+//       });
+//     });
+//   }
+// });
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1645,118 +1645,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
   // partner js
-  document.addEventListener('DOMContentLoaded', function() {
-      const container = document.getElementById('partnerContainer');
-      const dotsContainer = document.getElementById('partnerDots');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      
-      // Get all non-clone partner cards
-      const cards = Array.from(container.querySelectorAll('.partner-card:not(.clone)'));
-      const cardWidth = cards[0].offsetWidth + 20; // card width + gap
-      
-      let currentIndex = 0;
-      let autoScrollInterval;
-      
-      // Create dots
-      cards.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('partner-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-      });
-      
-      // Get all dots
-      const dots = Array.from(dotsContainer.querySelectorAll('.partner-dot'));
-      
-      // Auto scroll function
-      function startAutoScroll() {
-        stopAutoScroll();
-        autoScrollInterval = setInterval(() => {
-          nextSlide();
-        }, 3000);
-      }
-      
-      function stopAutoScroll() {
-        if (autoScrollInterval) {
-          clearInterval(autoScrollInterval);
-        }
-      }
-      
-      // Go to specific slide
-      function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-      }
-      
-      // Next slide
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        updateCarousel();
-      }
-      
-      // Previous slide
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        updateCarousel();
-      }
-      
-      // Update carousel position and active dot
-      function updateCarousel() {
-        container.style.transition = 'transform 0.5s ease';
-        container.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
-        
-        // Update active dot
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIndex);
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.getElementById('partnerContainer');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  const cards = container.querySelectorAll('.partner-card');
+  const cardWidth = cards[0].offsetWidth + 20;
+
+  let scrollX = 0;
+  let autoScrollInterval;
+
+  // Duplicate all cards to create seamless infinite effect
+  container.innerHTML += container.innerHTML;
+
+  function startAutoScroll() {
+    stopAutoScroll();
+    autoScrollInterval = setInterval(() => {
+      scrollX += 1;
+      container.style.transform = `translateX(-${scrollX}px)`;
+
+      // If scrolled past half (original + clone), reset
+      if (scrollX >= container.scrollWidth / 2) {
+        container.style.transition = 'none';
+        scrollX = 0;
+        container.style.transform = `translateX(0)`;
+        requestAnimationFrame(() => {
+          container.style.transition = 'transform 0.3s linear';
         });
       }
-      
-      // Reset transition when needed for infinite scroll illusion
-      container.addEventListener('transitionend', function() {
-        if (currentIndex >= cards.length) {
-          container.style.transition = 'none';
-          currentIndex = 0;
-          container.style.transform = `translateX(0)`;
-          setTimeout(() => {
-            container.style.transition = 'transform 0.5s ease';
-          }, 10);
-        } else if (currentIndex < 0) {
-          container.style.transition = 'none';
-          currentIndex = cards.length - 1;
-          container.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
-          setTimeout(() => {
-            container.style.transition = 'transform 0.5s ease';
-          }, 10);
-        }
-        
-        // Update active dot after transition
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIndex);
-        });
-      });
-      
-      // Event listeners for buttons
-      prevBtn.addEventListener('click', () => {
-        prevSlide();
-        stopAutoScroll();
-        startAutoScroll();
-      });
-      
-      nextBtn.addEventListener('click', () => {
-        nextSlide();
-        stopAutoScroll();
-        startAutoScroll();
-      });
-      
-      // Start auto scrolling
-      startAutoScroll();
-      
-      // Pause auto scroll on hover
-      container.addEventListener('mouseenter', stopAutoScroll);
-      container.addEventListener('mouseleave', startAutoScroll);
-    });
+    }, 16); // ~60fps
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    scrollX = Math.max(scrollX - cardWidth, 0);
+    container.style.transform = `translateX(-${scrollX}px)`;
+  });
+
+  nextBtn.addEventListener('click', () => {
+    scrollX += cardWidth;
+    container.style.transform = `translateX(-${scrollX}px)`;
+  });
+
+  container.addEventListener('mouseenter', stopAutoScroll);
+  container.addEventListener('mouseleave', startAutoScroll);
+
+  // Start scroll
+  container.style.transition = 'transform 0.3s linear';
+  startAutoScroll();
+});
+
    </script>
    <script src="https://static.elfsight.com/platform/platform.js" async></script>
      <script src="navbar.js"></script>
