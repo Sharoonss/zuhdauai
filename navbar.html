@@ -25,7 +25,7 @@
 
 .logo-3d-container {
     transform-style: preserve-3d;
-    width: 75px;
+    width:80px;
     height: 70px;
     position: relative;
     animation: customLogoPattern 8s infinite linear;
@@ -303,14 +303,19 @@
     }
     
     .logo-3d-container {
-        width: 80px; /* Smaller on mobile */
+        width: 85px; /* Smaller on mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
     .logo-3d-container {
-        width: 60px; /* Even smaller on small screens */
-    }
+    transform-style: preserve-3d;
+    width:80px;
+    height: 70px;
+    position: relative;
+    animation: customLogoPattern 8s infinite linear;
+}
+   
     
     .sidebar {
         width: 80%; /* Make sidebar more responsive */
@@ -348,10 +353,11 @@
         <div class="overlay"></div>
         <div class="sidebar">
             <div class="sidebar-header">
-                <div class="logo-container">
-                    <span class="logo-text"><img src="/acadmyimg/logo.png" alt="ZUHD Logo" class="logo">
-                    </span>
-                </div>
+                <a href="/index.html" class="logo-container">
+                    <div class="logo-3d-container">
+                        <img src="/zuhdlogo.png" alt="ZUHD Logo" class="rotating-image">
+                    </div>
+                </a>
                 <button class="sidebar-close" aria-label="Close Navigation">
                     <i class="fas fa-times"></i>
                 </button>
