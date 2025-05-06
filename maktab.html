@@ -741,7 +741,7 @@
                     <img src="/maktab/calender.png" alt="Yearly Maktak Calendar 2023" class="calendar-img">
                 </div>
                 <div class="download-btn">
-                    <button class="download-button" data-file="calendar.pdf">DOWNLOAD</button>
+                    <button class="download-button" data-file="/maktab/calender.pdf">DOWNLOAD</button>
                 </div>
             </div>
         </section>
@@ -751,14 +751,14 @@
             <div class="regulation-card">
                 <img src="/maktab/rule1.png" alt="Maktab Rules">
                 <div class="download-btn">
-                    <button class="download-button" data-file="rules.pdf">DOWNLOAD</button>
+                    <button class="download-button" data-file="/maktab/rule1.pdf">DOWNLOAD</button>
                 </div>
             </div>
             
             <div class="regulation-card">
                 <img src="/maktab/rule2.png" alt="Travel Rules">
                 <div class="download-btn">
-                    <button class="download-button" data-file="travel.pdf">DOWNLOAD</button>
+                    <button class="download-button" data-file="/maktab/rule2.pdf">DOWNLOAD</button>
                 </div>
             </div>
         </section>
@@ -870,82 +870,116 @@
                 <div class="payment-method">
                     <img src="/images/Item (6).svg" alt="Shop Pay">
                 </div>
-                <!-- <div class="payment-method">
-                    <img src="/images/Item (1).svg" alt="Union Pay">
-                </div>
-                <div class="payment-method">
-                    <img src="/images/Item (1).svg" alt="Visa">
-                </div> -->
             </div>
             <p>© 2025 ZUHD Academy. All rights reserved.</p>
         </div>
     </div>
-    
     <script>
-        // Function to handle downloads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all download buttons
-            const downloadButtons = document.querySelectorAll('.download-button');
+      document.addEventListener('DOMContentLoaded', function() {
+    // Select all download buttons
+    const downloadButtons = document.querySelectorAll('.download-button');
+    
+    // Add click event listener to each button
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the file name from the data-file attribute
+            const fileName = this.getAttribute('data-file');
             
-            // Add click event listener to each button
-            downloadButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Get the file to download from data attribute
-                    const fileToDownload = this.getAttribute('data-file');
-                    
-                    // In a real scenario, this would download the actual file
-                    // For this demo, we'll simulate a download with an alert
-                    alert(`Downloading ${fileToDownload}...`);
-                    
-                    // Simulate file download
-                    simulateDownload(fileToDownload);
-                });
-            });
+            // Check if file exists
+            if (!fileName) {
+                console.warn('No file specified for download.');
+                return;
+            }
             
-            // Function to simulate file download
-            function simulateDownload(filename) {
-                // Create a temporary anchor element
-                const link = document.createElement('a');
-                
-                // In a real scenario, this would be the actual file URL
-                // For this demo, we're creating a dummy text file
-                const blob = new Blob(['This is a sample file content for ' + filename], 
-                                     { type: 'text/plain' });
-                
+            // Check if the file is an image (png, jpg, etc.) or a document (pdf)
+            if (fileName.endsWith('.png') || fileName.endsWith('.jpg') || fileName.endsWith('.jpeg')) {
+                // For images, we need to fetch the image, convert to blob, and download
+                downloadImage(fileName);
+            } else {
+                // For PDFs or other documents, create a direct download link
+                downloadDocument(fileName);
+            }
+        });
+    });
+    
+    // Function to download images
+    function downloadImage(fileName) {
+        // Get the complete path to the image
+        const imagePath = fileName.startsWith('/') ? fileName : '/' + fileName;
+        
+        // Fetch the image
+        fetch(imagePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blob => {
                 // Create a URL for the blob
                 const url = window.URL.createObjectURL(blob);
                 
-                // Set link properties
-                link.href = url;
-                link.download = filename;
+                // Create a temporary link element
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
                 
-                // Append to body, click and remove
-                document.body.appendChild(link);
-                link.click();
+                // Set the download attribute to the desired file name
+                // Extract just the file name without the path
+                const fileNameOnly = fileName.split('/').pop();
+                a.download = fileNameOnly;
+                
+                // Append to the document, click it, and remove it
+                document.body.appendChild(a);
+                a.click();
                 
                 // Clean up
                 window.URL.revokeObjectURL(url);
-                document.body.removeChild(link);
-            }
-        });
-
-        // For demonstration purposes, let's add placeholder images
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add placeholder for calendar if needed
-            const calendarImg = document.querySelector('.calendar-img');
-            if (calendarImg && calendarImg.getAttribute('src') === 'calendar.jpg') {
-                calendarImg.src = 'https://via.placeholder.com/400x300/f8e3b9/8b6b35?text=Yearly+Maktak+Calendar+2023';
-            }
-            
-            // Add placeholders for regulation icons
-            const regulationIcons = document.querySelectorAll('.regulation-icon');
-            regulationIcons.forEach((icon, index) => {
-                if (icon && (icon.getAttribute('src') === 'rules-icon.png' || icon.getAttribute('src') === 'travel-icon.png')) {
-                    icon.src = `https://via.placeholder.com/30x30/c8a45e/ffffff?text=${index + 1}`;
-                }
+                document.body.removeChild(a);
+            })
+            .catch(error => {
+                console.error('Error downloading the image:', error);
+                alert('Failed to download the image. Please try again later.');
             });
-        });
-    </script>
+    }
+    
+    // Function to download PDFs or other documents
+    function downloadDocument(fileName) {
+        try {
+            // Get the complete path to the document
+            const filePath = fileName.startsWith('/') ? fileName : '/' + fileName;
+            
+            // Create a temporary link element
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = filePath;
+            
+            // Set the download attribute to the desired file name
+            const fileNameOnly = fileName.split('/').pop();
+            a.download = fileNameOnly;
+            
+            // Append to the document, click it, and remove it
+            document.body.appendChild(a);
+            a.click();
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(a);
+            }, 100);
+        } catch (error) {
+            console.error('Error downloading the document:', error);
+            alert('Failed to download the document. Please try again later.');
+        }
+    }
+    
+    // Add placeholder for calendar if needed
+    const calendarImg = document.querySelector('.calendar-img');
+    if (calendarImg && calendarImg.getAttribute('src').includes('calendar.pdf')) {
+        calendarImg.src = '/maktab/calender.pdf'; // Use existing image path instead
+    }
+});
+        </script>
+        
     <script src="navbar.js"></script>
 
 </body>
