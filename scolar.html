@@ -54,21 +54,21 @@
 
         /* Section title styles */
         .section-title {
-    width: 60%;
-    background-color: #C3922E; 
-    background-image: url('/maskeffect.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 40px;
-    border-radius: 10px;
-    margin: auto;
-    background-blend-mode: overlay; /* Try 'multiply' or 'overlay' */
-}
+            width: 60%;
+            background-color: #C3922E; 
+            background-image: url('/maskeffect.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 40px;
+            border-radius: 10px;
+            margin: auto;
+            background-blend-mode: overlay; /* Try 'multiply' or 'overlay' */
+        }
 
         /* Scholars container styles */
         .scholars-container {
@@ -78,7 +78,7 @@
             margin: 60px auto 0;
             gap: 20px;
         }
-
+     
         /* Scholar card styles */
         .scholar-card {
             background-color: white;
@@ -86,9 +86,10 @@
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
-            min-height: 400px; /* Changed from fixed height to min-height */
-            border: 1px solid #c9a44c;
+            flex-direction: column;
             margin-bottom: 40px;
+            border: 1px solid #c9a44c;
+
         }
 
         .scholar-card1 {
@@ -97,9 +98,21 @@
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
-            min-height: 400px; /* Changed from fixed height to min-height */
+            flex-direction: column;
             border: 1px solid #c9a44c;
             margin-bottom: 40px;
+        }
+
+        /* Scholar info container */
+        .scholar-info-container {
+            display: flex;
+            min-height: 400px;
+        }
+
+        .scholar-info-container-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+            min-height: 400px;
         }
 
         /* Scholar image styles */
@@ -117,7 +130,6 @@
             object-fit: cover;
             border-right: 5px solid #c9a44c;
             border-radius: 5px;
-           
         }
 
         /* Scholar info styles */
@@ -353,6 +365,110 @@
             color: #999;
         }
 
+        /* Video container styles */
+        .videos-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+
+        }
+
+        .videos-wrapper {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 50px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        .videos-wrapper::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* Scroll buttons */
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            background-color: white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        }
+
+        .scroll-left {
+            left: 10px;
+        }
+
+        .scroll-right {
+            right: 10px;
+        }
+
+        .scroll-btn i {
+            color: #C3922E;
+            font-size: 18px;
+        }
+
+        /* Video card styles */
+        .video-card {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 230px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            padding: 15px;
+            font-weight: 500;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
         /* Responsive styles - Improved for better mobile display */
         @media screen and (max-width: 768px) {
             .section-title {
@@ -382,7 +498,7 @@
                 line-height: 1.5;
             }
             
-            .scholar-card, .scholar-card1 {
+            .scholar-info-container, .scholar-info-container-reverse {
                 min-height: auto; /* Allow cards to expand based on content */
             }
             
@@ -416,35 +532,42 @@
             .footer-bottom {
                 flex-direction: column;
             }
+            
+            .videos-wrapper {
+                padding: 10px 40px;
+            }
+            
+            .video-card {
+                max-width: 300px;
+            }
         }
 
         @media screen and (max-width: 576px) {
-            .scholar-card, .scholar-card1 {
+            .scholar-info-container, .scholar-info-container-reverse {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 padding: 20px;
-                min-height: auto;
             }
             
-            .scholar-card .scholar-info {
+            .scholar-info {
                 order: 2; /* Move info below image */
             }
             
-            .scholar-card .scholar-image {
+            .scholar-image {
                 order: 1; /* Move image above info */
                 margin-bottom: 15px;
                 border-left: none;
                 border-bottom: 5px solid #c9a44c;
-                width:250px;
+                width: 250px;
                 height: 260px;
             }
             
-            .scholar-card1 .scholar-image1 {
+            .scholar-image1 {
                 margin-bottom: 15px;
                 border-right: none;
                 border-bottom: 5px solid #c9a44c;
-                width:250px;
+                width: 250px;
                 height: 260px;
             }
             
@@ -469,6 +592,14 @@
                 padding: 8px;
                 width: 90%;
             }
+            
+            .videos-wrapper {
+                padding: 10px 30px;
+            }
+            
+            .video-card {
+                max-width: 250px;
+            }
         }
 
         @media screen and (max-width: 400px) {
@@ -484,6 +615,9 @@
             
             .scholar-card, .scholar-card1 {
                 margin-bottom: 20px;
+            }
+            
+            .scholar-info-container, .scholar-info-container-reverse {
                 padding: 15px;
             }
             
@@ -520,6 +654,14 @@
             .section-gap {
                 margin-top: 20px;
             }
+            
+            .videos-wrapper {
+                padding: 10px 25px;
+            }
+            
+            .video-card {
+                max-width: 220px;
+            }
         }
     </style>
 </head>
@@ -536,59 +678,184 @@
     
     <!-- Senior Scholars Section -->
     <div class="section-title">SENIOR SCHOLARS</div>
+    <div class="main-section">    
+      
     
     <div class="scholars-container">
         <!-- Scholar 1 -->
         <div class="scholar-card">
-            <div class="scholar-info">
-                <h3 class="scholar-name">Dr.Mufti Abdur Rahman Mangera</h3>
-                <p class="scholar-bio">
-                    Dr. Mufti Abdur Rahman Ibn Yusuf Mangera is a British Muslim scholar educated in both the Islamic and Western traditions. He memorised the Qur'an by heart and graduated from the Darul Uloom seminary Bury, UK, and later earned a specialised licence to issue fatwa (legal responses) at Mazahir 'Ulum Saharan
-                </p>
-                <button class="read-more-btn">Read More</button>
+            <div class="scholar-info-container">
+                <div class="scholar-info">
+                    <h3 class="scholar-name">Dr.Mufti Abdur Rahman Mangera</h3>
+                    <p class="scholar-bio">
+                        Dr. Mufti Abdur Rahman Ibn Yusuf Mangera is a British Muslim scholar educated in both the Islamic and Western traditions. He memorised the Qur'an by heart and graduated from the Darul Uloom seminary Bury, UK, and later earned a specialised licence to issue fatwa (legal responses) at Mazahir 'Ulum Saharan
+                    </p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <img src="/scolor img/maufti1.png" alt="Dr. Nurit Abdur Rahman Mangera" class="scholar-image">
             </div>
-            <img src="/scolor img/maufti1.png" alt="Dr. Nurit Abdur Rahman Mangera" class="scholar-image">
+            
+            <!-- Videos for Scholar 1 -->
+            <div class="videos-container">
+                <button class="scroll-btn scroll-left" data-section="mufti-mangera">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="videos-wrapper" id="videos-mufti-mangera">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/vBayZNfokQQ?list=PLA-ylo0o2Z5lFlfJECgmLlDocSkozRZzc" title="Melbourne Muslim Seminary Address" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/l1RFeJG7yLY?list=PLA-ylo0o2Z5lFlfJECgmLlDocSkozRZzc" title="Empowering the Ummah through our Positive Actions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/KpWrBinXSfs?list=PLA-ylo0o2Z5lFlfJECgmLlDocSkozRZzc" title="Q &amp; A for Raising Positive Muslims: A Guide for Today&#39;s Youth" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                </div>
+                
+                <button class="scroll-btn scroll-right" data-section="mufti-mangera">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
-
+        
         <!-- Scholar 2 -->
         <div class="scholar-card1">
-            <img src="/scolor img/mufti2.png" alt="Shaykh Hasan Ali" class="scholar-image1">
-            <div class="scholar-info">
-                <h3 class="scholar-name">Shaykh Hasan Ali</h3>
-                <p class="scholar-bio">
-                    Shaykh Hasan Ali graduated in 1997 as a scholar/'alim in Islamic Education and then gained a Masters Degree in Educational Psychology at the Institute of Education (University of London). He became the Imam of London Islamic Cultural Society (LICS) mosque in North London (www.lics.info)
-                </p>
-                <button class="read-more-btn">Read More</button>
+            <div class="scholar-info-container-reverse">
+                <div class="scholar-info">
+                    <h3 class="scholar-name">Shaykh Hasan Ali</h3>
+                    <p class="scholar-bio">
+                        Shaykh Hasan Ali graduated in 1997 as a scholar/'alim in Islamic Education and then gained a Masters Degree in Educational Psychology at the Institute of Education (University of London). He became the Imam of London Islamic Cultural Society (LICS) mosque in North London (www.lics.info)
+                    </p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <img src="/scolor img/mufti2.png" alt="Shaykh Hasan Ali" class="scholar-image1">
+            </div>
+            
+            <!-- Videos for Scholar 2 -->
+            <div class="videos-container">
+                <button class="scroll-btn scroll-left" data-section="shaykh-hasan">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="videos-wrapper" id="videos-shaykh-hasan">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/TJ-yGNY6Yd0" title="The Key to Acceptance by Sheikh Hassan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/VhS7NaWTHgc" title="The Help of Allah by Sheikh Hassan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/r8mCyjc8SXE" title="🔥 The First Human &amp; His Divine Honor: The Story of Prophet Adam (AS) Sheikh Hasan Ali 🚀" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                </div>
+                
+                <button class="scroll-btn scroll-right" data-section="shaykh-hasan">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
 
         <!-- Scholar 3 -->
         <div class="scholar-card">
-            <div class="scholar-info">
-                <h3 class="scholar-name">Maulana Sulaiman Khatani Bin Yusuf</h3>
-                <p class="scholar-bio">
-                    Maulana Ahmed Suleman Khatani was born in Durban, South Africa. He completed his Hifz ul Quraan at an early age. He then enrolled into Madrasah Arabia Islamia, Azaadville, South Africa where he completed his Aalim Faadhil course in 1993. Maulana studied under many great scholars like Sheikhul Hadith Hadhrat Maulana Fazlur Rahman Azmi Saheb (DB) and Hadhrat Maulana Abdul Hamid Ishaq Saheb (DB).
-                </p>
-                <button class="read-more-btn">Read More</button>
+            <div class="scholar-info-container">
+                <div class="scholar-info">
+                    <h3 class="scholar-name">Maulana Sulaiman Khatani Bin Yusuf</h3>
+                    <p class="scholar-bio">
+                        Maulana Ahmed Suleman Khatani was born in Durban, South Africa. He completed his Hifz ul Quraan at an early age. He then enrolled into Madrasah Arabia Islamia, Azaadville, South Africa where he completed his Aalim Faadhil course in 1993. Maulana studied under many great scholars like Sheikhul Hadith Hadhrat Maulana Fazlur Rahman Azmi Saheb (DB) and Hadhrat Maulana Abdul Hamid Ishaq Saheb (DB).
+                    </p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <img src="/scolor img/mufti3.png" alt="Maulana Sulaiman Khatani Bin Yusuf" class="scholar-image">
             </div>
-            <img src="/scolor img/mufti3.png" alt="Maulana Sulaiman Khatani Bin Yusuf" class="scholar-image">
+            
+            <!-- Videos for Scholar 3 -->
+            <div class="videos-container">
+                <button class="scroll-btn scroll-left" data-section="maulana-sulaiman">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="videos-wrapper" id="videos-maulana-sulaiman">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/o4q3z4xRhn0" title="Allah Made Everything Out of Water (Part 1) | A Message from Maulana Suleman Khatani" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/H7_m4I7RZ7w" title="Allah Made Everything Out of Water (Part 2) | A Message from Maulana Suleman Khatani" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/wXSHjEOrDF8" title="Allah Made Everything Out of Water by Maulana Suleiman Khatani  #zuhd #religion #islamicvideo #islam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                </div>
+                
+                <button class="scroll-btn scroll-right" data-section="maulana-sulaiman">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </div>
-
+</div>
+   
     <!-- Scholar Section -->
     <div class="section-title section-gap">SCHOLAR</div>
     
     <div class="scholars-container">
         <!-- Scholar 4 -->
         <div class="scholar-card">
-            <div class="scholar-info">
-                <h3 class="scholar-name">Dr. Maulana Sami Al-Hashmi</h3>
-                <p class="scholar-bio">
-                    Born is Vienna, Austria. He began his university education at the University of Otago, New Zealand where he completed a Masters of Dental Surgery with a full scholarship. While practicing as a dental surgeon he then completed a Degree in Islamic studies from the World Islamic Sciences & Education University in Jordan.
-                </p>
-                <button class="read-more-btn">Read More</button>
+            <div class="scholar-info-container">
+                <div class="scholar-info">
+                    <h3 class="scholar-name">Dr. Maulana Sami Al-Hashmi</h3>
+                    <p class="scholar-bio">
+                        Born is Vienna, Austria. He began his university education at the University of Otago, New Zealand where he completed a Masters of Dental Surgery with a full scholarship. While practicing as a dental surgeon he then completed a Degree in Islamic studies from the World Islamic Sciences & Education University in Jordan.
+                    </p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <img src="/scolor img/mufti4.png" alt="Dr. Maulana Saad Al-Haidari" class="scholar-image">
             </div>
-            <img src="/scolor img/mufti4.png" alt="Dr. Maulana Saad Al-Haidari" class="scholar-image">
+            
+            <!-- Videos for Scholar 4 -->
+            <div class="videos-container">
+                <button class="scroll-btn scroll-left" data-section="dr-sami">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="videos-wrapper" id="videos-dr-sami">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/4hI8nW2_ne4" title="Three Embassies of Allah on Earth by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/qOV2cdPbqmg" title="Patience, Bravery &amp; the example of Prophet Musa (AS) by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe  src="https://www.youtube.com/embed/scy4EJXBI4k" title="Abu Bakr (RA) Life: A Role Model in Islamic History (Part 1) with Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+                </div>
+                
+                <button class="scroll-btn scroll-right" data-section="dr-sami">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </div>
     
@@ -688,16 +955,11 @@
                 <div class="payment-method">
                     <img src="/images/Item (6).svg" alt="Shop Pay">
                 </div>
-                <!-- <div class="payment-method">
-                    <img src="/images/Item (1).svg" alt="Union Pay">
-                </div>
-                <div class="payment-method">
-                    <img src="/images/Item (1).svg" alt="Visa">
-                </div> -->
             </div>
             <p>© 2025 ZUHD Academy. All rights reserved.</p>
         </div>
     </div>
+    
     <!-- Scripts -->
     <script>
         // Add click event listeners to all "Read More" buttons
@@ -705,6 +967,27 @@
             button.addEventListener('click', function() {
                 const scholarName = this.parentElement.querySelector('.scholar-name').textContent;
                 alert(`You clicked to read more about ${scholarName}. This would navigate to their detailed profile page.`);
+            });
+        });
+        
+        // Add scroll functionality for video carousels
+        document.querySelectorAll('.scroll-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                const videosWrapper = document.getElementById(`videos-${section}`);
+                const scrollAmount = 400; // Adjust scroll amount as needed
+                
+                if (this.classList.contains('scroll-left')) {
+                    videosWrapper.scrollBy({
+                        left: -scrollAmount,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    videosWrapper.scrollBy({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
