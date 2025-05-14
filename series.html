@@ -62,7 +62,6 @@ max-width: 1200px;
     background-repeat: no-repeat;
     color: white;
     text-align: center;
-    padding: 10px;
     font-weight: bold;
     font-size: 40px;
     border-radius: 10px;
@@ -125,8 +124,7 @@ max-width: 1200px;
             background-color: #e6e6e6;
             border-radius: 5px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
@@ -193,6 +191,7 @@ max-width: 1200px;
         }
  .section-title span{
     font-size: 22px;
+    font-weight: 500;
  }
         .section-gap {
             margin-top: 40px;
@@ -212,14 +211,12 @@ max-width: 1200px;
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
             cursor: pointer;
         }
         
         .workshop-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
         }
         
         /* Video container to maintain aspect ratio */
@@ -241,7 +238,7 @@ max-width: 1200px;
         }
           /* Section title styles */
           .section-title {
-            width: 60%;
+            width: 80%;
             background-color: #C3922E; 
             background-image: url('/maskeffect.png');
             background-size: cover;
@@ -249,7 +246,7 @@ max-width: 1200px;
             background-repeat: no-repeat;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 30px;
             font-weight: bold;
             font-size: 40px;
             border-radius: 10px;
@@ -335,13 +332,11 @@ max-width: 1200px;
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .video-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
         }
 
         .video-container {
@@ -430,9 +425,8 @@ max-width: 1200px;
         flex-direction: row;
         height: auto;
         align-items: center;
-        background-color: white;
+        background-color: #f6f6f6;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         padding: 10px;
     }
     
@@ -463,6 +457,8 @@ max-width: 1200px;
         width: 100%;
         height: 100%;
         border: none;
+        transform: scale(0.8);
+        transform-origin: 0 0;
     }
     
     /* Add this to make YouTube controls smaller */
@@ -822,9 +818,7 @@ max-width: 1200px;
     
     /* Add a subtle border and background to the cards */
     .video-card {
-        background-color: white;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         padding: 10px;
     }
     
@@ -888,7 +882,7 @@ max-width: 1200px;
         <!-- Scholar Section 1 -->
 <div id="mufti-mangera" class="video-section">
     <div class="section-header">
-        <div class="section-title">RasulAllah (SaW) Series <br> <span>Mawlana Sami Al Hashmi</span></div>
+        <div class="section-title">RasulAllah (SAW) Series <br> <span>Mawlana Sami Al Hashmi</span></div>
         <a href="#" class="see-all-link">See All</a>
     </div>
            
@@ -1005,9 +999,9 @@ max-width: 1200px;
                         
                 <div class="video-card">
                     <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/QjMFX5LaHvA?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="Illuminating Lives: Lessons from the Prophet’s (ﷺ) Legacy – Intro by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+<iframe  src="https://www.youtube.com/embed/QjMFX5LaHvA?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="Illuminating Lives: Lessons from the Prophet's (ﷺ) Legacy – Intro by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
                     <div class="video-info">
-                        <div class="video-title">Illuminating Lives: Lessons from the Prophet’s (ﷺ) Legacy</div>
+                        <div class="video-title">Illuminating Lives: Lessons from the Prophet's (ﷺ) Legacy</div>
                         <div class="video-author">Sheikh Hassan Ali</div>
                     </div>
                 </div>
@@ -1118,7 +1112,9 @@ max-width: 1200px;
 <!-- Scholar Section 5 -->
 <div id="maulana-hashmi" class="video-section">
     <div class="section-header">
-        <div class="section-title">Medina Vlog Series<br> <span>Ustadh Saad Al Hashmi</span></div>
+        <div class="section-title"> The Seerah Series
+<br> <span> Mawlana Sami Al Hashmi
+</span></div>
         <a href="#" class="see-all-link">See All</a>
     </div>            
     <div class="container">
@@ -1130,10 +1126,87 @@ max-width: 1200px;
             <div class="videos-wrapper" id="videos-maulana-hashmi">
                 <div class="video-card">
                     <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/uy0LBR1QjUg?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Unveiling Medina’s Secrets: Masjid Banu Unaif with Ustadh Saad &amp; Sheikh Yusuf | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe  src="https://www.youtube.com/embed/NswPl0cJ6iA" title="Seerah Series: The Battle of Tabook (Part 1) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad</div>
+                        <div class="video-author">Maulana Sami Al-Hashmi</div>
+                    </div>
+                </div>
+                        
+                <div class="video-card">
+                    <div class="video-container">
+<iframe  src="https://www.youtube.com/embed/-TUt7giwVNc" title="Seerah Series: The Battle of Tabook (Part 2) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Seerah Series: The Battle of Tabook (Part 2) </div>
+                        <div class="video-author">Maulana Sami Al-Hashmi</div>
+                    </div>
+                </div>
+                        
+                <div class="video-card">
+                    <div class="video-container">
+<iframe width="695" height="391" src="https://www.youtube.com/embed/xq3jzMVSCdQ" title="Seerah Series: The Battle of Tabook (Part 3) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    <div class="video-info">
+                        <div class="video-title">Seerah Series: The Battle of Tabook (Part 3)</div>
+                        <div class="video-author">Maulana Sami Al-Hashmi</div>
+                    </div>
+                </div>
+                        
+                <div class="video-card">
+                    <div class="video-container">
+<iframe width="695" height="391" src="https://www.youtube.com/embed/A5gdu864QBQ" title="🕋 The Last Sermon: Powerful Lessons from Hajj Al-Wida | Seerah Series 🕋" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="video-info">
+                        <div class="video-title">The Last Sermon: Powerful Lessons from Hajj Al-Wida </div>
+                        <div class="video-author">Maulana Sami Al-Hashmi</div>
+                    </div>
+                </div>
+                        
+                <div class="video-card">
+                    <div class="video-container">
+                       <iframe  src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina's Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
-                        <div class="video-title">Unveiling Medina’s Secrets: Masjid Banu Unaif with Ustadh Saad</div>
+                        <div class="video-title">Additional Lecture</div>
+                        <div class="video-author">Maulana Sami Al-Hashmii</div>
+                    </div>
+                </div>
+                        
+                <div class="video-card">
+                    <div class="video-container">
+<iframe  src="https://www.youtube.com/embed/dZ2LJmICFSM" title="The Final Moments of the Prophet ﷺ | A Heart-Wrenching Reminder (Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="video-info">
+                        <div class="video-title">The Final Moments of the Prophet ﷺ </div>
+                        <div class="video-author">Maulana Sami Al-Hashmi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-container">
+                <button class="view-more-btn" data-section="maulana-hashmi">View More</button>
+            </div>
+                    
+            <button class="scroll-btn scroll-right" data-section="maulana-hashmi">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- Scholar Section 5 -->
+<div id="maulana-hashmi-2" class="video-section">
+    <div class="section-header">
+        <div class="section-title">Medina Vlog Series<br> <span>Ustadh Saad Al Hashmi</span></div>
+        <a href="#" class="see-all-link">See All</a>
+    </div>            
+    <div class="container">
+        <div class="videos-container">
+            <button class="scroll-btn scroll-left" data-section="maulana-hashmi-2">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+                    
+            <div class="videos-wrapper" id="videos-maulana-hashmi-2">
+                <div class="video-card">
+                    <div class="video-container">
+                       <iframe  src="https://www.youtube.com/embed/uy0LBR1QjUg?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad &amp; Sheikh Yusuf | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad</div>
                         <div class="video-author">Ustadh Saad Al Hashmi</div>
                     </div>
                 </div>
@@ -1169,15 +1242,15 @@ max-width: 1200px;
                         
                 <div class="video-card">
                     <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina’s Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                       <iframe  src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina's Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
-                        <div class="video-title">Walking Through Medina’s Hidden Gems: Masjid Al-Usbah</div>
+                        <div class="video-title">Additional Lecture</div>
                         <div class="video-author">Ustadh Saad Al Hashmi</div>
                     </div>
                 </div>
                         
-                <!-- <div class="video-card">
+                <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/I9NU_xM2BIc" title="Dawah &amp; Changing Public Opinion by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -1185,13 +1258,13 @@ max-width: 1200px;
                         <div class="video-title">Dawah & Changing Public Opinion</div>
                         <div class="video-author">Ustadh Saad Al Hashmi</div>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="view-more-container">
-                <button class="view-more-btn" data-section="maulana-hashmi">View More</button>
+                <button class="view-more-btn" data-section="maulana-hashmi-2">View More</button>
             </div>
                     
-            <button class="scroll-btn scroll-right" data-section="maulana-hashmi">
+            <button class="scroll-btn scroll-right" data-section="maulana-hashmi-2">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
@@ -1296,8 +1369,9 @@ max-width: 1200px;
         <p>&copy; 2024 ZUHD. All rights reserved.</p>
     </div>
 </div>
+<script src="script.js"></script>
+    <script src="navbar.js"></script>
 
-    <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const navbarDiv = document.getElementById('navbar');
@@ -1584,7 +1658,6 @@ function initializeVideoCards() {
         });
     }
 }
-    </script>
     // Add this to the existing script at the bottom of the file
 document.addEventListener('DOMContentLoaded', function() {
     // Handle responsive layout
@@ -1613,5 +1686,47 @@ document.addEventListener('DOMContentLoaded', function() {
     handleResponsiveLayout();
     window.addEventListener('resize', handleResponsiveLayout);
 });
+    </script>
+    
+     <script src="navbar.js"></script>
+
+    <script>
+// Make sure both Medina Vlog sliders work
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize horizontal scrolling for both Medina Vlog sections
+    const scrollLeftBtns = document.querySelectorAll('.scroll-btn.scroll-left');
+    const scrollRightBtns = document.querySelectorAll('.scroll-btn.scroll-right');
+    
+    scrollLeftBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const sectionId = this.getAttribute('data-section');
+            if (sectionId) {
+                const videosWrapper = document.getElementById(`videos-${sectionId}`);
+                if (videosWrapper) {
+                    videosWrapper.scrollBy({
+                        left: -300,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    scrollRightBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const sectionId = this.getAttribute('data-section');
+            if (sectionId) {
+                const videosWrapper = document.getElementById(`videos-${sectionId}`);
+                if (videosWrapper) {
+                    videosWrapper.scrollBy({
+                        left: 300,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
