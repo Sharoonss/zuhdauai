@@ -41,7 +41,7 @@
             border: none;
             border-radius: 25px;
             background-color: #cecdcd;
-            width: 85%;
+            width:60%;
             border: 1px solid #C3922E ;
             font-size: 16px;
             outline: none;
@@ -51,11 +51,11 @@
             background-color: #C3922E;
             color: white;
             border: none;
-            border-radius: 50%;
-            width: 46px;
-            height: 46px;
+            border-radius:25px;
+            width:100px;
+            height:55px;
             cursor: pointer;
-            margin-left: -45px;
+            margin-left: -70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -108,16 +108,27 @@ width: 30%;        }
             line-height: 1.4;
         }
         
+        /* Desktop video styles */
+        .lecture-box {
+            margin-bottom: 20px;
+        }
+        
         .lecture-box iframe {
             width: 100%;
             border-radius: 4px;
             display: block;
             height: 180px;
         }
+        
         .lecture-title {
             font-size: 13px;
             font-weight: bold;
             margin-top: 10px;
+        }
+        
+        /* Mobile card layout styles */
+        .mobile-lecture-card {
+            display: none;
         }
         
         .divider {
@@ -143,6 +154,72 @@ width: 30%;        }
             .section-title {
                 font-size: 13px;
                 padding: 7px 14px;
+            }
+            
+            .right-column {
+                width: 100%;
+            }
+            
+            /* Hide desktop video on mobile */
+            .lecture-box iframe, .lecture-box .lecture-title {
+                display: none;
+            }
+            
+            /* Show mobile card layout */
+            .mobile-lecture-card {
+                display: flex;
+                background-color: #fff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                margin-bottom: 15px;
+            }
+            
+            .video-thumbnail {
+                width: 40%;
+                position: relative;
+            }
+            
+            .video-thumbnail img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .play-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(0,0,0,0.6);
+                color: white;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .lecture-content {
+                width: 60%;
+                padding: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .mobile-lecture-title {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.3;
+                color: #333;
+                margin-bottom: 5px;
+            }
+            
+            .lecture-author {
+                font-size: 12px;
+                color: #666;
             }
         }
         
@@ -174,6 +251,19 @@ width: 30%;        }
             
             .lecture-title {
                 font-size: 12px;
+            }
+            
+            .play-icon {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .mobile-lecture-title {
+                font-size: 13px;
+            }
+            
+            .lecture-author {
+                font-size: 11px;
             }
         }
         /* Banner styles */
@@ -494,18 +584,63 @@ width: 30%;        }
                 <div class="section-title">Recent Lectures</div>
                 
                 <div class="lecture-box">
-                    <iframe width="100%" height="391" src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- Desktop view -->
+                    <iframe width="100%" height="180" src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="lecture-title">Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!</div>
+                    
+                    <!-- Mobile view card -->
+                    <div class="mobile-lecture-card" data-video-id="gtLj7jDeD64">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/gtLj7jDeD64/hqdefault.jpg" alt="Spouse Selection & Haq Mehar">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="lecture-content">
+                            <div class="mobile-lecture-title">Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!</div>
+                            <div class="lecture-author">Shaykh Muhammad Carr</div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="lecture-box">
-                    <iframe width="100%" height="391" src="https://www.youtube.com/embed/quPr4dPjg2E" title="The Poisonous Tongue: Unveiling the Dangers of Backbiting &amp; Slander by Dr. Mufti AbdurRahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- Desktop view -->
+                    <iframe width="100%" height="180" src="https://www.youtube.com/embed/quPr4dPjg2E" title="The Poisonous Tongue: Unveiling the Dangers of Backbiting &amp; Slander by Dr. Mufti AbdurRahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="lecture-title">The Poisonous Tongue: Unveiling the Dangers of Backbiting &amp; Slander by Dr. Mufti AbdurRahman Mangera</div>
+                    
+                    <!-- Mobile view card -->
+                    <div class="mobile-lecture-card" data-video-id="quPr4dPjg2E">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/quPr4dPjg2E/hqdefault.jpg" alt="The Poisonous Tongue">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="lecture-content">
+                            <div class="mobile-lecture-title">The Poisonous Tongue: Unveiling the Dangers of Backbiting &amp; Slander</div>
+                            <div class="lecture-author">Dr. Mufti AbdurRahman Mangera</div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="lecture-box">
-                    <iframe width="100%" height="391" src="https://www.youtube.com/embed/ljADauvZK1U" title="The Fate of a Dead Heart with Dr. Mufti Abdur Rahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- Desktop view -->
+                    <iframe width="100%" height="180" src="https://www.youtube.com/embed/ljADauvZK1U" title="The Fate of a Dead Heart with Dr. Mufti Abdur Rahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="lecture-title">The Fate of a Dead Heart with Dr. Mufti Abdur Rahman Mangera</div>
+                    
+                    <!-- Mobile view card -->
+                    <div class="mobile-lecture-card" data-video-id="ljADauvZK1U">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/ljADauvZK1U/hqdefault.jpg" alt="The Fate of a Dead Heart">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="lecture-content">
+                            <div class="mobile-lecture-title">The Fate of a Dead Heart</div>
+                            <div class="lecture-author">Dr. Mufti Abdur Rahman Mangera</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -636,6 +771,9 @@ width: 30%;        }
     
     // ========== Video Cards Navigation and Animation ==========
     initializeVideoCards();
+    
+    // ========== Mobile Video Cards Click ==========
+    initializeMobileVideoCards();
 });
 
 // ===== Workshop Cards Functions =====
@@ -871,13 +1009,28 @@ function initializeVideoCards() {
             }, 100 * index);
         });
     }
-}// JavaScript functionality can be added here
-        // For example, for handling search or displaying dynamic content
-        document.querySelector('.search-button').addEventListener('click', function() {
-            const searchTerm = document.querySelector('.search-input').value;
-            console.log('Searching for:', searchTerm);
-            // Add search functionality here
+}
+
+// ===== Mobile Video Cards Click =====
+function initializeMobileVideoCards() {
+    // Add click event to mobile lecture cards
+    document.querySelectorAll('.mobile-lecture-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            if (videoId) {
+                window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+            }
         });
+    });
+}
+
+// JavaScript functionality can be added here
+// For example, for handling search or displaying dynamic content
+document.querySelector('.search-button').addEventListener('click', function() {
+    const searchTerm = document.querySelector('.search-input').value;
+    console.log('Searching for:', searchTerm);
+    // Add search functionality here
+});
     </script>
     <script src="navbar.js"></script>
 </body>

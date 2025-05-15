@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholars Section</title>
+    <title>Islamic Video Series</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Import fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Combined CSS -->
     <style>
-        /* Import fonts */
-        @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-
         /* Reset and base styles */
         * {
             margin: 0;
@@ -30,14 +31,14 @@
             overflow: hidden;
             margin-bottom: 40px;
         }
-        
+
         .banner-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: brightness(0.7);
         }
-        
+
         .banner-text {
             position: absolute;
             top: 50%;
@@ -46,199 +47,15 @@
             color: white;
             text-align: center;
             font-size: 75px;
-            font-weight:700;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             width: 100%;
         }
 
         /* Section title styles */
- .section-title {
-max-width: 1200px;
-     background-color: #C3922E; 
-    background-image: url('/maskeffect.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    border-radius: 10px;
-    margin: auto;
-    background-blend-mode: overlay; /* Try 'multiply' or 'overlay' */
-}
-
-       
-        /* Responsive styles - Improved for better mobile display */
-      
-      
-
-        @media screen and (max-width: 400px) {
-            body {
-                padding: 0;
-            }
-                  
-            
-            .banner {
-                height: 200px;
-                margin-bottom: 20px;
-            }
-            
-            .banner-text {
-                font-size: 24px;
-            }
-            
-            .section-title {
-                font-size: 20px;
-                margin-bottom: 10px;
-            }
-            
-            .section-gap {
-                margin-top: 20px;
-            }
-            .main-lecture{
-            margin-top:10px;
-            margin-bottom:10px;
-        }
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-            margin-bottom:40px;
-            margin-top:40px;
-
-        }
-        
-       
-        .workshops {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-        }
-        
-        .workshop-card {
-            flex: 1;
-            background-color: #e6e6e6;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-        
-      
-      
-      
-      
-        
-        @media (max-width: 768px) {
-            .workshops {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .container {
-                padding: 10px;
-                width: 95%;
-            }
-            
-            .workshop-card {
-                max-width: 100%;
-            }
-            
-            
-            .card-content {
-                font-size: 13px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 5px;
-                width: 100%;
-            }
-            
-            
-            .workshops {
-                gap: 15px;
-            }
-            
-            .card-image {
-                height: 120px;
-            }
-            .main-lecture{
-            margin-top:10px;
-            margin-bottom:10px;
-        }
-        }
-
-        
-        /* Section title styles */
         .section-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 2rem auto;
-            border-bottom: 2px solid #c9a44c;
-            width: 90%;
-            line-height: 30px;
-            max-width: 1200px;
-        }
- .section-title span{
-    font-size: 22px;
-    font-weight: 500;
- }
-        .section-gap {
-            margin-top: 40px;
-            margin-bottom: 30px;
-        }
-
-     
-        /* Workshop section styles */
-        .workshops {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-        }
-        
-        .workshop-card {
-            flex: 1;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .workshop-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        /* Video container to maintain aspect ratio */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-          /* Section title styles */
-          .section-title {
-            width: 80%;
+            width: 60%;
             background-color: #C3922E; 
             background-image: url('/maskeffect.png');
             background-size: cover;
@@ -250,20 +67,26 @@ max-width: 1200px;
             font-weight: bold;
             font-size: 40px;
             border-radius: 10px;
-            margin: 80px auto;
+            margin: 20px auto;
             background-blend-mode: overlay;
+        }
+
+        .section-title span {
+            font-size: 22px;
+            font-weight: 500;
         }
 
         /* Container styles */
         .container {
             width: 100%;
+            max-width: 1200px;
             margin: 40px auto;
             position: relative;
         }
 
         /* Video section styles */
         .video-section {
-            margin-bottom: 80px;
+            margin-bottom: 50px;
             scroll-margin-top: 100px;
         }
 
@@ -328,7 +151,7 @@ max-width: 1200px;
         .video-card {
             flex: 0 0 auto;
             width: 100%;
-            max-width:385px;
+            max-width: 385px;
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
@@ -366,209 +189,226 @@ max-width: 1200px;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        /* Responsive styles */
+
+        /* See All link container - NEW ADDITION */
+        .see-all-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 90%;
+            margin: 15px auto 0;
+        }
+
+        .see-all-link {
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .see-all-link:hover {
+            color: #C3922E;
+        }
+
+        /* Mobile view for video cards */
         @media (max-width: 768px) {
-            .workshops {
-                flex-direction: column;
-                gap: 20px;
+            .videos-wrapper {
+                display: block;
+                overflow-x: hidden;
             }
             
-            .container {
-                padding: 10px;
-                width: 95%;
-            }
-            
-            .workshop-card {
+            .video-card {
+                width: 100%;
                 max-width: 100%;
                 margin-bottom: 15px;
+                display: flex;
+                flex-direction: row;
+                height: auto;
+                align-items: center;
+                background-color: #f6f6f6;
+                border-radius: 8px;
+                padding: 10px;
             }
             
-            .section-title {
-                font-size: 1.1rem;
+            .video-card:nth-child(n+4) {
+                display: none;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 5px;
+            
+            .video-card.show {
+                display: flex;
+            }
+            
+            .videos-wrapper.show-all .video-card:nth-child(n+4) {
+                display: flex;
+            }
+            
+            .video-container {
+                width: 120px;
+                min-width: 120px;
+                height: 90px;
+                padding-bottom: 0;
+                position: relative;
+                margin-right: 15px;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            
+            /* Make YouTube buttons smaller on mobile */
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
+                height: 100%;
+                border: none;
+                transform: scale(0.8);
+                transform-origin: 0 0;
             }
             
-            .workshops {
-                gap: 15px;
+            /* Add this to make YouTube controls smaller */
+            .video-container:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                pointer-events: none;
             }
             
-            .section-title {
-                font-size: 1.1rem;
+            .video-info {
+                flex: 1;
+                padding: 0 10px 0 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .video-title {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                line-height: 1.3;
+                padding: 0;
+            }
+            
+            .video-author {
+                font-size: 12px;
+                color: #666;
+                margin-bottom: 5px;
+            }
+            
+            .scroll-btn {
+                display: none;
+            }
+            
+            .view-more-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
                 margin-bottom: 20px;
             }
             
-            .main-lecture{
-            margin-top:10px;
-            margin-bottom:10px;
+            .view-more-btn {
+                background-color: #C3922E;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            .view-more-btn:hover {
+                background-color: #a37a25;
+            }
+            
+            /* See All link in mobile view */
+            .see-all-container {
+                margin-top: 5px;
+            }
         }
-        }
-    
-         
-        /* Mobile view for video cards */
-@media (max-width: 768px) {
-    .videos-wrapper {
-        display: block;
-        overflow-x: hidden;
-    }
-    
-    .video-card {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: row;
-        height: auto;
-        align-items: center;
-        background-color: #f6f6f6;
-        border-radius: 8px;
-        padding: 10px;
-    }
-    
-    .video-card:nth-child(n+4) {
-        display: none;
-    }
-    
-    .video-card.show {
-        display: flex;
-    }
-    
-    .video-container {
-        width: 120px;
-        min-width: 120px;
-        height: 90px;
-        padding-bottom: 0;
-        position: relative;
-        margin-right: 15px;
-        border-radius: 4px;
-        overflow: hidden;
-    }
-    
-    /* Make YouTube buttons smaller on mobile */
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        transform: scale(0.8);
-        transform-origin: 0 0;
-    }
-    
-    /* Add this to make YouTube controls smaller */
-    .video-container:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        pointer-events: none;
-    }
-    
-    .video-info {
-        flex: 1;
-        padding: 0 10px 0 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .video-title {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 5px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        line-height: 1.3;
-        padding: 0;
-    }
-    
-    .video-author {
-        font-size: 12px;
-        color: #666;
-        margin-bottom: 5px;
-    }
-    
-    .scroll-btn {
-        display: none;
-    }
-    
-    .view-more-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 40px;
-    }
-    
-    .view-more-btn {
-        background-color: #C3922E;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    
-    .view-more-btn:hover {
-        background-color: #a37a25;
-    }
-    
-    .videos-wrapper.show-all .video-card:nth-child(n+4) {
-        display: flex;
-    }
-    
-    /* Add a "See All" link to each section */
-    .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    .see-all-link {
-        color: #666;
-        font-size: 14px;
-        text-decoration: none;
-    }
-}
 
-/* Desktop view - hide mobile-specific elements */
-@media (min-width: 769px) {
-    .video-info {
-        display: none;
-    }
-    
-    .view-more-container {
-        display: none;
-    }
-    
-    
-    .video-card {
-        display: block;
-    }
-    
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        overflow: hidden;
-    }
-}
-         
+        /* Desktop view - hide mobile-specific elements */
+        @media (min-width: 769px) {
+            .video-info {
+                display: none;
+            }
+            
+            .view-more-container {
+                display: none;
+            }
+            
+            .video-card {
+                display: block;
+            }
+            
+            .video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                height: 0;
+                overflow: hidden;
+            }
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .section-title {
+                width: 90%;
+                font-size: 18px;
+                margin: 30px auto;
+                padding: 8px;
+                line-height: 20px;
+            }
+            
+            .section-title span {
+                font-size: 14px;
+            }
+            
+            .container {
+                margin: 20px auto;
+            }
+            
+            .banner {
+                height: 300px;
+            }
+            
+            .banner-text {
+                font-size: 28px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .banner {
+                height: 200px;
+                margin-bottom: 20px;
+            }
+            
+            .banner-text {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .section-gap {
+                margin-top: 20px;
+            }
+            
+            .main-lecture {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
         /* Footer styles */
         .footer {
             background-color: #000;
@@ -678,16 +518,6 @@ max-width: 1200px;
             color: #ca9836;
         }
 
-        .hiring-tag {
-            background-color: #ca9836;
-            color: #000;
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 10px;
-            margin-left: 5px;
-            font-weight: bold;
-        }
-
         .contact-info {
             margin-bottom: 30px;
         }
@@ -752,26 +582,8 @@ max-width: 1200px;
             font-size: 12px;
             color: #999;
         }
-  @media screen and (max-width: 768px) {
-            .section-title {
-                width: 90%;
-                font-size:18px;
-            }
-            
-            .scholars-container {
-                width: 90%;
-            }
-            
-            .banner {
-                height: 300px;
-            }
-            
-            .banner-text {
-                font-size: 28px;
-            }
-            
-            
-          
+
+        @media screen and (max-width: 768px) {
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
@@ -798,73 +610,6 @@ max-width: 1200px;
                 flex-direction: column;
             }
         }
-
-/* Additional styles for the section title and container */
-@media (max-width: 768px) {
-    .section-title {
-        width: 90%;
-        font-size: 18px;
-        margin: 30px auto;
-        padding: 8px;
-    }
-    
-    .section-title span {
-        font-size: 14px;
-    }
-    
-    .container {
-        margin: 20px auto;
-    }
-    
-    /* Add a subtle border and background to the cards */
-    .video-card {
-        border-radius: 8px;
-        padding: 10px;
-    }
-    
-    /* Style the video info section */
-    .video-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    /* Add a "See All" link to each section */
-    .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    .see-all-link {
-        color: #666;
-        font-size: 14px;
-        text-decoration: none;
-    }
-}
-
-/* Style for See All link on desktop */
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.see-all-link {
-    color: #666;
-    font-size: 14px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.see-all-link:hover {
-    color: #C3922E;
-}
-
     </style>
 </head>
 <body>
@@ -877,857 +622,651 @@ max-width: 1200px;
         <img src="/scolor img/scolorbanner.png" alt="Islamic Workshop Banner" class="banner-img">
         <div class="banner-text">Series</div>
     </div>
-   <!-- Main Content -->
+   
+    <!-- Main Content -->
     <div class="main-lecture">
         <!-- Scholar Section 1 -->
-<div id="mufti-mangera" class="video-section">
-    <div class="section-header">
-        <div class="section-title">RasulAllah (SAW) Series <br> <span>Mawlana Sami Al Hashmi</span></div>
-        <a href="#" class="see-all-link">See All</a>
-    </div>
-           
-    <div class="container">
-        <div class="videos-container">
-            <button class="scroll-btn scroll-left" data-section="mufti-mangera">
-                <i class="fas fa-chevron-left"></i>
-            </button>
+        <div id="mufti-mangera" class="video-section">
+            <div class="section-header">
+                <div class="section-title">Rasulallah (SaW) Series <br> <span>Mawlana Sami Al Hashmi</span></div>
+            </div>
+                   
+            <div class="container">
+                <div class="videos-container">
+                    <button class="scroll-btn scroll-left" data-section="mufti-mangera">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                            
+                    <div class="videos-wrapper" id="videos-mufti-mangera">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/OHFKeG1eStw?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Journey to Taif &amp; First Pledge of the Sahabah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Journey to Taif & First Pledge of the Sahabah</div>
+                                <div class="video-author">Mawlana Sami Al Hashmi</div>
+                            </div>
+                        </div> 
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/lvGDhC9NMJ8?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Second Pledge of the Sahabah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Second Pledge of the Sahabah</div>
+                                <div class="video-author">Mawlana Sami Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/GgvdfHBaYZU?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Hijrah Migration to Medina (Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Hijrah Migration to Medina (Part 1)</div>
+                                <div class="video-author">Mawlana Sami Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/K5qgjYBb65E?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Hijrah Migration to Medina (Part 2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Hijrah Migration to Medina (Part 2)</div>
+                                <div class="video-author">Mawlana Sami Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/K5qgjYBb65E?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Hijrah Migration to Medina (Part 2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Hijrah Migration to Medina (Part 2)</div>
+                                <div class="video-author">Mawlana Sami Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/t7jv7gPTF7k?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Masjid An-Nabawi: The Epicenter of Islamic Spirituality and History" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Masjid An-Nabawi: The Epicenter of Islamic Spirituality and History</div>
+                                <div class="video-author">Mawlana Sami Al Hashmi</div>
+                            </div>
+                        </div>
+                    </div>
                     
-            <div class="videos-wrapper" id="videos-mufti-mangera">
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/OHFKeG1eStw?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Journey to Taif &amp; First Pledge of the Sahabah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="view-more-container">
+                        <button class="view-more-btn" data-section="mufti-mangera">View More</button>
                     </div>
-                    <div class="video-info">
-                        <div class="video-title">Journey to Taif & First Pledge of the Sahabah</div>
-                        <div class="video-author">Mawlana Sami Al Hashmi</div>
+                    
+                    <!-- See All link positioned after videos -->
+                    <div class="see-all-container">
+                        <a href="#" class="see-all-link">See All</a>
                     </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/lvGDhC9NMJ8?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Second Pledge of the Sahabah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Second Pledge of the Sahabah</div>
-                        <div class="video-author">Mawlana Sami Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/GgvdfHBaYZU?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Hijrah Migration to Medina (Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Hijrah Migration to Medina (Part 1)</div>
-                        <div class="video-author">Mawlana Sami Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/K5qgjYBb65E?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Hijrah Migration to Medina (Part 2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Hijrah Migration to Medina (Part 2)</div>
-                        <div class="video-author">Mawlana Sami Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/K5qgjYBb65E?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Hijrah Migration to Medina (Part 2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Hijrah Migration to Medina (Part 2)</div>
-                        <div class="video-author">Mawlana Sami Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/t7jv7gPTF7k?list=PLA-ylo0o2Z5kAdM_RyjN_0Volk4pX-Uiu" title="Masjid An-Nabawi: The Epicenter of Islamic Spirituality and History" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Masjid An-Nabawi: The Epicenter of Islamic Spirituality and History</div>
-                        <div class="video-author">Mawlana Sami Al Hashmi</div>
-                    </div>
+                            
+                    <button class="scroll-btn scroll-right" data-section="mufti-mangera">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
-            <div class="view-more-container">
-                <button class="view-more-btn" data-section="mufti-mangera">View More</button>
-            </div>
-                    
-            <button class="scroll-btn scroll-right" data-section="mufti-mangera">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
-    </div>
-</div>
 
         <!-- Scholar Section 2 -->
-<div id="sheikh-hasan" class="video-section">
-    <div class="section-header">
-        <div class="section-title">The Prophet Series <br> <span>Shaykh Hassan Ali</span></div>
-        <a href="#" class="see-all-link">See All</a>
-    </div>
-            
-    <div class="container">
-        <div class="videos-container">
-            <button class="scroll-btn scroll-left" data-section="sheikh-hasan">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-                    
-            <div class="videos-wrapper" id="videos-sheikh-hasan">
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/al1y3iwNv4k?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="The First Test: Adam (A.S), Shaytaan &amp; the Fall From Jannah | Lessons for Our Time" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The First Test: Adam (A.S)</div>
-                        <div class="video-author">Sheikh Hassan Ali</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/r8mCyjc8SXE?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="🔥 The First Human &amp; His Divine Honor: The Story of Prophet Adam (AS) Sheikh Hasan Ali 🚀" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title"> The First Human &amp; His Divine Honor: The Story of Prophet Adam (AS)</div>
-                        <div class="video-author">Sheikh Hassan Ali</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/QjMFX5LaHvA?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="Illuminating Lives: Lessons from the Prophet's (ﷺ) Legacy – Intro by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Illuminating Lives: Lessons from the Prophet's (ﷺ) Legacy</div>
-                        <div class="video-author">Sheikh Hassan Ali</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/YmGlfueDQAM?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="The Prophet Series: Timeless Lessons with Sheikh Hassan Ali – Coming Soon to Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The Prophet Series: Timeless Lessons with Sheikh Hassan Ali – Coming Soon to Zuhd Guidance</div>
-                        <div class="video-author">Sheikh Hassan Ali</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/Ickppft5A6U" title="The Transformative Power of Dua | Insights by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The Transformative Power of Dua</div>
-                        <div class="video-author">Sheikh Hassan Ali</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/mWCA-y-tal8" title="The 5 Phases of Life by Sheikh Hassan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The 5 Phases of Life</div>
-                        <div class="video-author">Sheikh Hassan Ali</div>
-                    </div>
-                </div>
-            </div>
-            <div class="view-more-container">
-                <button class="view-more-btn" data-section="sheikh-hasan">View More</button>
+        <div id="sheikh-hasan" class="video-section">
+            <div class="section-header">
+                <div class="section-title">The Prophet Series <br> <span>Shaykh Hassan Ali</span></div>
             </div>
                     
-            <button class="scroll-btn scroll-right" data-section="sheikh-hasan">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="container">
+                <div class="videos-container">
+                    <button class="scroll-btn scroll-left" data-section="sheikh-hasan">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                            
+                    <div class="videos-wrapper" id="videos-sheikh-hasan">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/al1y3iwNv4k?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="The First Test: Adam (A.S), Shaytaan &amp; the Fall From Jannah | Lessons for Our Time" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The First Test: Adam (A.S)</div>
+                                <div class="video-author">Sheikh Hassan Ali</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/r8mCyjc8SXE?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="🔥 The First Human &amp; His Divine Honor: The Story of Prophet Adam (AS) Sheikh Hasan Ali 🚀" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title"> The First Human &amp; His Divine Honor: The Story of Prophet Adam (AS)</div>
+                                <div class="video-author">Sheikh Hassan Ali</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/QjMFX5LaHvA?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="Illuminating Lives: Lessons from the Prophet's (ﷺ) Legacy – Intro by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Illuminating Lives: Lessons from the Prophet's (ﷺ) Legacy</div>
+                                <div class="video-author">Sheikh Hassan Ali</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/YmGlfueDQAM?list=PLA-ylo0o2Z5m8WQQAG_q0QggLTpRCYM87" title="The Prophet Series: Timeless Lessons with Sheikh Hassan Ali – Coming Soon to Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The Prophet Series: Timeless Lessons with Sheikh Hassan Ali – Coming Soon to Zuhd Guidance</div>
+                                <div class="video-author">Sheikh Hassan Ali</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/Ickppft5A6U" title="The Transformative Power of Dua | Insights by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The Transformative Power of Dua</div>
+                                <div class="video-author">Sheikh Hassan Ali</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/mWCA-y-tal8" title="The 5 Phases of Life by Sheikh Hassan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The 5 Phases of Life</div>
+                                <div class="video-author">Sheikh Hassan Ali</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-more-container">
+                        <button class="view-more-btn" data-section="sheikh-hasan">View More</button>
+                    </div>
+                    
+                    <!-- See All link positioned after videos -->
+                    <div class="see-all-container">
+                        <a href="#" class="see-all-link">See All</a>
+                    </div>
+                            
+                    <button class="scroll-btn scroll-right" data-section="sheikh-hasan">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <!-- Scholar Section 3 -->
-<div id="maulana-khatani" class="video-section">
-    <div class="section-header">
-        <div class="section-title">Abubakr (R.A) Series<br> <span>Mawlana Sami Al Hashmi</span></div>
-        <a href="#" class="see-all-link">See All</a>
-    </div>            
-    <div class="container">
-        <div class="videos-container">
-            <button class="scroll-btn scroll-left" data-section="maulana-khatani">
-                <i class="fas fa-chevron-left"></i>
-            </button>
+        <div id="maulana-khatani" class="video-section">
+            <div class="section-header">
+                <div class="section-title">Abubakr (R.A) Series<br> <span>Mawlana Sami Al Hashmi</span></div>
+            </div>            
+            <div class="container">
+                <div class="videos-container">
+                    <button class="scroll-btn scroll-left" data-section="maulana-khatani">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                            
+                    <div class="videos-wrapper" id="videos-maulana-khatani">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/knh-nLyLZ88?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="Abu Bakr (RA): When Leadership Forgave the Unforgivable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Abu Bakr (RA): When Leadership Forgave the Unforgivable</div>
+                                <div class="video-author">Mawlana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/XAuA9QtJFgQ?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="🔥 &quot;Abu Bakr (RA): Leadership, Loyalty &amp; The Lessons of Al-Hudaibiyyah&quot; 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Abu Bakr (RA): Leadership, Loyalty</div>
+                                <div class="video-author">Mawlana Sami  Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/8DyaIBdqCOk?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="🌟 Abu Bakr (RA) &amp; The Battle of Badr: Loyalty, Faith &amp; the 5 Virtues of Prophet Muhammad ﷺ!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">🌟 Abu Bakr (RA) &amp; The Battle of Badr: Loyalty, Faith</div>
+                                <div class="video-author">Mawlana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/rOux9FZsAPI?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="Abu Bakr (RA): Skills, Love for Medina &amp; Lessons from Makkah by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Abu Bakr (RA): Skills, Love for Medina</div>
+                                <div class="video-author">Mawlana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                    </div>
                     
-            <div class="videos-wrapper" id="videos-maulana-khatani">
-                <div class="video-card">
-                    <div class="video-container">
-<iframe src="https://www.youtube.com/embed/knh-nLyLZ88?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="Abu Bakr (RA): When Leadership Forgave the Unforgivable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Abu Bakr (RA): When Leadership Forgave the Unforgivable</div>
-                        <div class="video-author">Mawlana Sami Al-Hashmi</div>
+                    <div class="view-more-container">
+                        <button class="view-more-btn" data-section="maulana-khatani">View More</button>
                     </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe src="https://www.youtube.com/embed/XAuA9QtJFgQ?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="🔥 &quot;Abu Bakr (RA): Leadership, Loyalty &amp; The Lessons of Al-Hudaibiyyah&quot; 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                    <!-- See All link positioned after videos -->
+                    <div class="see-all-container">
+                        <a href="#" class="see-all-link">See All</a>
                     </div>
-                    <div class="video-info">
-                        <div class="video-title">Abu Bakr (RA): Leadership, Loyalty</div>
-                        <div class="video-author">Mawlana Sami  Al-Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/8DyaIBdqCOk?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="🌟 Abu Bakr (RA) &amp; The Battle of Badr: Loyalty, Faith &amp; the 5 Virtues of Prophet Muhammad ﷺ!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">🌟 Abu Bakr (RA) &amp; The Battle of Badr: Loyalty, Faith</div>
-                        <div class="video-author">Mawlana Sami Al-Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/rOux9FZsAPI?list=PLA-ylo0o2Z5nocSj07ccnJIB8Sax4FFT-" title="Abu Bakr (RA): Skills, Love for Medina &amp; Lessons from Makkah by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Abu Bakr (RA): Skills, Love for Medina</div>
-                        <div class="video-author">Mawlana Sami Al-Hashmi</div>
-                    </div>
+                            
+                    <button class="scroll-btn scroll-right" data-section="maulana-khatani">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
-            <div class="view-more-container">
-                <button class="view-more-btn" data-section="maulana-khatani">View More</button>
-            </div>
-                    
-            <button class="scroll-btn scroll-right" data-section="maulana-khatani">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
-    </div>
-</div>
 
-<!-- Scholar Section 5 -->
-<div id="maulana-hashmi" class="video-section">
-    <div class="section-header">
-        <div class="section-title"> The Seerah Series
-<br> <span> Mawlana Sami Al Hashmi
-</span></div>
-        <a href="#" class="see-all-link">See All</a>
-    </div>            
-    <div class="container">
-        <div class="videos-container">
-            <button class="scroll-btn scroll-left" data-section="maulana-hashmi">
-                <i class="fas fa-chevron-left"></i>
-            </button>
+        <!-- Scholar Section 4 -->
+        <div id="maulana-hashmi" class="video-section">
+            <div class="section-header">
+                <div class="section-title"> The Seerah Series
+                <br> <span> Mawlana Sami Al Hashmi</span></div>
+            </div>            
+            <div class="container">
+                <div class="videos-container">
+                    <button class="scroll-btn scroll-left" data-section="maulana-hashmi">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                            
+                    <div class="videos-wrapper" id="videos-maulana-hashmi">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/NswPl0cJ6iA" title="Seerah Series: The Battle of Tabook (Part 1) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Seerah Series: The Battle of Tabook (Part 1)</div>
+                                <div class="video-author">Maulana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/-TUt7giwVNc" title="Seerah Series: The Battle of Tabook (Part 2) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Seerah Series: The Battle of Tabook (Part 2) </div>
+                                <div class="video-author">Maulana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/xq3jzMVSCdQ" title="Seerah Series: The Battle of Tabook (Part 3) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>                
+                            <div class="video-info">
+                                <div class="video-title">Seerah Series: The Battle of Tabook (Part 3)</div>
+                                <div class="video-author">Maulana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/A5gdu864QBQ" title="🕋 The Last Sermon: Powerful Lessons from Hajj Al-Wida | Seerah Series 🕋" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The Last Sermon: Powerful Lessons from Hajj Al-Wida </div>
+                                <div class="video-author">Maulana Sami Al-Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina's Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Additional Lecture</div>
+                                <div class="video-author">Maulana Sami Al-Hashmii</div>
+                            </div>
+                        </div>
+                    </div>
                     
-            <div class="videos-wrapper" id="videos-maulana-hashmi">
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/NswPl0cJ6iA" title="Seerah Series: The Battle of Tabook (Part 1) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Seerah Series: The Battle of Tabook (Part 1)</div>
-                        <div class="video-author">Maulana Sami Al-Hashmi</div>
+                    <div class="view-more-container">
+                        <button class="view-more-btn" data-section="maulana-hashmi">View More</button>
                     </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/-TUt7giwVNc" title="Seerah Series: The Battle of Tabook (Part 2) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Seerah Series: The Battle of Tabook (Part 2) </div>
-                        <div class="video-author">Maulana Sami Al-Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/xq3jzMVSCdQ" title="Seerah Series: The Battle of Tabook (Part 3) with Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </div>                
- <div class="video-info">
-                        <div class="video-title">Seerah Series: The Battle of Tabook (Part 3)</div>
-                        <div class="video-author">Maulana Sami Al-Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/A5gdu864QBQ" title="🕋 The Last Sermon: Powerful Lessons from Hajj Al-Wida | Seerah Series 🕋" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The Last Sermon: Powerful Lessons from Hajj Al-Wida </div>
-                        <div class="video-author">Maulana Sami Al-Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina's Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Additional Lecture</div>
-                        <div class="video-author">Maulana Sami Al-Hashmii</div>
-                    </div>
-                </div>
-<!--                         
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/dZ2LJmICFSM" title="The Final Moments of the Prophet ﷺ | A Heart-Wrenching Reminder (Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The Final Moments of the Prophet ﷺ </div>
-                        <div class="video-author">Maulana Sami Al-Hashmi</div>
-                    </div>
-                </div> -->
-            </div>
-            <div class="view-more-container">
-                <button class="view-more-btn" data-section="maulana-hashmi">View More</button>
-            </div>
                     
-            <button class="scroll-btn scroll-right" data-section="maulana-hashmi">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+                    <!-- See All link positioned after videos -->
+                    <div class="see-all-container">
+                        <a href="#" class="see-all-link">See All</a>
+                    </div>
+                            
+                    <button class="scroll-btn scroll-right" data-section="maulana-hashmi">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scholar Section 5 -->
+        <div id="maulana-hashmi-2" class="video-section">
+            <div class="section-header">
+                <div class="section-title">Medina Vlog Series<br> <span>Ustadh Saad Al Hashmi</span></div>
+            </div>            
+            <div class="container">
+                <div class="videos-container">
+                    <button class="scroll-btn scroll-left" data-section="maulana-hashmi-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                            
+                    <div class="videos-wrapper" id="videos-maulana-hashmi-2">
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/uy0LBR1QjUg?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad &amp; Sheikh Yusuf | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad</div>
+                                <div class="video-author">Ustadh Saad Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/pciDsM_dQkY?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi</div>
+                                <div class="video-author">Ustadh Saad Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/0gFhXno7tlo?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="🌿 &quot;Bir Ghars: The Forgotten Well of the Prophet ﷺ – A Hidden Treasure in Medina!&quot; 🌿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Bir Ghars: The Forgotten Well of the Prophet ﷺ – A Hidden Treasure in Medina!</div>
+                                <div class="video-author">Ustadh Saad Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                              <iframe src="https://www.youtube.com/embed/mG5A1IUK2Aw?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="🌿 &quot;Bir Ghars: The Well of the Prophet ﷺ – A Forgotten Treasure of Medina&quot; 🌿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Bir Ghars: The Well of the Prophet ﷺ – A Forgotten Treasure of Medina</div>
+                                <div class="video-author">Ustadh Saad Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                               <iframe src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina's Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Additional Lecture</div>
+                                <div class="video-author">Ustadh Saad Al Hashmi</div>
+                            </div>
+                        </div>
+                                
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/I9NU_xM2BIc" title="Dawah &amp; Changing Public Opinion by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Dawah & Changing Public Opinion</div>
+                                <div class="video-author">Ustadh Saad Al Hashmi</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-more-container">
+                        <button class="view-more-btn" data-section="maulana-hashmi-2">View More</button>
+                    </div>
+                    
+                    <!-- See All link positioned after videos -->
+                    <div class="see-all-container">
+                        <a href="#" class="see-all-link">See All</a>
+                    </div>
+                            
+                    <button class="scroll-btn scroll-right" data-section="maulana-hashmi-2">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<!-- Scholar Section 5 -->
-<div id="maulana-hashmi-2" class="video-section">
-    <div class="section-header">
-        <div class="section-title">Medina Vlog Series<br> <span>Ustadh Saad Al Hashmi</span></div>
-        <a href="#" class="see-all-link">See All</a>
-    </div>            
-    <div class="container">
-        <div class="videos-container">
-            <button class="scroll-btn scroll-left" data-section="maulana-hashmi-2">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-                    
-            <div class="videos-wrapper" id="videos-maulana-hashmi-2">
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/uy0LBR1QjUg?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad &amp; Sheikh Yusuf | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad</div>
-                        <div class="video-author">Ustadh Saad Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/pciDsM_dQkY?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi</div>
-                        <div class="video-author">Ustadh Saad Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-<iframe  src="https://www.youtube.com/embed/0gFhXno7tlo?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="🌿 &quot;Bir Ghars: The Forgotten Well of the Prophet ﷺ – A Hidden Treasure in Medina!&quot; 🌿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Bir Ghars: The Forgotten Well of the Prophet ﷺ – A Hidden Treasure in Medina!</div>
-                        <div class="video-author">Ustadh Saad Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                      <iframe  src="https://www.youtube.com/embed/mG5A1IUK2Aw?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="🌿 &quot;Bir Ghars: The Well of the Prophet ﷺ – A Forgotten Treasure of Medina&quot; 🌿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Bir Ghars: The Well of the Prophet ﷺ – A Forgotten Treasure of Medina</div>
-                        <div class="video-author">Ustadh Saad Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                       <iframe  src="https://www.youtube.com/embed/N9FOObs8h_I?list=PLA-ylo0o2Z5lSpeLmxcIAAbexfNobXD5U" title="Walking Through Medina's Hidden Gems: Masjid Al-Usbah &amp; The Blessed Date Farms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Additional Lecture</div>
-                        <div class="video-author">Ustadh Saad Al Hashmi</div>
-                    </div>
-                </div>
-                        
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/I9NU_xM2BIc" title="Dawah &amp; Changing Public Opinion by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Dawah & Changing Public Opinion</div>
-                        <div class="video-author">Ustadh Saad Al Hashmi</div>
-                    </div>
-                </div>
-            </div>
-            <div class="view-more-container">
-                <button class="view-more-btn" data-section="maulana-hashmi-2">View More</button>
-            </div>
-                    
-            <button class="scroll-btn scroll-right" data-section="maulana-hashmi-2">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </div>
-</div>
-    </div>
-</div>
 
-
-<div class="footer">
-    <div class="footer-content">
-        <div class="footer-column">
-            <div class="footer-logo">
-                <img src="/images/flogo.png" alt="ZUHD Logo">
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="/images/flogo.png" alt="ZUHD Logo">
+                </div>
+                <p class="footer-text">Be the first to receive all the recent updates, articles, and valuable deals from ZUHD EXCLUSIVELY.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Email address">
+                    <button>Subscribe</button>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/zuhd.au" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com/zuhd.au" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/zuhd_au?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkdin.com/zuhd.au" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@zuhd.store?_t=ZS-8w1A4y4ZWO9&_r=1" class="social-icon">
+                      <i class="fab fa-tiktok"></i>
+                  </a>
+                </div>
             </div>
-            <p class="footer-text">Be the first to receive all the recent updates, articles, and valuable deals from ZUHD EXCLUSIVELY.</p>
-            <div class="newsletter">
-                <input type="email" placeholder="Email address">
-                <button>Subscribe</button>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/zuhd.au" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.twitter.com/zuhd.au" class="social-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/zuhd_au?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkdin.com/zuhd.au" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.tiktok.com/@zuhd.store?_t=ZS-8w1A4y4ZWO9&_r=1" class="social-icon">
-                  <i class="fab fa-tiktok"></i>
-              </a>
-            </div>
-        </div>
-        
-        <div class="footer-column">
-            <h3>ABOUT ACADEMY</h3>
-            <div class="footer-links">
-                <a href="/story.html">About ZUHD</a>
-                <a href="#">ZUHD Lectures</a>
-                <a href="/delivery-info-page.html">Delivery</a>
-                <a href="/tandc.html">Terms and conditions</a>
-                <a href="/return-policy.html">Return Policy</a>
-            </div>
-        </div>
-        
-        <div class="footer-column">
-            <h3>QUICK LINKS</h3>
-            <div class="footer-links">
-              <a href="/index.html">Home</a>
-              <a href="/zuhd.html">Academy</a>
-              <a href="/workshop-sections.html">Workshops</a>
-              <a href="/maktab.html">After School Classes</a>
-              <a href="/mosque.html">Masjid</a>
-            </div>
-        </div>
-        
-        
-        <div class="footer-column">
-            <h3>CONTACT US</h3>
-            <div class="contact-info">
-                <p>Call: <a href="tel:+61291000100">+61 291000100</a></p>
-                <p>Email: <a href="mailto:info@zuhd.au" target="_blank">info@zuhd.au</a></p>
-              </div>
             
-            <div class="preferences">
-                <h3>PREFERENCES</h3>
-                <select class="preference-select">
-                    <option>English</option>
-                    <option>Arabic</option>
-                    <option>Urdu</option>
-                </select>
-                <select class="preference-select">
-                    <option>US Dollar(USD)</option>
-                    <option>Euro(EUR)</option>
+            <div class="footer-column">
+                <h3>ABOUT ACADEMY</h3>
+                <div class="footer-links">
+                    <a href="/story.html">About ZUHD</a>
+                    <a href="#">ZUHD Lectures</a>
+                    <a href="/delivery-info-page.html">Delivery</a>
+                    <a href="/tandc.html">Terms and conditions</a>
+                    <a href="/return-policy.html">Return Policy</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>QUICK LINKS</h3>
+                <div class="footer-links">
+                  <a href="/index.html">Home</a>
+                  <a href="/zuhd.html">Academy</a>
+                  <a href="/workshop-sections.html">Workshops</a>
+                  <a href="/maktab.html">After School Classes</a>
+                  <a href="/mosque.html">Masjid</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <div class="contact-info">
+                    <p>Call: <a href="tel:+61291000100">+61 291000100</a></p>
+                    <p>Email: <a href="mailto:info@zuhd.au" target="_blank">info@zuhd.au</a></p>
+                  </div>
+                
+                <div class="preferences">
+                    <h3>PREFERENCES</h3>
+                    <select class="preference-select">
+                        <option>English</option>
+                        <option>Arabic</option>
+                        <option>Urdu</option>
                     </select>
+                    <select class="preference-select">
+                        <option>US Dollar(USD)</option>
+                        <option>Euro(EUR)</option>
+                        </select>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="footer-divider"></div>
-    
-    <div class="footer-bottom">
-        <div class="payment-methods">
-            <div class="payment-method">
-                <img src="/images/visa.png" alt="Visa" width="50">
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom">
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <img src="/images/visa.png" alt="Visa" width="50">
+                </div>
+                <div class="payment-method">
+                    <img src="/images/mastercard.png" alt="Mastercard" width="50">
+                </div>
+                <div class="payment-method">
+                    <img src="/images/paypal.png" alt="PayPal" width="50">
+                </div>
+                <div class="payment-method">
+                    <img src="/images/amex.png" alt="American Express" width="50">
+                </div>
             </div>
-            <div class="payment-method">
-                <img src="/images/mastercard.png" alt="Mastercard" width="50">
-            </div>
-            <div class="payment-method">
-                <img src="/images/paypal.png" alt="PayPal" width="50">
-            </div>
-            <div class="payment-method">
-                <img src="/images/amex.png" alt="American Express" width="50">
-            </div>
+            <p>&copy; 2024 ZUHD. All rights reserved.</p>
         </div>
-        <p>&copy; 2024 ZUHD. All rights reserved.</p>
     </div>
-</div>
-<script src="script.js"></script>
-    <script src="navbar.js"></script>
 
+    <!-- Combined JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navbarDiv = document.getElementById('navbar');
-
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    navbarDiv.innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error fetching navbar.html:', error);
-                    navbarDiv.innerHTML = '<p>Failed to load navigation bar.</p>';
-                });
-        });
         document.addEventListener('DOMContentLoaded', function() {
-    // ========== Workshop Cards Animation and Interaction ==========
-    initializeWorkshopCards();
-    
-    // ========== Scholar Profiles ==========
-    initializeScholarProfiles();
-    
-    // ========== Section Navigation ==========
-    initializeSectionNavigation();
-    
-    // ========== Video Cards Navigation and Animation ==========
-    initializeVideoCards();
-    
-    // Initialize View More buttons
-    initializeViewMoreButtons();
-    
-    function initializeViewMoreButtons() {
-        const viewMoreButtons = document.querySelectorAll('.view-more-btn');
-        
-        viewMoreButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const sectionId = this.getAttribute('data-section');
-                const videosWrapper = document.getElementById(`videos-${sectionId}`);
+            // Initialize View More buttons
+            initializeViewMoreButtons();
+            
+            // Initialize horizontal scrolling
+            initializeHorizontalScrolling();
+            
+            // Initialize responsive layout
+            handleResponsiveLayout();
+            
+            // Listen for window resize
+            window.addEventListener('resize', handleResponsiveLayout);
+            
+            // Function to initialize View More buttons
+            function initializeViewMoreButtons() {
+                const viewMoreButtons = document.querySelectorAll('.view-more-btn');
                 
-                if (videosWrapper) {
-                    videosWrapper.classList.toggle('show-all');
+                viewMoreButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const sectionId = this.getAttribute('data-section');
+                        const videosWrapper = document.getElementById(`videos-${sectionId}`);
+                        
+                        if (videosWrapper) {
+                            videosWrapper.classList.toggle('show-all');
+                            
+                            if (videosWrapper.classList.contains('show-all')) {
+                                this.textContent = 'Show Less';
+                            } else {
+                                this.textContent = 'View More';
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Function to initialize horizontal scrolling
+            function initializeHorizontalScrolling() {
+                const scrollLeftBtns = document.querySelectorAll('.scroll-btn.scroll-left');
+                const scrollRightBtns = document.querySelectorAll('.scroll-btn.scroll-right');
+                
+                scrollLeftBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const sectionId = this.getAttribute('data-section');
+                        if (sectionId) {
+                            const videosWrapper = document.getElementById(`videos-${sectionId}`);
+                            if (videosWrapper) {
+                                videosWrapper.scrollBy({
+                                    left: -300,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
+                
+                scrollRightBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const sectionId = this.getAttribute('data-section');
+                        if (sectionId) {
+                            const videosWrapper = document.getElementById(`videos-${sectionId}`);
+                            if (videosWrapper) {
+                                videosWrapper.scrollBy({
+                                    left: 300,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Function to handle responsive layout
+            function handleResponsiveLayout() {
+                const isMobile = window.innerWidth <= 768;
+                const videoCards = document.querySelectorAll('.video-card');
+                
+                videoCards.forEach(card => {
+                    const videoInfo = card.querySelector('.video-info');
                     
-                    if (videosWrapper.classList.contains('show-all')) {
-                        this.textContent = 'Show Less';
+                    if (isMobile) {
+                        // Mobile view - show video info
+                        if (videoInfo) {
+                            videoInfo.style.display = 'flex';
+                        }
                     } else {
-                        this.textContent = 'View More';
+                        // Desktop view - hide video info
+                        if (videoInfo) {
+                            videoInfo.style.display = 'none';
+                        }
                     }
-                }
-            });
-        });
-    }
-});
-
-// ===== Workshop Cards Functions =====
-function initializeWorkshopCards() {
-    const container = document.getElementById('workshopContainer');
-    const cards = document.querySelectorAll('.workshop-card');
-    
-    // Initial layout adjustment
-    adjustLayout();
-    
-    // Listen for resize events
-    window.addEventListener('resize', adjustLayout);
-    
-    // Animate cards with delay between each
-    animateCards(cards);
-    
-    // Add click effect to workshop cards
-    cards.forEach(card => {
-        card.addEventListener('click', function() {
-            this.classList.add('card-clicked');
-            setTimeout(() => {
-                this.classList.remove('card-clicked');
-            }, 150);
-        });
-    });
-    
-    // Function to adjust layout based on screen size
-    function adjustLayout() {
-        if (container) {
-            if (isMobile()) {
-                container.classList.add('mobile-view');
-            } else {
-                container.classList.remove('mobile-view');
+                });
             }
-        }
-    }
-    
-    // Function to check if device is mobile
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
-    
-    // Function to animate cards
-    function animateCards(cards) {
-        cards.forEach((card, index) => {
-            // Set initial state - hidden and translated down
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
             
-            // Animate cards with delay between each
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 300 * index);
-        });
-    }
-}
-
-// ===== Scholar Profiles Functions =====
-function initializeScholarProfiles() {
-    // Add click event listeners to all "Read More" buttons
-    document.querySelectorAll('.read-more-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            const scholarNameElement = this.parentElement.querySelector('.scholar-name');
-            const scholarName = scholarNameElement ? scholarNameElement.textContent : 'this scholar';
-            alert(`You clicked to read more about ${scholarName}. This would navigate to their detailed profile page.`);
-            e.preventDefault(); // Prevent default behavior if it's a link
-        });
-    });
-}
-
-// ===== Section Navigation Functions =====
-function initializeSectionNavigation() {
-    const sectionTabs = document.querySelectorAll('.section-tab');
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
-    const dropdownButton = document.querySelector('.dropdown-button');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    const currentSectionText = document.getElementById('current-section');
-    
-    // Handle section tab clicks
-    sectionTabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-            const sectionId = this.getAttribute('data-section');
-            if (sectionId) {
-                scrollToSection(sectionId);
-                
-                // Update active tab
-                sectionTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Update dropdown
-                updateDropdown(sectionId);
-            }
-            e.preventDefault();
-        });
-    });
-    
-    // Handle dropdown toggle
-    if (dropdownButton && dropdownContent) {
-        dropdownButton.addEventListener('click', function(e) {
-            dropdownContent.classList.toggle('show');
-            e.stopPropagation();
-        });
-    }
-    
-    // Handle dropdown item clicks
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            const sectionId = this.getAttribute('data-section');
-            if (sectionId) {
-                scrollToSection(sectionId);
-                
-                // Update dropdown
-                dropdownItems.forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-                
-                if (currentSectionText) {
-                    currentSectionText.textContent = this.textContent;
-                }
-                
-                if (dropdownContent) {
-                    dropdownContent.classList.remove('show');
-                }
-                
-                // Update tabs
-                updateTabs(sectionId);
-            }
-            e.preventDefault();
-        });
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        if (dropdownContent && !event.target.closest('.mobile-dropdown')) {
-            dropdownContent.classList.remove('show');
-        }
-    });
-    
-    // Initialize horizontal scrolling with buttons
-    initializeHorizontalScrolling();
-    
-    // Function to scroll to section
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            const yOffset = -80; // Adjust based on header height
-            const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({top: y, behavior: 'smooth'});
-        }
-    }
-    
-    // Function to update dropdown based on section
-    function updateDropdown(sectionId) {
-        dropdownItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('data-section') === sectionId) {
-                item.classList.add('active');
-                if (currentSectionText) {
-                    currentSectionText.textContent = item.textContent;
-                }
-            }
-        });
-    }
-    
-    // Function to update tabs based on section
-    function updateTabs(sectionId) {
-        sectionTabs.forEach(tab => {
-            tab.classList.remove('active');
-            if (tab.getAttribute('data-section') === sectionId) {
-                tab.classList.add('active');
-            }
-        });
-    }
-    
-    // Function to initialize horizontal scrolling
-    function initializeHorizontalScrolling() {
-        const scrollLeftBtns = document.querySelectorAll('.scroll-left');
-        const scrollRightBtns = document.querySelectorAll('.scroll-right');
-        
-        scrollLeftBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const sectionId = this.getAttribute('data-section');
-                if (sectionId) {
+            // Initialize See All links
+            const seeAllLinks = document.querySelectorAll('.see-all-link');
+            
+            seeAllLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the parent section
+                    const section = this.closest('.video-section');
+                    const sectionId = section.id;
                     const videosWrapper = document.getElementById(`videos-${sectionId}`);
+                    const viewMoreBtn = section.querySelector('.view-more-btn');
+                    
                     if (videosWrapper) {
-                        videosWrapper.scrollBy({
-                            left: -300,
-                            behavior: 'smooth'
-                        });
+                        // Toggle show-all class
+                        const isShowingAll = videosWrapper.classList.toggle('show-all');
+                        
+                        // Update link text
+                        this.textContent = isShowingAll ? 'Show Less' : 'See All';
+                        
+                        // Update View More button if it exists
+                        if (viewMoreBtn) {
+                            viewMoreBtn.textContent = isShowingAll ? 'Show Less' : 'View More';
+                        }
+                        
+                        // Scroll to section if on mobile
+                        if (window.innerWidth <= 768 && isShowingAll) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
                     }
-                }
+                });
             });
         });
-        
-        scrollRightBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const sectionId = this.getAttribute('data-section');
-                if (sectionId) {
-                    const videosWrapper = document.getElementById(`videos-${sectionId}`);
-                    if (videosWrapper) {
-                        videosWrapper.scrollBy({
-                            left: 300,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-    }
-}
-
-// ===== Video Cards Functions =====
-function initializeVideoCards() {
-    // Add animation to video cards when they come into view
-    const videoCards = document.querySelectorAll('.video-card');
-    
-    // Simple animation on page load
-    animateVideoCards(videoCards);
-    
-    // Function to animate video cards
-    function animateVideoCards(cards) {
-        cards.forEach((card, index) => {
-            // Set initial state
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            
-            // Animate cards with delay between each
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100 * index);
-        });
-    }
-}
-    // Add this to the existing script at the bottom of the file
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle responsive layout
-    function handleResponsiveLayout() {
-        const isMobile = window.innerWidth <= 768;
-        const videoCards = document.querySelectorAll('.video-card');
-        
-        videoCards.forEach(card => {
-            const videoInfo = card.querySelector('.video-info');
-            
-            if (isMobile) {
-                // Mobile view - show video info
-                if (videoInfo) {
-                    videoInfo.style.display = 'flex';
-                }
-            } else {
-                // Desktop view - hide video info
-                if (videoInfo) {
-                    videoInfo.style.display = 'none';
-                }
-            }
-        });
-    }
-    
-    // Run on load and resize
-    handleResponsiveLayout();
-    window.addEventListener('resize', handleResponsiveLayout);
-});
     </script>
-    
-     <script src="navbar.js"></script>
-
-    <script>
-// Make sure both Medina Vlog sliders work
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize horizontal scrolling for both Medina Vlog sections
-    const scrollLeftBtns = document.querySelectorAll('.scroll-btn.scroll-left');
-    const scrollRightBtns = document.querySelectorAll('.scroll-btn.scroll-right');
-    
-    scrollLeftBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const sectionId = this.getAttribute('data-section');
-            if (sectionId) {
-                const videosWrapper = document.getElementById(`videos-${sectionId}`);
-                if (videosWrapper) {
-                    videosWrapper.scrollBy({
-                        left: -300,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-    
-    scrollRightBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const sectionId = this.getAttribute('data-section');
-            if (sectionId) {
-                const videosWrapper = document.getElementById(`videos-${sectionId}`);
-                if (videosWrapper) {
-                    videosWrapper.scrollBy({
-                        left: 300,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-});
-</script>
+    <script src="navbar.js"></script>
 </body>
 </html>
