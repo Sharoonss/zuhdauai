@@ -169,6 +169,7 @@
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
+            background-color: #000; /* Black background to hide thumbnails */
         }
 
         .video-container iframe {
@@ -253,45 +254,6 @@
                 overflow: hidden;
             }
             
-            /* Make YouTube buttons smaller on mobile */
-            .video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
-
-            /* Create a play overlay that disappears when video is playing */
-            .video-container::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #000; /* Black background to hide thumbnails */
-                z-index: 1;
-                cursor: pointer;
-                pointer-events: none; /* Allow clicks to pass through to the iframe */
-            }
-
-            /* Add a play button icon to indicate it's a video */
-            .video-container::after {
-                content: "\f04b"; /* Font Awesome play icon */
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-                font-size: 20px;
-                z-index: 2;
-                pointer-events: none;
-            }
-            
             .video-info {
                 flex: 1;
                 padding: 0 10px 0 0;
@@ -347,25 +309,6 @@
             /* See All link in mobile view */
             .see-all-container {
                 margin-top: 5px;
-            }
-
-            .video-container {
-                --overlay-opacity: 1;
-            }
-
-            .video-container::before {
-                opacity: var(--overlay-opacity);
-                transition: opacity 0.3s ease;
-            }
-
-            .video-container::after {
-                opacity: var(--overlay-opacity);
-                transition: opacity 0.3s ease;
-            }
-
-            .video-container.playing::before,
-            .video-container.playing::after {
-                opacity: 0;
             }
         }
 
@@ -1291,63 +1234,7 @@
                 });
             });
         });
-
-          // Add this to the existing script or create a new script tag
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle YouTube video interaction on mobile
-    if (window.innerWidth <= 768) {
-        // Add YouTube API
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        
-        // Process all YouTube iframes
-        const videoContainers = document.querySelectorAll('.video-container');
-        videoContainers.forEach(container => {
-            const iframe = container.querySelector('iframe');
-            if (iframe) {
-                // Extract video ID from iframe src
-                const src = iframe.getAttribute('src');
-                if (src && src.includes('youtube.com/embed/')) {
-                    // Add API parameter to enable control
-                    if (!src.includes('enablejsapi=1')) {
-                        iframe.setAttribute('src', src + (src.includes('?') ? '&' : '?') + 'enablejsapi=1');
-                    }
-                }
-            }
-        });
-    }
-});
-
-// YouTube API callback
-function onYouTubeIframeAPIReady() {
-    if (window.innerWidth <= 768) {
-        const videoContainers = document.querySelectorAll('.video-container');
-        videoContainers.forEach(container => {
-            const iframe = container.querySelector('iframe');
-            if (iframe) {
-                const player = new YT.Player(iframe, {
-                    events: {
-                        'onStateChange': function(event) {
-                            // When video starts playing (state 1), hide the overlay
-                            if (event.data === YT.PlayerState.PLAYING) {
-                                container.classList.add('playing');
-                                container.style.setProperty('--overlay-opacity', '0');
-                            } else if (event.data === YT.PlayerState.ENDED || 
-                                      event.data === YT.PlayerState.PAUSED) {
-                                container.classList.remove('playing');
-                                container.style.setProperty('--overlay-opacity', '1');
-                            }
-                        }
-                    }
-                });
-            }
-        });
-    }
-}
     </script>
     <script src="navbar.js"></script>
-  
 </body>
 </html>
