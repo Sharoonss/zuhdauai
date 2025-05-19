@@ -641,14 +641,7 @@
             }
         }
 
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuhd Academy Overlay Section</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
+
         /* Base styles */
         * {
             margin: 0;
@@ -819,31 +812,35 @@
         <div class="banner-text">MASJID PROJECT</div>
     </div>
 <div class="main">
-    <div class="donation-container">
-        <div class="donation-description">
-            <p class="donation-description-text">
-                The construction of a new mosque, Islamic school, Darul Ifta, and other facilities in Point Cook, Melbourne, Australia, is an exciting development for the Muslim community in Australia. This project will provide a much-needed space for Muslims to come together, worship, and learn about Islam in a supportive and welcoming environment. It will be the first project of its kind to make an entire Islamic Village with all facilities included in it taking inspiration from Darul Uloom Kaurangi of Mufti Taqi Usmani in Karachi, Pakistan.
-            </p>
-        </div>
-        <div class="donation-form">
-            <p class="donation-form-title">Amount (In Multiples Of 10):</p>
-            <p class="donation-form-subtitle">Example: 10, 20, 30</p>
-            <div class="donation-input-container">
-                <input 
-                    type="number" 
-                    class="donation-input" 
-                    id="donationAmount" 
-                    placeholder="Enter Amount"
-                >
-            </div>
-            <button 
-                class="donation-button" 
-                onclick="validateDonation()"
-            >
-                Donate
-            </button>
-        </div>
+ <div class="donation-container">
+    <div class="donation-description">
+        <p class="donation-description-text">
+            The construction of a new mosque, Islamic school, Darul Ifta, and other facilities in Point Cook, Melbourne, Australia, is an exciting development for the Muslim community in Australia. This project will provide a much-needed space for Muslims to come together, worship, and learn about Islam in a supportive and welcoming environment. It will be the first project of its kind to make an entire Islamic Village with all facilities included in it taking inspiration from Darul Uloom Kaurangi of Mufti Taqi Usmani in Karachi, Pakistan.
+
+
+        </p>
     </div>
+    <div class="donation-form">
+        <p class="donation-form-title">Amount (in USD):</p>
+        <p class="donation-form-subtitle">Enter an amount in multiples of $10 (e.g., 10, 20, 30)</p>
+        <div class="donation-input-container">
+            <input 
+                type="number" 
+                class="donation-input" 
+                id="donationAmount" 
+                placeholder="Enter Amount in USD"
+            >
+        </div>
+        <button 
+            class="donation-button" 
+            onclick="donateNow()"
+        >
+            Donate Now
+        </button>
+    </div>
+</div>
+
+
 </div>
 <div class="zuhd-donation-container">
     <div class="main-content">
@@ -1014,23 +1011,43 @@
     </div>
   
     <script>
-        function validateDonation() {
-            const donationInput = document.getElementById('donationAmount');
-            const amount = donationInput.value;
+function donateNow() {
+    const donationInput = document.getElementById('donationAmount');
+    const amount = parseFloat(donationInput.value);
 
-            if (amount === '' || isNaN(amount)) {
-                alert('Please enter a valid number');
-                return;
-            }
+    if (!amount || isNaN(amount)) {
+        alert('Please enter a valid amount in USD.');
+        return;
+    }
 
-            if (amount % 10 !== 0) {
-                alert('Please enter an amount in multiples of 10');
-                return;
-            }
+    if (amount % 10 !== 0) {
+        alert('Please enter an amount in multiples of $10.');
+        return;
+    }
 
-            // Redirect to donation page or process donation
-            alert('Donation of $' + amount + ' selected. Proceeding to donation...');
+    fetch('https://pay.techrealm.pk/create-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            amount: amount,
+            currency: "USD" // Explicitly pass USD
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.payment_url) {
+            window.location.href = data.payment_url;
+        } else {
+            alert('Payment URL not found in response.');
         }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while processing your donation.');
+    });
+}
+
+
 
         document.addEventListener('DOMContentLoaded', () => {
             const slider = document.querySelector('.slider');
