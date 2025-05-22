@@ -36,9 +36,9 @@
         .hero {
             position: relative;
             height: 500px;
-            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/homepage-bzLY0BsML3OGRvJeAukUYUEfjCNirU.png');
+            background-image: url('/banner2.png');
             background-size: cover;
-            background-position: top center;
+            background-position:center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -52,7 +52,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
+            /* background-color: rgba(0, 0, 0, 0.548); */
         }
 
         .hero-content {
@@ -379,9 +379,9 @@
             width: 45%;
             min-width: 300px;
             position: relative;
-            padding-top: 25%;
+            /* padding-top: 25%; */
             height: 0;
-            overflow: hidden;
+            /* overflow: hidden; */
             border-radius: 8px;
         }
         
@@ -404,6 +404,7 @@
         
         .muslim-services-heading {
             font-size: 28px;
+            padding-top:170px;
             margin-bottom: 40px;
         }
         
@@ -502,6 +503,9 @@
             transition: transform 0.3s;
         }
         
+        .bd-service-icon {
+    stroke: #ca9836;
+}
         .bd-service-card:hover {
             transform: translateY(-5px);
         }
@@ -569,7 +573,7 @@
         }
         
         .bd-testimonial-stars {
-            color: #ffc107;
+            color:#ca9836;
             margin-bottom: 5px;
         }
         
@@ -586,11 +590,12 @@
         
         /* Umrah Section */
         .umrah-section {
-            background-image: url('https://source.unsplash.com/random/1200x800/?mecca');
+            background-image: url('/zuhdconsultation.png');
             background-size: cover;
-            background-position: center;
+            background-position:top center;
             position: relative;
             color: white;
+            height:100vh;
             text-align: center;
             padding: 100px 0;
         }
@@ -783,8 +788,166 @@
                 font-size: 1rem;
             }
         }
-       
-         
+         #articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg,#ca9836, #ca9836);
+        }
+
+        .article-title {
+            font-size: 22px;
+            font-weight: 700;
+            color:#ca9836;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .article-content {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-time::before {
+            content: '🕒';
+            font-size: 12px;
+        }
+
+        .read-more {
+            color:  #ca9836;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more:hover {
+            color: #a68439;
+        }
+
+        .read-more::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover::after {
+            transform: translateX(3px);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            #articles-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .article-card {
+                padding: 25px;
+            }
+            
+            .article-title {
+                font-size: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         /* Footer styles */
         .footer {
             background-color: #000;
@@ -1014,6 +1177,35 @@
                 flex-direction: column;
             }
         }
+.muslim-video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.muslim-video-item {
+    flex: 1 1 45%;
+    max-width: 695px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
     </style>
 </head>
@@ -1034,85 +1226,30 @@
     <section class="services">
         <div class="service-card">
             <div class="icon-container">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjYzlhYTVlIj48cGF0aCBkPSJNMjE1LjcgMzIuMDdjLTE4LjMgMC0zMy4yIDE0LjktMzMuMiAzMy4yIDAgMTguMyAxNC45IDMzLjIgMzMuMiAzMy4yIDE4LjMgMCAzMy4yLTE0LjkgMzMuMi0zMy4yIDAtMTguMy0xNC45LTMzLjItMzMuMi0zMy4yem04MC42IDBjLTE4LjMgMC0zMy4yIDE0LjktMzMuMiAzMy4yIDAgMTguMyAxNC45IDMzLjIgMzMuMiAzMy4yIDE4LjMgMCAzMy4yLTE0LjkgMzMuMi0zMy4yIDAtMTguMy0xNC45LTMzLjItMzMuMi0zMy4yeiIvPjwvc3ZnPg==" alt="Marriage Ceremony Icon" class="service-icon">
+                <img src="./marriage.svg" alt="Marriage Ceremony Icon" class="service-icon">
             </div>
             <h2>Marriage Ceremony</h2>
             <p>Book an Islamic or civil marriage at our office reception, at your venue or even an online marriage.</p>
-            <button class="cta-button">Start Now</button>
+<a href="/marriagecermony.html" class="cta-button">Start Now</a>
         </div>
 
         <div class="service-card">
             <div class="icon-container">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0iI2M5YWE1ZSI+PHBhdGggZD0iTTMyIDJDMTUuNDMgMiAyIDE1LjQzIDIgMzJzMTMuNDMgMzAgMzAgMzAgMzAtMTMuNDMgMzAtMzBTNDguNTcgMiAzMiAyem0wIDU0Yy0xMy4yMyAwLTI0LTEwLjc3LTI0LTI0UzE4Ljc3IDggMzIgOHMyNCAxMC43NyAyNCAyNFM0NS4yMyA1NiAzMiA1NnptMTQtMjRjMCAzLjMxLTIuNjkgNi02IDZzLTYtMi42OS02LTYgMi42OS02IDYtNiA2IDIuNjkgNiA2em0tMjggMGMwIDMuMzEtMi42OSA2LTYgNnMtNi0yLjY5LTYtNiAyLjY5LTYgNi02IDYgMi42OSA2IDZ6bTE0IDEyYy03LjczIDAtMTQtNi4yNy0xNC0xNGgxNGMwIDcuNzMgNi4yNyAxNCAxNCAxNHoiLz48L3N2Zz4=" alt="Counselling Services Icon" class="service-icon">
+                <img src="./divorce.svg" alt="Counselling Services Icon" class="service-icon">
             </div>
-            <h2>Counselling Services</h2>
+            <h2>Divorce Counselling</h2>
             <p>Book an office, phone, or online counselling session for faith based guidance, incorporating proven mental and behavioural strategies</p>
             <button class="cta-button">Book Appointment</button>
         </div>
 
-        <div class="service-card">
-            <div class="icon-container">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjYzlhYTVlIj48cGF0aCBkPSJNNDQ4IDM2MGMwLTguOC03LjItMTYtMTYtMTZIMjU2Yy04LjggMC0xNiA3LjItMTYgMTZ2MTI4YzAgOC44IDcuMiAxNiAxNiAxNmgxNzZjOC44IDAgMTYtNy4yIDE2LTE2VjM2MHpNMjU2IDY0YzAtOC44LTcuMi0xNi0xNi0xNkg2NGMtOC44IDAtMTYgNy4yLTE2IDE2djEyOGMwIDguOCA3LjIgMTYgMTYgMTZoMTc2YzguOCAwIDE2LTcuMiAxNi0xNlY2NHptMTkyIDBjMC04LjgtNy4yLTE2LTE2LTE2SDI1NmMtOC44IDAtMTYgNy4yLTE2IDE2djEyOGMwIDguOCA3LjIgMTYgMTYgMTZoMTc2YzguOCAwIDE2LTcuMiAxNi0xNlY2NHpNNjQgMzYwYzAtOC44LTcuMi0xNi0xNi0xNkg2NGMtOC44IDAtMTYgNy4yLTE2IDE2djEyOGMwIDguOCA3LjIgMTYgMTYgMTZoMTc2YzguOCAwIDE2LTcuMiAxNi0xNlYzNjBINjR6Ii8+PC9zdmc+" alt="Marriage Course Icon" class="service-icon">
-            </div>
-            <h2>Marriage Course</h2>
-            <p>Register yourself and your spouse or fiancé for this course about the essentials for a healthy marriage.</p>
-            <button class="cta-button">Register Now</button>
-        </div>
+        
     </section>
 
-    <!-- Barakah Promo Section -->
-    <section class="promo barakah-promo">
-        <div class="promo-content">
-            <div class="promo-badge">
-                <p>Historical returns on investment of up to 25%</p>
-            </div>
-            <div class="promo-logo">
-                <h3>BARAKAH</h3>
-                <h4>CAPITAL</h4>
-            </div>
-            <div class="promo-info">
-                <p>www.barakahcapital.org</p>
-                <p>Shariah-Approved & Ethical Investments</p>
-            </div>
-        </div>
-        <div class="promo-cta">
-            <button class="cta-button secondary">Learn More</button>
-        </div>
-    </section>
+   
 
     <hr class="divider">
 
-    <!-- Soulmate Promo Section -->
-    <section class="promo soulmate-promo">
-        <div class="promo-content">
-            <h2>FIND YOUR SOULMATE</h2>
-            <p class="subtitle">An exciting and unique matrimonial event</p>
-            <div class="event-details">
-                <p>MELBOURNE 23 AUG</p>
-                <p>SYDNEY 24-25 AUG</p>
-            </div>
-            <div class="event-brands">
-                <span>half deen</span>
-                <span>Sunnah Soulmates</span>
-            </div>
-        </div>
-        <div class="promo-cta">
-            <button class="cta-button secondary">Learn More</button>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Marriage Course Section -->
-    <div class="muslim-container">
-        <div class="muslim-header">
-            <h1>Online Muslim Marriage Course</h1>
-            <div class="muslim-banner">
-                <img class="muslim-banner-img" src="/placeholder.svg?height=200&width=700" alt="The Five Cs to a Happier, Healthier & Thriving Relationship" />
-            </div>
-            <a href="#" class="muslim-btn">Learn More</a>
-        </div>
-    </div>
+    
     
     <!-- Trusted Section -->
     <div class="muslim-container">
@@ -1155,14 +1292,19 @@
     <div class="muslim-solemnized-section">
         <div class="muslim-container">
             <h2 class="muslim-solemnized-heading">We make sure your marriage is correctly and legally solemnized.</h2>
-            <div class="muslim-video-container">
-                <div class="muslim-video-item">
-                    <iframe class="muslim-video-frame" src="/placeholder.svg?height=315&width=560" allowfullscreen></iframe>
-                </div>
-                <div class="muslim-video-item">
-                    <iframe class="muslim-video-frame" src="/placeholder.svg?height=315&width=560" allowfullscreen></iframe>
-                </div>
-            </div>
+          <div class="muslim-video-container">
+    <div class="muslim-video-item">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/lJAIosxSdZk" title="The Secret to Barakah in Marriage – A Simple Sunnah Most Forget! 💍✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="muslim-video-item">
+        <div class="video-wrapper">
+           <iframe src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
         </div>
     </div>
     
@@ -1187,6 +1329,22 @@
                     <div class="muslim-service-icon">✓</div>
                     <div>Islamic Marriage Certificate</div>
                 </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Islamic Divorce</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Civil & Islamic Marriage</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Online Islamic Marriage</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Online Islamic Divorce</div>
+                </div>
             </div>
         </div>
     </div>
@@ -1205,15 +1363,7 @@
                     <h3 class="bd-service-title">Marriage Counselling</h3>
                 </div>
                 
-                <div class="bd-service-card">
-                    <svg class="bd-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="12" y1="8" x2="12" y2="16"></line>
-                        <line x1="8" y1="12" x2="16" y2="12"></line>
-                    </svg>
-                    <h3 class="bd-service-title">Marriage Course</h3>
-                </div>
-                
+              
                 <div class="bd-service-card">
                     <svg class="bd-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
@@ -1222,17 +1372,7 @@
                     <h3 class="bd-service-title">Islamic Divorce</h3>
                 </div>
                 
-                <div class="bd-service-card">
-                    <svg class="bd-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
-                        <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
-                        <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                    </svg>
-                    <h3 class="bd-service-title">Umrah Trips</h3>
-                </div>
+                
             </div>
             
             <div class="bd-center-btn">
@@ -1246,7 +1386,7 @@
         <div class="bd-container">
             <div class="bd-video-container">
                 <div class="bd-responsive-iframe">
-                    <iframe src="/placeholder.svg?height=450&width=800" title="Muslim Marriage Celebrant Sydney | Bilal Damnoun" allowfullscreen></iframe>
+                 <iframe width="695" height="391" src="https://www.youtube.com/embed/5_cIV8gsMJ4" title="Marriage Myths vs Reality: What Islam Really Says | Mufti Muhammad Ibne Adam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -1299,19 +1439,59 @@
             <div class="videos-grid">
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="/placeholder.svg?height=315&width=560" title="Finding the Perfect Partner | Islamic Marriage Advice" allowfullscreen></iframe>
+                      <iframe width="" height="" src="https://www.youtube.com/embed/XDPCqw5e9xI" title="Let’s Dive into Marraige (Part 1) with Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="/placeholder.svg?height=315&width=560" title="HAPPY WIFE! HAPPY LIFE! with Bilal Damnoun" allowfullscreen></iframe>
+                       <iframe width="695" height="391" src="https://www.youtube.com/embed/dLB04JUYirQ" title="Let’s Dive into Marriage (Part 2) by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container" id="articles-container">
+        <article class="article-card fade-in">
+            <h2 class="article-title">The Marital Questionnaire – Know Your Partner and Yourself</h2>
+            <div class="article-content">
+                The Marital Questionnaire – Know Your Partner and Yourself Bilal Dannoun – Muslim Marriage Expert About Bilal Dannoun Bilal Dannoun is a marriage celebrant, marital counsellor and divorce facilitator with
+            </div>
+            <a href="#" class="read-more">Read More</a>
+        </article>
 
+        <article class="article-card fade-in">
+            <div class="article-meta">
+                <span class="read-time">12 minute read</span>
+            </div>
+            <h2 class="article-title">Requirements of an Islamic Marriage Contract</h2>
+            <div class="article-content">
+                Therefore, the phenomenon of bachelorship or celibacy are UN-Islamic practices that result in devastation, affecting the Muslim community, and posing a threat to the Islamic world.
+            </div>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="article-card fade-in">
+            <h2 class="article-title">Rules Related to DIVORCE in Islam</h2>
+            <div class="article-content">
+                Written by Bilal Dannoun Verily, all praise is due to Allah, the Lord of the worlds, the compassionate, the Merciful, Master of the Day of Judgement. And peace and blessings
+            </div>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+    </div>
+
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690"/>
+        </svg>
+    </div>
+
+
+    <!-- <div class="whatsapp-float" onclick="openWhatsApp()">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690"/>
+        </svg>
+    </div> -->
 <div class="footer">
     <div class="footer-content">
         <div class="footer-column">
@@ -1485,6 +1665,54 @@
         // Run on load and resize
         window.addEventListener('load', checkMobileView);
         window.addEventListener('resize', checkMobileView);
+
+         // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${Array.from(document.querySelectorAll('.article-card')).indexOf(entry.target) * 0.2}s`;
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.article-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // WhatsApp functionality
+        function openWhatsApp() {
+            // Replace with actual WhatsApp number
+            const phoneNumber = "1234567890";
+            const message = "Hello! I'm interested in learning more about Islamic marriage guidance.";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add click handlers for read more links
+        document.querySelectorAll('.read-more').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add your navigation logic here
+                console.log('Read more clicked for:', this.closest('.article-card').querySelector('.article-title').textContent);
+            });
+        });
+
+        // Add smooth hover effects
+        document.querySelectorAll('.article-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
     </script>
     <script src="navbar.js"></script>
 </body>

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Ceremony Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: "Poppins", sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background-color: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: "Playfair Display", serif;
+          margin-bottom: 1rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+
+        h2 {
+          font-size: 2rem;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #333;
+        }
+
+        p {
+          margin-bottom: 1rem;
+          color: #666;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        section {
+          padding: 4rem 0;
+        }
+
+        .text-center {
+          text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+          display: inline-block;
+          padding: 0.8rem 1.5rem;
+          border-radius: 4px;
+          font-weight: 500;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: none;
+          font-family: "Poppins", sans-serif;
+        }
+
+        .primary-btn {
+          background-color: #d4af37;
+          color: white;
+        }
+
+        .primary-btn:hover {
+          background-color: #c4a030;
+        }
+
+        .secondary-btn {
+          background-color: #d4af37;
+          color: white;
+        }
+
+        .secondary-btn:hover {
+          background-color: #c4a030;
+        }
+
+        /* Hero Section */
+        .hero {
+          background-color: #f9f9f9;
+          padding: 2rem 0;
+        }
+
+        .hero-content {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        .video-container {
+          flex: 1;
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+          height: 0;
+          overflow: hidden;
+        }
+
+        .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+
+        .hero-text {
+          flex: 1;
+          padding: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .faq-item {
+          background-color: #f9f9f9;
+          padding: 1.5rem;
+          border-radius: 8px;
+        }
+
+        /* Services Section */
+        .service-list {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .service-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+          background-color: #f9f9f9;
+          padding: 1rem;
+          border-radius: 8px;
+        }
+
+        .service-icon {
+          margin-right: 1rem;
+          color: #d4af37;
+          font-size: 1.2rem;
+        }
+
+        /* Download Forms Section */
+        .forms-grid {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+        }
+
+        .form-item {
+          display: flex;
+          align-items: center;
+          background-color: #f9f9f9;
+          padding: 1rem;
+          border-radius: 8px;
+          width: 300px;
+        }
+
+        .form-icon {
+          margin-right: 1rem;
+          color: #d4af37;
+          font-size: 1.5rem;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+          background-color: #f9f9f9;
+        }
+
+        .service-categories {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .category {
+          text-align: center;
+          padding: 1.5rem;
+          background-color: white;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-icon {
+          width: 64px;
+          height: 64px;
+          margin: 0 auto 1rem;
+          background-color: #f9f9f9;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .category-icon img {
+          width: 40px;
+          height: 40px;
+        }
+
+        /* Testimonials Section */
+        .testimonial-content {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        .testimonial-text {
+          flex: 1;
+        }
+
+        .stars {
+          color: #d4af37;
+          margin-bottom: 1rem;
+        }
+
+        .testimonial-video {
+          flex: 1;
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+          height: 0;
+          overflow: hidden;
+        }
+
+        .testimonial-video iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
+        }
+
+        .gallery-item img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+          transform: scale(1.05);
+        }
+
+        /* CTA Section */
+        .cta {
+          background-color: #f9f9f9;
+          text-align: center;
+        }
+
+        /* Footer */
+        footer {
+          background-color: #333;
+          color: white;
+          padding: 2rem 0;
+          text-align: center;
+        }
+
+        footer p {
+          color: white;
+          margin-bottom: 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+          .hero-content {
+            flex-direction: column;
+          }
+
+          .service-categories {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .gallery-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .faq-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .testimonial-content {
+            flex-direction: column;
+          }
+
+          .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 576px) {
+          .service-categories {
+            grid-template-columns: 1fr;
+          }
+
+          .forms-grid {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .gallery-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Marriage Celebrant Rim Karama" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="hero-text">
+                    <h1>Marriage Ceremony</h1>
+                    <p>Book an Islamic or civil marriage at my office, reception, or your venue to suit your coming marriage.</p>
+                    <button class="btn primary-btn">Send Your Enquiry</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>In what language is the marriage service conducted?</h3>
+                    <p>The service can be in English only. You may also request to have it in Arabic only or both English and Arabic. Unfortunately, I don't speak any other languages but I am happy to make some arrangements if you need another language.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What do I talk about?</h3>
+                    <p>You don't have to say anything if you're too nervous to meet your expectations. It depends if my sermon includes inspiring words or advice to the bride and groom in the introduction to the ceremony.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Where can the marriage service be held?</h3>
+                    <p>The service can be in English only. You may also request to have it in Arabic only or both English and Arabic. Unfortunately, I don't speak any other languages but I am happy to make some arrangements if you need another language.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does the ceremony go for?</h3>
+                    <p>The service usually goes for up to 25 minutes. Arrangements may be made for a shorter or longer service.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn secondary-btn">Book Your Ceremony</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Type of Services</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p>A Civil Only Marriage Ceremony</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p>An Islamic Marriage Only</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p>Both a Civil & Islamic Marriage</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p>Overseas Couple Marrying in Australia</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p>Letter and Notice of Intended Marriage form for the Department of Immigration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-forms">
+        <div class="container">
+            <h2>Download Your Wedding Application Forms</h2>
+            <div class="forms-grid">
+                <div class="form-item">
+                    <div class="form-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <p>Marriage Certificate Application</p>
+                </div>
+                <div class="form-item">
+                    <div class="form-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <p>Notice of Intended Marriage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee">
+        <div class="container">
+            <h2>We make sure your marriage<br>is correctly and legally solemnized.</h2>
+            <div class="service-categories">
+                <div class="category">
+                    <div class="category-icon">
+                        <img src="https://via.placeholder.com/64" alt="Islamic Marriage Icon">
+                    </div>
+                    <h3>Islamic Marriage</h3>
+                    <p>Ceremonies</p>
+                </div>
+                <div class="category">
+                    <div class="category-icon">
+                        <img src="https://via.placeholder.com/64" alt="Civil Marriage Icon">
+                    </div>
+                    <h3>Civil Marriage</h3>
+                    <p>Ceremonies</p>
+                </div>
+                <div class="category">
+                    <div class="category-icon">
+                        <img src="https://via.placeholder.com/64" alt="Civil & Islamic Icon">
+                    </div>
+                    <h3>Civil & Islamic</h3>
+                    <p>Ceremonies</p>
+                </div>
+                <div class="category">
+                    <div class="category-icon">
+                        <img src="https://via.placeholder.com/64" alt="Online Islamic Marriage Icon">
+                    </div>
+                    <h3>Online Islamic Marriage</h3>
+                    <p>Ceremonies</p>
+                </div>
+                <div class="category">
+                    <div class="category-icon">
+                        <img src="https://via.placeholder.com/64" alt="Overseas Couple Marrying Icon">
+                    </div>
+                    <h3>Overseas Couple Marrying</h3>
+                    <p>Services</p>
+                </div>
+                <div class="category">
+                    <div class="category-icon">
+                        <img src="https://via.placeholder.com/64" alt="Letter and Notice Form Icon">
+                    </div>
+                    <h3>Letter and Notice Form</h3>
+                    <p>Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial-content">
+                <div class="testimonial-text">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"We were so blessed to find you! We were able to marry us with such short notice. It's been 10 years now and still feel we were complete. Once everything would work out, also delivered a ceremony to suit us that was professional, heart-felt and sincere, exactly what we wanted. We are so grateful for your guidance and support during your calming telling of hadith at a very stressful time." - Mary (North Shore and Ryde)</p>
+                    <button class="btn secondary-btn">Read Testimonials</button>
+                </div>
+                <div class="testimonial-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Testimonial Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2>Photos from Latest Ceremonies</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 9">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 10">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 11">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 12">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 13">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 14">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 15">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/200" alt="Wedding Ceremony 16">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Book Your Ceremony<br>Easily Online</h2>
+            <p>Book a memorable marriage ceremony with the most trusted and known Muslim Marriage Celebrant in Australia.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Marriage Ceremony Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault()
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            })
+          })
+        })
+
+        // Form submission handling
+        const forms = document.querySelectorAll("form")
+        forms.forEach((form) => {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            alert("Thank you for your submission! We will get back to you soon.")
+            form.reset()
+          })
+        })
+
+        // Gallery image modal
+        const galleryItems = document.querySelectorAll(".gallery-item img")
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            // Create modal
+            const modal = document.createElement("div")
+            modal.classList.add("image-modal")
+
+            // Create image element
+            const modalImg = document.createElement("img")
+            modalImg.src = this.src
+
+            // Create close button
+            const closeBtn = document.createElement("span")
+            closeBtn.innerHTML = "&times;"
+            closeBtn.classList.add("close-modal")
+
+            // Append elements to modal
+            modal.appendChild(closeBtn)
+            modal.appendChild(modalImg)
+
+            // Append modal to body
+            document.body.appendChild(modal)
+
+            // Add modal styles
+            modal.style.display = "flex"
+            modal.style.position = "fixed"
+            modal.style.top = "0"
+            modal.style.left = "0"
+            modal.style.width = "100%"
+            modal.style.height = "100%"
+            modal.style.backgroundColor = "rgba(0,0,0,0.9)"
+            modal.style.zIndex = "1000"
+            modal.style.justifyContent = "center"
+            modal.style.alignItems = "center"
+
+            modalImg.style.maxWidth = "90%"
+            modalImg.style.maxHeight = "90%"
+
+            closeBtn.style.position = "absolute"
+            closeBtn.style.top = "20px"
+            closeBtn.style.right = "30px"
+            closeBtn.style.color = "white"
+            closeBtn.style.fontSize = "40px"
+            closeBtn.style.fontWeight = "bold"
+            closeBtn.style.cursor = "pointer"
+
+            // Close modal on click
+            closeBtn.addEventListener("click", () => {
+              document.body.removeChild(modal)
+            })
+          })
+        })
+
+        // Testimonial carousel functionality
+        let currentTestimonial = 0
+        const testimonials = [
+          {
+            text: '"We were so blessed to find you! We were able to marry us with such short notice. It\'s been 10 years now and still feel we were complete. Once everything would work out, also delivered a ceremony to suit us that was professional, heart-felt and sincere, exactly what we wanted. We are so grateful for your guidance and support during your calming telling of hadith at a very stressful time." - Mary (North Shore and Ryde)',
+            stars: 5,
+          },
+          {
+            text: '"Thank you for making our special day even more memorable. Your professionalism and warmth made everyone feel comfortable." - Ahmed & Fatima',
+            stars: 5,
+          },
+          {
+            text: '"We appreciate how you accommodated our cultural traditions while ensuring all legal requirements were met. Highly recommended!" - Zainab & Omar',
+            stars: 5,
+          },
+        ]
+
+        // Function to change testimonial
+        function changeTestimonial() {
+          currentTestimonial = (currentTestimonial + 1) % testimonials.length
+          const testimonialText = document.querySelector(".testimonial-text p")
+          const starsContainer = document.querySelector(".stars")
+
+          // Fade out
+          testimonialText.style.opacity = 0
+
+          setTimeout(() => {
+            // Update content
+            testimonialText.textContent = testimonials[currentTestimonial].text
+
+            // Update stars
+            starsContainer.innerHTML = ""
+            for (let i = 0; i < testimonials[currentTestimonial].stars; i++) {
+              const star = document.createElement("i")
+              star.classList.add("fas", "fa-star")
+              starsContainer.appendChild(star)
+            }
+
+            // Fade in
+            testimonialText.style.opacity = 1
+          }, 500)
+        }
+
+        // Auto-change testimonials every 10 seconds
+        setInterval(changeTestimonial, 10000)
+
+        // Add transition effect to testimonial text
+        document.querySelector(".testimonial-text p").style.transition = "opacity 0.5s ease"
+    </script>
+</body>
+</html>
