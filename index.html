@@ -928,7 +928,7 @@
         @media (max-width: 500px) {
             .classes-container {
                 grid-template-columns: 1fr;
-                max-width: 400px;
+                max-width: 350px;
             }
             
             .class-card {
@@ -1057,225 +1057,327 @@
             }
         }
 
-
-        /* daily reminder  */
-         /* .vortex-gallery-wrapper {
+.reminders-section {
             max-width: 1400px;
             margin: 0 auto;
-            position: relative;
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            /* background: rgba(255, 255, 255, 0.95); */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); */
         }
-         */
-        .vortex-media-stage {
+
+        .partners-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #C3922E;
+            margin-bottom: 40px;
+            font-weight: 700;
+             background: linear-gradient(45deg, #C3922E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .carousel-container {
             position: relative;
-            margin-bottom: 20px;
             overflow: hidden;
+            border-radius: 15px;
         }
-        
-        .vortex-video-matrix {
+
+        .carousel-wrapper {
             display: flex;
-            gap: 15px;
-            /* margin: 0 60px; */
-            min-height: 220px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            padding: 10px 0;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 20px;
         }
-        
-        .vortex-video-matrix::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .vortex-media-cell {
+
+        .video-card {
+            flex: 0 0 calc(25% - 15px);
+            min-width: 280px;
+            background: white;
+            border-radius: 15px;
             overflow: hidden;
+            /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
             transform: translateY(0);
-            transition: all 0.3s ease;
-            flex: 0 0 280px;
-            width: 280px;
+            transition: all 0.4s ease;
+            position: relative;
         }
-        
-        .vortex-media-cell:hover {
-            transform: translateY(-2px);
+
+        .video-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); */
         }
-        
-        .vortex-media-cell iframe,
-        .vortex-media-cell video {
+
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            /* background: linear-gradient(90deg, #667eea, #764ba2); */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover::before {
+            opacity: 1;
+        }
+
+        .video-card iframe {
             width: 100%;
-            height: 200px;
+            height: 168px;
             border: none;
             display: block;
         }
-        
-        .vortex-nav-orb {
+
+        .nav-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            border: 2px solid #e9ecef;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: #C3922E;
+            font-size: 24px;
             cursor: pointer;
-            font-size: 18px;
-            color: #495057;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 100;
             transition: all 0.3s ease;
-            z-index: 10;
+            /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+            backdrop-filter: blur(10px);
         }
-        
-        .vortex-nav-orb:hover {
-            background: #f8f9fa;
-            border-color: #dee2e6;
-            transform: translateY(-50%) scale(1.05);
+
+        .nav-button:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            /* box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); */
         }
-        
-        .vortex-nav-orb:active {
+
+        .nav-button:active {
             transform: translateY(-50%) scale(0.95);
         }
-        
-        .vortex-nav-orb.vortex-prev {
-            left: 10px;
+
+        .nav-button.prev {
+            left: -8px;
         }
-        
-        .vortex-nav-orb.vortex-next {
-            right: 10px;
+
+        .nav-button.next {
+            right: -8px;
         }
-        
-        .vortex-nav-orb:disabled {
-            background: #f8f9fa;
-            color: #adb5bd;
-            border-color: #e9ecef;
+
+        .nav-button:disabled {
+            opacity: 0.4;
             cursor: not-allowed;
-            transform: translateY(-50%);
+            transform: translateY(-50%) scale(0.9);
         }
-        
-        .vortex-nav-orb:disabled:hover {
-            transform: translateY(-50%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        .nav-button:disabled:hover {
+            transform: translateY(-50%) scale(0.9);
         }
-        
-        .vortex-beacon-row {
+
+        .indicators {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 12px;
+            margin-top: 30px;
         }
-        
-        .vortex-beacon {
-            width: 10px;
-            height: 10px;
+
+        .indicator {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background: #dee2e6;
+            background: #ddd;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
         }
-        
-        .vortex-beacon:hover {
-            background: #adb5bd;
-            transform: scale(1.1);
+
+        .indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #C3922E);
+            transition: all 0.3s ease;
         }
-        
-        .vortex-beacon.active {
-            background: #495057;
+
+        .indicator.active::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .indicator:hover {
             transform: scale(1.2);
         }
-        
-        .vortex-status-display {
-            text-align: center;
-            font-size: 14px;
-            color: #6c757d;
-            font-weight: 500;
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #eee;
+            border-radius: 2px;
+            margin-top: 20px;
+            overflow: hidden;
         }
-        
-        /* Responsive design */
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #C3922E);
+            border-radius: 2px;
+            transition: width 0.6s ease;
+        }
+
+        /* Mobile Responsive Design */
         @media (max-width: 1200px) {
-            .vortex-video-matrix {
-                margin: 0 50px;
-            }
-            
-            .vortex-media-cell {
-                flex: 0 0 250px;
-                width: 250px;
-            }
-        }
-        
-        @media (max-width: 968px) {
-            .vortex-video-matrix {
-                margin: 0 40px;
-            }
-            
-            .vortex-media-cell {
-                flex: 0 0 220px;
-                width: 220px;
-            }
-            
-            .vortex-media-cell iframe,
-            .vortex-media-cell video {
-                height: 180px;
-            }
-            
-            .vortex-nav-orb {
-                width: 45px;
-                height: 45px;
-                font-size: 16px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .vortex-video-matrix {
-                margin: 0 30px;
-            }
-            
-            .vortex-media-cell {
-                flex: 0 0 200px;
-                width: 200px;
-            }
-            
-            .vortex-media-cell iframe,
-            .vortex-media-cell video {
-                height: 160px;
-            }
-            
-            .vortex-gallery-wrapper {
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .vortex-video-matrix {
-                margin: 0 20px;
-            }
-            
-            .vortex-media-cell {
-                flex: 0 0 180px;
-                width: 180px;
-            }
-            
-            .vortex-nav-orb {
-                width: 40px;
-                height: 40px;
-                font-size: 14px;
-            }
-            
-            .vortex-nav-orb.vortex-prev {
-                left: 5px;
-            }
-            
-            .vortex-nav-orb.vortex-next {
-                right: 5px;
-            }
-            
-            .vortex-media-cell iframe,
-            .vortex-media-cell video {
-                height: 140px;
+            .video-card {
+                flex: 0 0 calc(33.333% - 14px);
+                min-width: 250px;
             }
         }
 
+        @media (max-width: 968px) {
+            .reminders-section {
+                padding: 30px 20px;
+            }
+            
+            .partners-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .video-card {
+                flex: 0 0 calc(50% - 10px);
+                min-width: 220px;
+            }
+            
+            .video-card iframe {
+                height: 180px;
+            }
+            
+            .nav-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .nav-button.prev {
+                left: -25px;
+            }
+            
+            .nav-button.next {
+                right: -25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reminders-section {
+                padding: 20px 15px;
+            }
+            
+            .partners-title {
+                font-size: 1.8rem;
+            }
+            
+            .video-card {
+                flex: 0 0 calc(100% - 0px);
+                min-width: 100%;
+                margin: 0;
+            }
+            
+            .carousel-wrapper {
+                gap: 15px;
+            }
+            
+            .video-card iframe {
+                height: 200px;
+            }
+            
+            .nav-button {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .nav-button.prev {
+                left: -22px;
+            }
+            
+            .nav-button.next {
+                right: -22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .reminders-section {
+                padding: 20px 10px;
+                border-radius: 15px;
+            }
+            
+            .partners-title {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
+            
+            .video-card {
+                min-width: 100%;
+            }
+            
+            .video-card iframe {
+                height: 180px;
+            }
+            
+            .nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .nav-button.prev {
+                left: -20px;
+            }
+            
+            .nav-button.next {
+                right: -20px;
+            }
+            
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        /* Animation for card entrance */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-card {
+            animation: slideInUp 0.6s ease forwards;
+        }
+
+        .video-card:nth-child(1) { animation-delay: 0.1s; }
+        .video-card:nth-child(2) { animation-delay: 0.2s; }
+        .video-card:nth-child(3) { animation-delay: 0.3s; }
+        .video-card:nth-child(4) { animation-delay: 0.4s; }
 
         /* partners  */
         
@@ -1636,60 +1738,53 @@
         </section>
     </section>
 <!-- Daily Reminders Section -->
-<section class="reminders-section">
-    <h2 class="partners-title">Daily Reminders</h2>
-       <!-- <div class="vortex-gallery-wrapper"> -->
-        <div class="vortex-media-stage">
-            <button class="vortex-nav-orb vortex-prev" id="vortexPrevOrb" onclick="vortexScrollContainer(-1)">
-                ❮
-            </button>
-            
-            <div class="vortex-video-matrix" id="vortexVideoMatrix">
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/cA19-eBKVR4" title="Secrets Beneath the Soil: Salman Al-Farsi’s Garden &amp; the Legacy of Sincerity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/FeiekJKY6tA" title="From the Skies to the Palace | Zuhd’s Royal Collection Has Landed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe src="https://www.youtube.com/embed/knh-nLyLZ88" title="Abu Bakr (RA): When Leadership Forgave the Unforgivable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe src="https://www.youtube.com/embed/uy0LBR1QjUg" title="Unveiling Medina’s Secrets: Masjid Banu Unaif with Ustadh Saad &amp; Sheikh Yusuf | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe src="https://www.youtube.com/embed/pciDsM_dQkY" title="The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/NmDP7ez2TmM" title="✨ &quot;Lailatul Qadr: The Night That Changes Everything | Full Lecture by Sheikh Hasan Ali&quot; ✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/fzgrTls3hwQ" title="🔥 Walking the Path of the Prophet (ﷺ): Madina&#39;s Sacred Sites | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/dtmStUqRkjI" title="The Greatest 10 Days on Earth – Hajj with the Prophet ﷺ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/RF1v1eGq154" title="The Patience of Gaza by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <div class="vortex-media-cell">
-<iframe  src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-                <!-- <div class="vortex-media-cell">
-                    <video controls preload="none">
-                        <source src="" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+ <section class="reminders-section">
+        <h2 class="partners-title">Daily Reminders</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/cA19-eBKVR4" title="Secrets Beneath the Soil: Salman Al-Farsi's Garden & the Legacy of Sincerity" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <div class="vortex-media-cell">
-                    <video controls preload="none">
-                        <source src="" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div> -->
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/FeiekJKY6tA" title="From the Skies to the Palace | Zuhd's Royal Collection Has Landed" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/knh-nLyLZ88" title="Abu Bakr (RA): When Leadership Forgave the Unforgivable" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/uy0LBR1QjUg" title="Unveiling Medina's Secrets: Masjid Banu Unaif with Ustadh Saad & Sheikh Yusuf | Zuhd Guidance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/pciDsM_dQkY" title="The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/NmDP7ez2TmM" title="Lailatul Qadr: The Night That Changes Everything | Full Lecture by Sheikh Hasan Ali" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/fzgrTls3hwQ" title="Walking the Path of the Prophet (ﷺ): Madina's Sacred Sites | Zuhd Guidance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/dtmStUqRkjI" title="The Greatest 10 Days on Earth – Hajj with the Prophet ﷺ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/RF1v1eGq154" title="The Patience of Gaza by Dr. Maulana Sami Al-Hashmi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection & Haq Mehar: What Every Muslim Must Know!" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
             </div>
             
-            <button class="vortex-nav-orb vortex-next" id="vortexNextOrb" onclick="vortexScrollContainer(1)">
-                ❯
-            </button>
+            <button class="nav-button prev" id="prevBtn">❮</button>
+            <button class="nav-button next" id="nextBtn">❯</button>
         </div>
         
-        <!-- <div class="vortex-status-display">
-            Showing all 12 videos in one row - Use arrows to scroll horizontally
-        </div> -->
-    </div>
-
-</section>
+        <div class="indicators" id="indicators"></div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </section>
     
         
     <div class="banner-container">
@@ -2688,125 +2783,144 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         // daily remainder
-           const vortexVideoMatrix = document.getElementById('vortexVideoMatrix');
-        const vortexPrevOrb = document.getElementById('vortexPrevOrb');
-        const vortexNextOrb = document.getElementById('vortexNextOrb');
-
-        // Scroll container horizontally
-        function vortexScrollContainer(direction) {
-            const scrollAmount = 300;
-            const currentScroll = vortexVideoMatrix.scrollLeft;
-            const targetScroll = currentScroll + (scrollAmount * direction);
-            
-            vortexVideoMatrix.scrollTo({
-                left: targetScroll,
-                behavior: 'smooth'
-            });
-            
-            setTimeout(vortexUpdateOrbStates, 300);
-        }
-
-        // Update navigation orb states based on scroll position
-        function vortexUpdateOrbStates() {
-            const container = vortexVideoMatrix;
-            const isAtStart = container.scrollLeft <= 0;
-            const isAtEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth - 10);
-            
-            vortexPrevOrb.disabled = isAtStart;
-            vortexNextOrb.disabled = isAtEnd;
-        }
-
-        // Listen for scroll events to update button states
-        vortexVideoMatrix.addEventListener('scroll', vortexUpdateOrbStates);
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                vortexScrollContainer(-1);
-            } else if (e.key === 'ArrowRight') {
-                vortexScrollContainer(1);
+           class VideoCarousel {
+            constructor() {
+                this.wrapper = document.getElementById('carouselWrapper');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.indicatorsContainer = document.getElementById('indicators');
+                this.progressFill = document.getElementById('progressFill');
+                
+                this.cards = document.querySelectorAll('.video-card');
+                this.currentIndex = 0;
+                this.cardsPerView = this.getCardsPerView();
+                this.totalPages = Math.ceil(this.cards.length / this.cardsPerView);
+                
+                this.init();
+                this.setupEventListeners();
+                this.setupResponsive();
             }
-        });
-
-        // Touch/swipe support for mobile devices
-        let vortexTouchStartX = 0;
-        let vortexTouchEndX = 0;
-
-        vortexVideoMatrix.addEventListener('touchstart', (e) => {
-            vortexTouchStartX = e.changedTouches[0].screenX;
-        });
-
-        vortexVideoMatrix.addEventListener('touchend', (e) => {
-            vortexTouchEndX = e.changedTouches[0].screenX;
-            vortexHandleSwipe();
-        });
-
-        function vortexHandleSwipe() {
-            const swipeThreshold = 50;
-            const diff = vortexTouchStartX - vortexTouchEndX;
             
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    // Swipe left - scroll right
-                    vortexScrollContainer(1);
-                } else {
-                    // Swipe right - scroll left
-                    vortexScrollContainer(-1);
+            getCardsPerView() {
+                const width = window.innerWidth;
+                if (width <= 768) return 1;
+                if (width <= 968) return 2;
+                if (width <= 1200) return 3;
+                return 4;
+            }
+            
+            init() {
+                this.createIndicators();
+                this.updateCarousel();
+                this.updateProgress();
+            }
+            
+            createIndicators() {
+                this.indicatorsContainer.innerHTML = '';
+                for (let i = 0; i < this.totalPages; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => this.goToPage(i));
+                    this.indicatorsContainer.appendChild(indicator);
                 }
             }
-        }
-
-        // Initialize the gallery
-        vortexUpdateOrbStates();
-
-        // partners 
-          // Enhanced functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById('logoSlider');
             
-            // Handle image loading errors
-            const images = slider.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('error', function() {
-                    this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2Y4ZjlmYSIgc3Ryb2tlPSIjZGVlMmU2IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI1MCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvZ288L3RleHQ+Cjwvc3ZnPg==';
-                    this.alt = 'Partner Logo';
+            updateCarousel() {
+                const cardWidth = this.cards[0].offsetWidth;
+                const gap = 20;
+                const totalWidth = (cardWidth + gap) * this.cardsPerView - gap;
+                const translateX = -this.currentIndex * totalWidth;
+                
+                this.wrapper.style.transform = `translateX(${translateX}px)`;
+                
+                // Update navigation buttons
+                this.prevBtn.disabled = this.currentIndex === 0;
+                this.nextBtn.disabled = this.currentIndex >= this.totalPages - 1;
+                
+                // Update indicators
+                document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+            
+            updateProgress() {
+                const progress = ((this.currentIndex + 1) / this.totalPages) * 100;
+                this.progressFill.style.width = `${progress}%`;
+            }
+            
+            nextSlide() {
+                if (this.currentIndex < this.totalPages - 1) {
+                    this.currentIndex++;
+                    this.updateCarousel();
+                    this.updateProgress();
+                }
+            }
+            
+            prevSlide() {
+                if (this.currentIndex > 0) {
+                    this.currentIndex--;
+                    this.updateCarousel();
+                    this.updateProgress();
+                }
+            }
+            
+            goToPage(pageIndex) {
+                this.currentIndex = pageIndex;
+                this.updateCarousel();
+                this.updateProgress();
+            }
+            
+            setupEventListeners() {
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
                 });
                 
-                img.addEventListener('load', function() {
-                    this.style.animationDelay = Math.random() * 0.5 + 's';
+                // Touch/swipe support
+                let startX = 0;
+                let endX = 0;
+                
+                this.wrapper.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
                 });
-            });
-
-            // Optional: Add pause on hover for better UX
-            slider.addEventListener('mouseenter', function() {
-                this.style.animationPlayState = 'paused';
-            });
-
-            slider.addEventListener('mouseleave', function() {
-                this.style.animationPlayState = 'running';
-            });
-
-            // Optional: Add keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === ' ') { // Spacebar
-                    e.preventDefault();
-                    const currentState = slider.style.animationPlayState;
-                    slider.style.animationPlayState = currentState === 'paused' ? 'running' : 'paused';
-                }
-            });
-
-            // Intersection Observer for performance
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        slider.style.animationPlayState = 'running';
-                    } else {
-                        slider.style.animationPlayState = 'paused';
+                
+                this.wrapper.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) { // Minimum swipe distance
+                        if (diff > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
                     }
                 });
-            });
-
-            observer.observe(slider);
+            }
+            
+            setupResponsive() {
+                window.addEventListener('resize', () => {
+                    const newCardsPerView = this.getCardsPerView();
+                    if (newCardsPerView !== this.cardsPerView) {
+                        this.cardsPerView = newCardsPerView;
+                        this.totalPages = Math.ceil(this.cards.length / this.cardsPerView);
+                        this.currentIndex = Math.min(this.currentIndex, this.totalPages - 1);
+                        this.createIndicators();
+                        this.updateCarousel();
+                        this.updateProgress();
+                    }
+                });
+            }
+        }
+        
+        // Initialize carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new VideoCarousel();
         });
    </script>
    <script src="https://static.elfsight.com/platform/platform.js" async></script>
