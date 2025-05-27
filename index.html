@@ -100,13 +100,13 @@
         }
 
        /* Main container styles */
-  .reminders-section {
+  /* .reminders-section {
     width: 100%;
     max-width: 1200px;
     margin: 0px auto;
     text-align: center;
     padding: 0 15px;
-  }
+  } */
   
   .section-heading {
     font-size: 36px;
@@ -1056,6 +1056,371 @@
                 margin-bottom: 20px;
             }
         }
+
+
+        /* daily reminder  */
+         /* .vortex-gallery-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+         */
+        .vortex-media-stage {
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .vortex-video-matrix {
+            display: flex;
+            gap: 15px;
+            /* margin: 0 60px; */
+            min-height: 220px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 10px 0;
+        }
+        
+        .vortex-video-matrix::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .vortex-media-cell {
+            overflow: hidden;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            flex: 0 0 280px;
+            width: 280px;
+        }
+        
+        .vortex-media-cell:hover {
+            transform: translateY(-2px);
+        }
+        
+        .vortex-media-cell iframe,
+        .vortex-media-cell video {
+            width: 100%;
+            height: 200px;
+            border: none;
+            display: block;
+        }
+        
+        .vortex-nav-orb {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid #e9ecef;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .vortex-nav-orb:hover {
+            background: #f8f9fa;
+            border-color: #dee2e6;
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        .vortex-nav-orb:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        
+        .vortex-nav-orb.vortex-prev {
+            left: 10px;
+        }
+        
+        .vortex-nav-orb.vortex-next {
+            right: 10px;
+        }
+        
+        .vortex-nav-orb:disabled {
+            background: #f8f9fa;
+            color: #adb5bd;
+            border-color: #e9ecef;
+            cursor: not-allowed;
+            transform: translateY(-50%);
+        }
+        
+        .vortex-nav-orb:disabled:hover {
+            transform: translateY(-50%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .vortex-beacon-row {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .vortex-beacon {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .vortex-beacon:hover {
+            background: #adb5bd;
+            transform: scale(1.1);
+        }
+        
+        .vortex-beacon.active {
+            background: #495057;
+            transform: scale(1.2);
+        }
+        
+        .vortex-status-display {
+            text-align: center;
+            font-size: 14px;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .vortex-video-matrix {
+                margin: 0 50px;
+            }
+            
+            .vortex-media-cell {
+                flex: 0 0 250px;
+                width: 250px;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .vortex-video-matrix {
+                margin: 0 40px;
+            }
+            
+            .vortex-media-cell {
+                flex: 0 0 220px;
+                width: 220px;
+            }
+            
+            .vortex-media-cell iframe,
+            .vortex-media-cell video {
+                height: 180px;
+            }
+            
+            .vortex-nav-orb {
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .vortex-video-matrix {
+                margin: 0 30px;
+            }
+            
+            .vortex-media-cell {
+                flex: 0 0 200px;
+                width: 200px;
+            }
+            
+            .vortex-media-cell iframe,
+            .vortex-media-cell video {
+                height: 160px;
+            }
+            
+            .vortex-gallery-wrapper {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .vortex-video-matrix {
+                margin: 0 20px;
+            }
+            
+            .vortex-media-cell {
+                flex: 0 0 180px;
+                width: 180px;
+            }
+            
+            .vortex-nav-orb {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+            
+            .vortex-nav-orb.vortex-prev {
+                left: 5px;
+            }
+            
+            .vortex-nav-orb.vortex-next {
+                right: 5px;
+            }
+            
+            .vortex-media-cell iframe,
+            .vortex-media-cell video {
+                height: 140px;
+            }
+        }
+
+
+        /* partners  */
+        
+        /* Slider Styles */
+        .brand-slider-container {
+            position: relative;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            animation: slide 20s infinite linear;
+            gap: 30px;
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            /* width: 250px;
+            height: 250px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+            padding: 15px;
+        }
+
+         .logo-item:hover {
+            transform: translateY(-5px);
+        } 
+
+        .logo-item img {
+             width: 250px;
+            height: 250px;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* filter: grayscale(100%);
+            transition: filter 0.3s ease; */
+        }
+
+        /* .logo-item:hover img {
+            filter: grayscale(0%);
+        } */
+
+        /* Animation */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .slider-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+       
+
+     
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
+
+            .logo-item {
+                width: 120px;
+                height:100px;
+                padding: 10px;
+            }
+
+            .slider-wrapper {
+                gap: 20px;
+            }
+
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-60%);
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-item {
+                width: 150px;
+                height: 150px;
+                padding: 8px;
+            }
+
+            .slider-wrapper {
+                gap: 15px;
+            }
+
+            .main-heading {
+                font-size: 1.3rem;
+            }
+
+            .slider-description {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+
+        /* Alternative slider with dots indicator */
+        .slider-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background-color: darkred;
+        }
+
+        /* Loading animation for images */
+        .logo-item img {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
 </style>
   </head>
   <body>
@@ -1213,7 +1578,7 @@
                 </div>
             </div>
             <div class="card-back">
-                <img src="https://i.ibb.co/V0Ghwsgg/Lectures-to-the-Academy-Section.png" alt="Scholars" class="card-image">
+                <img src="https://i.ibb.co/fRSrH0q/International-Scholars-1.png" alt="Scholars" class="card-image">
             </div>
         </div>
     </a>
@@ -1236,91 +1601,93 @@
 </div>
  <section class="partners-section">
         <h2 class="partners-title">Our Partners</h2>
-        
-        <div class="partners-slider-container">
-            <div class="partners-slider" id="partnersSlider">
-                <!-- Original Partners -->
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://www.al-ihsan.com.au/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-01.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+          
+        <section class="brand-slider-container">
+            <div class="slider-wrapper" id="logoSlider">
+                <!-- First set of logos -->
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/FQ0XsJd/LOGOS-01.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://mensesmatters.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-02.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/jXjwgFy/LOGOS-02.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://www.facebook.com/daarularqamaustralia/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-03.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/390KrWKw/LOGOS-03.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://www.zamzamacademy.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-04.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/TxyzvBzX/LOGOS-04.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://saadnomaniacademy.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-05.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/WWm7JXfG/LOGOS-05.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://www.safaracademy.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-06.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/kgWYdxC5/LOGOS-06.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://www.whitethread.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-07.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/pBDdGcbM/LOGOS-07.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://daruliftaa.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-08.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/dJPH6nMB/LOGOS-08.jpg" alt="DIO Partner Logo" loading="lazy">
                 </div>
-                
-                <div class="partner-slide">
-                    <div class="partner-logo-container">
-                        <a href="https://courses.whitethread.org/bundles/rayyan-course-subscription" target="_blank" rel="noopener noreferrer">
-                            <img src="./partnerlogo/LOGOS-09.jpg" alt="Partner Logo" class="partner-logo">
-                        </a>
-                    </div>
-                </div>
-                </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/ymBZmgR2/LOGOS-09.jpg" alt="DIO Partner Logo" loading="lazy">
+                </div>               
             </div>
-        </div>
+        </section>
     </section>
 <!-- Daily Reminders Section -->
 <section class="reminders-section">
     <h2 class="partners-title">Daily Reminders</h2>
-  
-<div class="elfsight-app-9e033b4b-bebe-40e1-a8c7-ac80cda83778" data-elfsight-app-lazy></div>
-
+       <!-- <div class="vortex-gallery-wrapper"> -->
+        <div class="vortex-media-stage">
+            <button class="vortex-nav-orb vortex-prev" id="vortexPrevOrb" onclick="vortexScrollContainer(-1)">
+                ❮
+            </button>
+            
+            <div class="vortex-video-matrix" id="vortexVideoMatrix">
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/cA19-eBKVR4" title="Secrets Beneath the Soil: Salman Al-Farsi’s Garden &amp; the Legacy of Sincerity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/FeiekJKY6tA" title="From the Skies to the Palace | Zuhd’s Royal Collection Has Landed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe src="https://www.youtube.com/embed/knh-nLyLZ88" title="Abu Bakr (RA): When Leadership Forgave the Unforgivable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe src="https://www.youtube.com/embed/uy0LBR1QjUg" title="Unveiling Medina’s Secrets: Masjid Banu Unaif with Ustadh Saad &amp; Sheikh Yusuf | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe src="https://www.youtube.com/embed/pciDsM_dQkY" title="The Masjid That Changed History: Secrets of Quba with Ustadh Saad Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/NmDP7ez2TmM" title="✨ &quot;Lailatul Qadr: The Night That Changes Everything | Full Lecture by Sheikh Hasan Ali&quot; ✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/fzgrTls3hwQ" title="🔥 Walking the Path of the Prophet (ﷺ): Madina&#39;s Sacred Sites | Zuhd Guidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/dtmStUqRkjI" title="The Greatest 10 Days on Earth – Hajj with the Prophet ﷺ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/RF1v1eGq154" title="The Patience of Gaza by Dr. Maulana Sami Al-Hashmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div class="vortex-media-cell">
+<iframe  src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <!-- <div class="vortex-media-cell">
+                    <video controls preload="none">
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="vortex-media-cell">
+                    <video controls preload="none">
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div> -->
+            </div>
+            
+            <button class="vortex-nav-orb vortex-next" id="vortexNextOrb" onclick="vortexScrollContainer(1)">
+                ❯
+            </button>
+        </div>
+        
+        <!-- <div class="vortex-status-display">
+            Showing all 12 videos in one row - Use arrows to scroll horizontally
+        </div> -->
+    </div>
 
 </section>
     
@@ -2319,6 +2686,127 @@ document.addEventListener('DOMContentLoaded', function() {
                     startSlider();
                 }
             });
+        });
+        // daily remainder
+           const vortexVideoMatrix = document.getElementById('vortexVideoMatrix');
+        const vortexPrevOrb = document.getElementById('vortexPrevOrb');
+        const vortexNextOrb = document.getElementById('vortexNextOrb');
+
+        // Scroll container horizontally
+        function vortexScrollContainer(direction) {
+            const scrollAmount = 300;
+            const currentScroll = vortexVideoMatrix.scrollLeft;
+            const targetScroll = currentScroll + (scrollAmount * direction);
+            
+            vortexVideoMatrix.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+            
+            setTimeout(vortexUpdateOrbStates, 300);
+        }
+
+        // Update navigation orb states based on scroll position
+        function vortexUpdateOrbStates() {
+            const container = vortexVideoMatrix;
+            const isAtStart = container.scrollLeft <= 0;
+            const isAtEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth - 10);
+            
+            vortexPrevOrb.disabled = isAtStart;
+            vortexNextOrb.disabled = isAtEnd;
+        }
+
+        // Listen for scroll events to update button states
+        vortexVideoMatrix.addEventListener('scroll', vortexUpdateOrbStates);
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                vortexScrollContainer(-1);
+            } else if (e.key === 'ArrowRight') {
+                vortexScrollContainer(1);
+            }
+        });
+
+        // Touch/swipe support for mobile devices
+        let vortexTouchStartX = 0;
+        let vortexTouchEndX = 0;
+
+        vortexVideoMatrix.addEventListener('touchstart', (e) => {
+            vortexTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        vortexVideoMatrix.addEventListener('touchend', (e) => {
+            vortexTouchEndX = e.changedTouches[0].screenX;
+            vortexHandleSwipe();
+        });
+
+        function vortexHandleSwipe() {
+            const swipeThreshold = 50;
+            const diff = vortexTouchStartX - vortexTouchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - scroll right
+                    vortexScrollContainer(1);
+                } else {
+                    // Swipe right - scroll left
+                    vortexScrollContainer(-1);
+                }
+            }
+        }
+
+        // Initialize the gallery
+        vortexUpdateOrbStates();
+
+        // partners 
+          // Enhanced functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('logoSlider');
+            
+            // Handle image loading errors
+            const images = slider.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2Y4ZjlmYSIgc3Ryb2tlPSIjZGVlMmU2IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI1MCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvZ288L3RleHQ+Cjwvc3ZnPg==';
+                    this.alt = 'Partner Logo';
+                });
+                
+                img.addEventListener('load', function() {
+                    this.style.animationDelay = Math.random() * 0.5 + 's';
+                });
+            });
+
+            // Optional: Add pause on hover for better UX
+            slider.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+
+            slider.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+
+            // Optional: Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === ' ') { // Spacebar
+                    e.preventDefault();
+                    const currentState = slider.style.animationPlayState;
+                    slider.style.animationPlayState = currentState === 'paused' ? 'running' : 'paused';
+                }
+            });
+
+            // Intersection Observer for performance
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        slider.style.animationPlayState = 'running';
+                    } else {
+                        slider.style.animationPlayState = 'paused';
+                    }
+                });
+            });
+
+            observer.observe(slider);
         });
    </script>
    <script src="https://static.elfsight.com/platform/platform.js" async></script>
