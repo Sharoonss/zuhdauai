@@ -812,11 +812,35 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden;
+            backface-visibility:hidden;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             background-color: #fff;
+        }
+        
+        .card-front {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.61);
+        }
+        
+        .zuhd-maktab .card-front {
+            background-image: url('https://i.ibb.co/9kFkSVhP/Maktab.png');
+        }
+        
+        .zuhd-seerah .card-front {
+            background-image: url('https://i.ibb.co/zVRjvVwG/The-Seerah-Series.png');
+        }
+        
+        .zuhd-scholars .card-front {
+            background-image: url('https://i.ibb.co/fRSrH0q/International-Scholars-1.png');
+        }
+        
+        .zuhd-lectures .card-front {
+            background-image: url('https://i.ibb.co/G17mLTm/Chat-GPT-Image-May-26-2025-09-51-03-AM.png');
         }
         
         .card-back {
@@ -845,12 +869,16 @@
             font-size: 22px;
             align-items: center;
             justify-content: center;
+            position: relative;
+            z-index: 2;
         }
         
         .class-info {
             margin-top: auto;
-            background-color: #F4F4F4;
+            background-color: rgba(244, 244, 244, 0.95);
             padding: 20px;
+            position: relative;
+            z-index: 2;
         }
         
         .class-info p {
@@ -948,7 +976,6 @@
                 margin: 0px;
             }
         }
-        
 
       .partners-section {
            width: 100%;
@@ -1219,21 +1246,7 @@
             transform: scale(1.2);
         }
 
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background: #eee;
-            border-radius: 2px;
-            margin-top: 20px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #C3922E);
-            border-radius: 2px;
-            transition: width 0.6s ease;
-        }
+       
 
         /* Mobile Responsive Design */
         @media (max-width: 1200px) {
@@ -1636,71 +1649,71 @@
       </div>
   </div>
 </div>
-<div class="classes-container">
-    <!-- Class Card 1 - Clickable -->
-    <a href="maktab.html" class="class-card zuhd-maktab" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-inner">
-            <div class="card-front">
-                <div class="class-title">After School Classes For Kids (Maktab)</div>
-                <div class="class-info">
-                    <p>Days: Monday to Thursday</p>
-                    <p>Time: 6:45 pm to 8:15 pm</p>
+ <div class="classes-container">
+        <!-- Class Card 1 - Clickable -->
+        <a href="maktab.html" class="class-card zuhd-maktab" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="class-title">After School Classes For Kids (Maktab)</div>
+                    <div class="class-info">
+                        <p>Days: Monday to Thursday</p>
+                        <p>Time: 6:45 pm to 8:15 pm</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <img src="https://i.ibb.co/9kFkSVhP/Maktab.png" alt="Kids Learning" class="card-image">
                 </div>
             </div>
-            <div class="card-back">
-                <img src="https://i.ibb.co/9kFkSVhP/Maktab.png" alt="Kids Learning" class="card-image">
-            </div>
-        </div>
-    </a>
+        </a>
 
-    <!-- Class Card 2 - Clickable -->
-    <a href="/series.html" class="class-card zuhd-seerah" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-inner">
-            <div class="card-front">
-                <div class="class-title">The Seerah Series</div>
-                <div class="class-info">
-                    <p class="coming-soon">Friday Khutaba</p>
-                    <p class="stay-tuned">Time: 2:05 pm</p>
+        <!-- Class Card 2 - Clickable -->
+        <a href="/series.html" class="class-card zuhd-seerah" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="class-title">The Seerah Series</div>
+                    <div class="class-info">
+                        <p class="coming-soon">Friday Khutaba</p>
+                        <p class="stay-tuned">Time: 2:05 pm</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <img src="https://i.ibb.co/zVRjvVwG/The-Seerah-Series.png" alt="Islamic Learning" class="card-image">
                 </div>
             </div>
-            <div class="card-back">
-                <img src="https://i.ibb.co/zVRjvVwG/The-Seerah-Series.png" alt="Islamic Learning" class="card-image">
-            </div>
-        </div>
-    </a>
-    
-    <!-- Class Card 3 - Clickable -->
-    <a href="/scolar.html" class="class-card zuhd-scholars" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-inner">
-            <div class="card-front">
-                <div class="class-title">International Scholars</div>
-                <div class="class-info">
-                    <p class="coming-soon">Coming Soon</p>
-                    <p class="stay-tuned">Stay Tuned</p>
+        </a>
+        
+        <!-- Class Card 3 - Clickable -->
+        <a href="/scolar.html" class="class-card zuhd-scholars" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="class-title">International Scholars</div>
+                    <div class="class-info">
+                        <p class="coming-soon">Coming Soon</p>
+                        <p class="stay-tuned">Stay Tuned</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <img src="https://i.ibb.co/fRSrH0q/International-Scholars-1.png" alt="Scholars" class="card-image">
                 </div>
             </div>
-            <div class="card-back">
-                <img src="https://i.ibb.co/fRSrH0q/International-Scholars-1.png" alt="Scholars" class="card-image">
-            </div>
-        </div>
-    </a>
-    
-    <!-- Class Card 4 - Clickable -->
-    <a href="/https://www.youtube.com/@zuhdau/playlists" class="class-card zuhd-lectures" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-inner">
-            <div class="card-front">
-                <div class="class-title">Lectures to the Academy Section</div>
-                <div class="class-info">
-                    <p class="coming-soon">Coming Soon</p>
-                    <p class="stay-tuned">Stay Tuned</p>
+        </a>
+        
+        <!-- Class Card 4 - Clickable -->
+        <a href="/https://www.youtube.com/@zuhdau/playlists" class="class-card zuhd-lectures" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="class-title">Lectures to the Academy Section</div>
+                    <div class="class-info">
+                        <p class="coming-soon">Coming Soon</p>
+                        <p class="stay-tuned">Stay Tuned</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <img src="https://i.ibb.co/G17mLTm/Chat-GPT-Image-May-26-2025-09-51-03-AM.png" alt="Academy Lectures" class="card-image">
                 </div>
             </div>
-            <div class="card-back">
-                <img src="https://i.ibb.co/G17mLTm/Chat-GPT-Image-May-26-2025-09-51-03-AM.png" alt="Academy Lectures" class="card-image">
-            </div>
-        </div>
-    </a>
-</div>
+        </a>
+    </div>
  <section class="partners-section">
         <h2 class="partners-title">Our Partners</h2>
           

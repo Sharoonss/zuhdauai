@@ -167,6 +167,7 @@
             cursor: pointer;
             font-size: 12px;
             font-weight: bold;
+            text-decoration:none;
             text-transform: uppercase;
             margin-top: 15px;
             align-self: flex-start; /* Aligns button to the left */
@@ -690,7 +691,7 @@
                     <p class="scholar-bio">
                         Dr. Mufti Abdur Rahman Ibn Yusuf Mangera is a British Muslim scholar educated in both the Islamic and Western traditions. He memorised the Qur'an by heart and graduated from the Darul Uloom seminary Bury, UK, and later earned a specialised licence to issue fatwa (legal responses) at Mazahir 'Ulum Saharan
                     </p>
-                    <button class="read-more-btn">Read More</button>
+<a href="https://www.youtube.com/watch?v=vBayZNfokQQ&list=PLA-ylo0o2Z5lFlfJECgmLlDocSkozRZzc" class="read-more-btn btn btn-primary">Read More</a>
                 </div>
                 <img src="/scolor img/maufti1.png" alt="Dr. Nurit Abdur Rahman Mangera" class="scholar-image">
             </div>
@@ -733,7 +734,7 @@
                     <p class="scholar-bio">
                         Shaykh Hasan Ali graduated in 1997 as a scholar/'alim in Islamic Education and then gained a Masters Degree in Educational Psychology at the Institute of Education (University of London). He became the Imam of London Islamic Cultural Society (LICS) mosque in North London (www.lics.info)
                     </p>
-                    <button class="read-more-btn">Read More</button>
+<a href="https://www.youtube.com/watch?v=XlsNJ4kGN4A&list=PLA-ylo0o2Z5ko_YodOj1up7Nv6kKzXXRb" class="read-more-btn btn btn-primary">Read More</a>
                 </div>
                 <img src="/scolor img/mufti2.png" alt="Shaykh Hasan Ali" class="scholar-image1">
             </div>
@@ -775,7 +776,7 @@
                     <p class="scholar-bio">
                         Maulana Ahmed Suleman Khatani was born in Durban, South Africa. He completed his Hifz ul Quraan at an early age. He then enrolled into Madrasah Arabia Islamia, Azaadville, South Africa where he completed his Aalim Faadhil course in 1993. Maulana studied under many great scholars like Sheikhul Hadith Hadhrat Maulana Fazlur Rahman Azmi Saheb (DB) and Hadhrat Maulana Abdul Hamid Ishaq Saheb (DB).
                     </p>
-                    <button class="read-more-btn">Read More</button>
+<a href="https://www.youtube.com/watch?v=wXSHjEOrDF8" class="read-more-btn btn btn-primary">Read More</a>
                 </div>
                 <img src="/scolor img/mufti3.png" alt="Maulana Sulaiman Khatani Bin Yusuf" class="scholar-image">
             </div>
@@ -823,7 +824,7 @@
                     <p class="scholar-bio">
                         Born is Vienna, Austria. He began his university education at the University of Otago, New Zealand where he completed a Masters of Dental Surgery with a full scholarship. While practicing as a dental surgeon he then completed a Degree in Islamic studies from the World Islamic Sciences & Education University in Jordan.
                     </p>
-                    <button class="read-more-btn">Read More</button>
+<a href="https://www.youtube.com/results?search_query=Dr.+Maulana+Sami+Al-Hashmi" class="read-more-btn btn btn-primary">Read More</a>
                 </div>
                 <img src="/scolor img/mufti4.png" alt="Dr. Maulana Saad Al-Haidari" class="scholar-image">
             </div>
@@ -963,12 +964,12 @@
     <!-- Scripts -->
     <script>
         // Add click event listeners to all "Read More" buttons
-        document.querySelectorAll('.read-more-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const scholarName = this.parentElement.querySelector('.scholar-name').textContent;
-                alert(`You clicked to read more about ${scholarName}. This would navigate to their detailed profile page.`);
-            });
-        });
+        // document.querySelectorAll('.read-more-btn').forEach(button => {
+        //     button.addEventListener('click', function() {
+        //         const scholarName = this.parentElement.querySelector('.scholar-name').textContent;
+        //         alert(`You clicked to read more about ${scholarName}. This would navigate to their detailed profile page.`);
+        //     });
+        // });
         
         // Add scroll functionality for video carousels
         document.querySelectorAll('.scroll-btn').forEach(button => {

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
     <style>
         /* Reset and Base Styles */
         * {
@@ -15,7 +14,6 @@
           padding: 0;
           box-sizing: border-box;
          font-family: 'Plus Jakarta Sans';
-
         }
 
         body {
@@ -114,11 +112,12 @@
           gap: 2rem;
         }
 
+        /* Updated video container with fixed dimensions */
         .video-container {
           flex: 1;
           position: relative;
-          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-          height: 0;
+          width: 300px;
+          height: 250px;
           overflow: hidden;
         }
 
@@ -245,11 +244,12 @@
           margin-bottom: 1rem;
         }
 
+        /* Updated testimonial video with fixed dimensions */
         .testimonial-video {
           flex: 1;
           position: relative;
-          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-          height: 0;
+          width: 300px;
+          height: 250px;
           overflow: hidden;
         }
 
@@ -287,19 +287,6 @@
           text-align: center;
         }
 
-        /* Footer
-        footer {
-          background-color: #333;
-          color: white;
-          padding: 2rem 0;
-          text-align: center;
-        }
-
-        footer p {
-          color: white;
-          margin-bottom: 0;
-        } */
-
         /* Media Queries */
         @media (max-width: 992px) {
           .hero-content {
@@ -326,6 +313,15 @@
 
           .gallery-grid {
             grid-template-columns: repeat(2, 1fr);
+          }
+
+          /* Responsive video containers for mobile */
+          .video-container,
+          .testimonial-video {
+            width: 100%;
+            max-width: 300px;
+            height: 250px;
+            margin: 0 auto;
           }
         }
 
@@ -448,7 +444,7 @@
             text-decoration: none;
             font-size: 14px;
             padding-left: 10px;
-            transition: color 0.3s;
+            transition: color 0.3;
         }
 
         .footer-links a:hover {
@@ -548,8 +544,6 @@
                 font-size: 28px;
             }
             
-            
-          
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
@@ -591,7 +585,11 @@
 <iframe src="https://www.youtube.com/embed/x3SX1rH5sww" title="Strengthening Marriages : Practical Tips for Every Stage of Life by Dr. Mufti Abdur Rahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
                 <div class="hero-text">
                     <h1>Marriage Ceremony</h1>
-                    <p>Book an Islamic or civil marriage at my office, reception, or your venue to suit your coming marriage.</p>
+                    <p>Book your Islamic or civil marriage in a setting that suits you—whether at my office, a reception hall, or your chosen venue.
+The ceremony is kept simple, meaningful, and respectful of Islamic values.
+I aim to create a peaceful and sincere atmosphere for your special day.
+Whether formal or intimate, your preferences will guide the tone of the service.
+Let your marriage begin with ease, clarity, and blessings.</p>
                     <button class="btn primary-btn">Send Your Enquiry</button>
                 </div>
             </div>
@@ -604,19 +602,21 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>In what language is the marriage service conducted?</h3>
-                    <p>The service can be in English only. You may also request to have it in Arabic only or both English and Arabic. Unfortunately, I don't speak any other languages but I am happy to make some arrangements if you need another language.</p>
+                    <p>The service is available in English by default. However, you may request to receive it in Arabic only or in both English and Arabic. I don’t speak other languages, but I’d be happy to explore options if you require support in a different language.</p>
                 </div>
                 <div class="faq-item">
                     <h3>What do I talk about?</h3>
-                    <p>You don't have to say anything if you're too nervous to meet your expectations. It depends if my sermon includes inspiring words or advice to the bride and groom in the introduction to the ceremony.</p>
+                    <p>You don’t need to say anything if you’re feeling too nervous—just being present is enough. Whether or not I include words of inspiration or advice for the bride and groom during the ceremony introduction depends on the tone and style you’d like for your wedding.
+
+</p>
                 </div>
                 <div class="faq-item">
                     <h3>Where can the marriage service be held?</h3>
-                    <p>The service can be in English only. You may also request to have it in Arabic only or both English and Arabic. Unfortunately, I don't speak any other languages but I am happy to make some arrangements if you need another language.</p>
+                    <p>The ceremony can be conducted in English, Arabic, or a combination of both—based on your preference. While I don't speak other languages, I'm happy to explore alternative arrangements if you require the service in a different language.</p>
                 </div>
                 <div class="faq-item">
                     <h3>How long does the ceremony go for?</h3>
-                    <p>The service usually goes for up to 25 minutes. Arrangements may be made for a shorter or longer service.</p>
+                    <p>The ceremony typically lasts up to 25 minutes, but it can be customized to be shorter or longer based on your needs and preferences.</p>
                 </div>
             </div>
             <div class="text-center">
@@ -685,7 +685,9 @@
 
     <section class="guarantee">
         <div class="container">
-            <h2>We make sure your marriage<br>is correctly and legally solemnized.</h2>
+            <h2>Marriage Ceremonies with Legal 
+
+<br>and Spiritual Integrity</h2>
             <div class="service-categories">
                 <div class="category">
                     <div class="category-icon">
@@ -749,7 +751,7 @@
                     <button class="btn secondary-btn">Read Testimonials</button>
                 </div>
                 <div class="testimonial-video">
-<iframe width="" height="" src="https://www.youtube.com/embed/x3SX1rH5sww" title="Strengthening Marriages : Practical Tips for Every Stage of Life by Dr. Mufti Abdur Rahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+<iframe width="300" height="250" src="https://www.youtube.com/embed/x3SX1rH5sww" title="Strengthening Marriages : Practical Tips for Every Stage of Life by Dr. Mufti Abdur Rahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
             </div>
         </div>
     </section>
@@ -915,12 +917,6 @@
             <div class="payment-method">
                 <img src="/images/Item (6).svg" alt="Shop Pay">
             </div>
-            <!-- <div class="payment-method">
-                <img src="/images/Item (1).svg" alt="Union Pay">
-            </div>
-            <div class="payment-method">
-                <img src="/images/Item (1).svg" alt="Visa">
-            </div> -->
         </div>
         <p>© 2025 ZUHD Academy. All rights reserved.</p>
     </div>
