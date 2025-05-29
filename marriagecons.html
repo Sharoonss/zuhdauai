@@ -503,7 +503,15 @@ iframe{
         <h1>Counselling Services</h1>
         <p>It doesn't matter how big or small the dilemma is, you owe it to yourself to get the help you need. My strategies focus on what you need and not only what you want.</p>
         <button class="btn btn-primary" id="bookAppointmentBtn">Book Appointment</button>
-        <button class="btn btn-secondary" id="myAppointmentsBtn">My Appointments</button>
+        <!-- <button class="btn btn-secondary" id="myAppointmentsBtn">My Appointments</button> -->
+        <div id="calendlyModal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+  <div class="modal-content" style="background-color:#fff; margin:10% auto; padding:20px; border:1px solid #888; width:80%; position:relative;">
+    <span class="close-calendly" style="position:absolute; top:10px; right:20px; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+    
+    <!-- Calendly Widget -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/zuhd-info/30min" style="min-width:320px;height:700px;"></div>
+  </div>
+</div>
     </div>
 </section>
         
@@ -516,7 +524,7 @@ iframe{
 <p>Issues I address range from trust breakdowns, emotional or physical abuse, disrespect, lack of commitment, communication difficulties, family interference, value differences, selfish behavior, compatibility concerns, financial stress, unmet expectations, and intimacy-related matters.</p>
 <p>If your marriage is facing any of these challenges, don’t delay seeking help. Taking action now can make all the difference in restoring harmony to your relationship.</p>
 <p>Please provide your details in the section below, and a member of our team will be in touch to arrange your consultation.</p>
-<button class="btn btn-primary" id="bookConsultationBtn">Book Your Consultation</button>
+<!-- <button class="btn btn-primary" id="bookConsultationBtn">Book Your Consultation</button> -->
 <p><small>Authorised Islamic and Civil Marriage Celebrant – Australia | zuhd Guidance</small></p>
 
         </section>
@@ -555,7 +563,7 @@ iframe{
                 </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <button class="btn btn-primary" id="bookConsultationBtn2">Book a Consultation</button>
+                <!-- <button class="btn btn-primary" id="bookConsultationBtn2">Book a Consultation</button> -->
             </div>
         </section>
         
@@ -748,103 +756,38 @@ iframe{
     </div>
 </div>
     <script>
-        // Get modal elements
-        const bookingModal = document.getElementById('bookingModal');
-        const appointmentsModal = document.getElementById('appointmentsModal');
-        
-        // Get buttons
-        const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
-        const bookConsultationBtn = document.getElementById('bookConsultationBtn');
-        const bookConsultationBtn2 = document.getElementById('bookConsultationBtn2');
-        const myAppointmentsBtn = document.getElementById('myAppointmentsBtn');
-        const readTestimonialsBtn = document.getElementById('readTestimonialsBtn');
-        
-        // Get close buttons
-        const closeButtons = document.getElementsByClassName('close');
-        
-        // Get form
-        const bookingForm = document.getElementById('bookingForm');
-        const loginBtn = document.getElementById('loginBtn');
-        
-        // Open booking modal
-        bookAppointmentBtn.addEventListener('click', () => {
-            bookingModal.style.display = 'block';
-        });
-        
-        bookConsultationBtn.addEventListener('click', () => {
-            bookingModal.style.display = 'block';
-        });
-        
-        bookConsultationBtn2.addEventListener('click', () => {
-            bookingModal.style.display = 'block';
-        });
-        
-        // Open appointments modal
-        myAppointmentsBtn.addEventListener('click', () => {
-            appointmentsModal.style.display = 'block';
-        });
-        
-        // Close modals when clicking on X
-        for (let i = 0; i < closeButtons.length; i++) {
-            closeButtons[i].addEventListener('click', function() {
-                bookingModal.style.display = 'none';
-                appointmentsModal.style.display = 'none';
-            });
-        }
-        
-        // Close modals when clicking outside
-        window.addEventListener('click', (event) => {
-            if (event.target === bookingModal) {
-                bookingModal.style.display = 'none';
-            }
-            if (event.target === appointmentsModal) {
-                appointmentsModal.style.display = 'none';
-            }
-        });
-        
-        // Handle form submission
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real application, you would send this data to a server
-            console.log('Booking submitted:', { name, email, phone, service, date, time, message });
-            
-            // Show confirmation
-            alert('Thank you for your booking request. We will contact you shortly to confirm your appointment.');
-            
-            // Reset form and close modal
-            bookingForm.reset();
-            bookingModal.style.display = 'none';
-        });
-        
-        // Handle login
-        loginBtn.addEventListener('click', () => {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            // In a real application, you would authenticate with a server
-            if (email && password) {
-                alert('Login functionality would be implemented in a real application.');
-            } else {
-                alert('Please enter your email and password.');
-            }
-        });
-        
+      
         // Handle testimonials button
         readTestimonialsBtn.addEventListener('click', () => {
             alert('More testimonials would be displayed in a real application.');
         });
+
+
+        // calenderly
+        // Get Calendly modal and close button
+const calendlyModal = document.getElementById('calendlyModal');
+const closeCalendlyBtn = calendlyModal.querySelector('.close-calendly');
+
+// Show Calendly on Book Appointment click
+bookAppointmentBtn.addEventListener('click', () => {
+    calendlyModal.style.display = 'block';
+});
+
+// Close Calendly modal on X click
+closeCalendlyBtn.addEventListener('click', () => {
+    calendlyModal.style.display = 'none';
+});
+
+// Close Calendly modal on outside click
+window.addEventListener('click', (event) => {
+    if (event.target === calendlyModal) {
+        calendlyModal.style.display = 'none';
+    }
+});
+
     </script>
         <script src="navbar.js"></script>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </body>
 </html>
