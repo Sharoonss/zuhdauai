@@ -10,6 +10,7 @@
         * {
             margin: 0;
             padding: 0;
+         font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
@@ -224,13 +225,14 @@
         .event-card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            padding: 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding:10px;
+            /* box-shadow: 0 10px 30px rgba(133, 132, 132, 0.397); */
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             cursor: pointer;
             display: flex;
+            border: 1px solid #ca9836;
             flex-direction: column;
         }
 
@@ -243,25 +245,26 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            border-radius: 5px;
         }
 
         .event-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            padding:10px;
+             transition: transform 0.3s ease; 
         }
 
-        .event-card:hover .event-image img {
+         .event-card:hover .event-image img {
             transform: scale(1.05);
-        }
+        } 
 
         .event-date-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.123), transparent);
             color: white;
             padding: 1rem;
             font-size: 0.9rem;
@@ -270,26 +273,26 @@
         }
 
         .event-content {
-            padding:1rem;
+            padding:10px 0px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: left;
-            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+            /* background: linear-gradient(to bottom, #ffffff, #f8fafc); */
         }
 
         .event-name {
-            font-size:25px;
+            font-size:22px;
             font-weight: bold;
             color: #000000;
         }
 
         .event-description {
-            color: #000000;
+            color: #161616;
             line-height:20px;
             font-size:18px;
-            font-weight:500;
+            font-weight:400;
             padding: 10px 0px;
         }
 
@@ -305,7 +308,7 @@
             transition: all 0.3s ease;
             align-self: flex-start;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            margin-bottom:10px;
+            /* margin-bottom:10px; */
         }
 
         .learn-more-btn:hover {
@@ -617,7 +620,7 @@
    <div class="events-grid" id="events">
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=200&fit=crop" alt="Ramadan crescent moon">
+                        <img src="https://i.ibb.co/0VqWz8fF/01-Ramadan.png" alt="Ramadan crescent moon">
                         <div class="event-date-overlay">29 Sha'ban - 29 Ramadan (March - April 2025)</div>
                     </div>
                     <div class="event-content">
@@ -629,7 +632,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=200&fit=crop" alt="Night sky with stars">
+                        <img src="https://i.ibb.co/XZv3MqHM/02-Laylat-al-Qadr.png" alt="Night sky with stars">
                         <div class="event-date-overlay">Last 10 nights of Ramadan (April 2025)</div>
                     </div>
                     <div class="event-content">
@@ -641,7 +644,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="" alt="Eid celebration">
+                        <img src="https://i.ibb.co/FbC16wmN/03-Eid-al-Fitr.png" alt="Eid celebration">
                         <div class="event-date-overlay">1 Shawwal (April 30, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -653,7 +656,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="" alt="Sheep for sacrifice">
+                        <img src="https://i.ibb.co/hxWDNSBy/04-Eid-al-Adha.png" alt="Sheep for sacrifice">
                         <div class="event-date-overlay">10 Dhul Hijjah (July 7, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -665,7 +668,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="" alt="Kaaba in Mecca">
+                        <img src="https://i.ibb.co/Z6PxLXVc/05-Mawlid-al-Nabi.png" alt="Kaaba in Mecca">
                         <div class="event-date-overlay">8-12 Dhul Hijjah (July 5-9, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -677,7 +680,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop" alt="Islamic calendar">
+                        <img src="https://i.ibb.co/fzgQ4w6Q/07-Islamic-New-Year-Hijri.png" alt="Islamic calendar">
                         <div class="event-date-overlay">1 Muharram (July 8, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -689,7 +692,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&h=200&fit=crop" alt="Islamic remembrance">
+                        <img src="https://i.ibb.co/G4yhVFGF/08-Ashura-10th-Muharram.png" alt="Islamic remembrance">
                         <div class="event-date-overlay">10 Muharram (July 17, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -701,7 +704,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&h=200&fit=crop" alt="Islamic celebration">
+                        <img src="https://i.ibb.co/9HksfF5g/09-Isra-and-Mi-raj.png" alt="Islamic celebration">
                         <div class="event-date-overlay">12 Rabi' al-Awwal (September 6, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -713,7 +716,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=200&fit=crop" alt="Night journey">
+                        <img src="https://i.ibb.co/N2HtLYy8/10-Day-of-Arafah.png" alt="Night journey">
                         <div class="event-date-overlay">27 Rajab (January 26, 2026)</div>
                     </div>
                     <div class="event-content">
@@ -725,7 +728,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop" alt="Mount Arafah">
+                        <img src="https://i.ibb.co/4RtnJhRV/11-Mid-Sha-ban-Laylat-al-Bara-ah.png" alt="Mount Arafah">
                         <div class="event-date-overlay">9 Dhul Hijjah (July 6, 2025)</div>
                     </div>
                     <div class="event-content">
@@ -737,7 +740,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=200&fit=crop" alt="Full moon night">
+                        <img src="https://i.ibb.co/n8CNHtzY/12-Nisfu-Sha-ban.png" alt="Full moon night">
                         <div class="event-date-overlay">15 Sha'ban (February 13, 2026)</div>
                     </div>
                     <div class="event-content">
@@ -749,7 +752,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=200&fit=crop" alt="Islamic worship">
+                        <img src="https://i.ibb.co/LXNqzs1n/13-Start-of-Rajab.png" alt="Islamic worship">
                         <div class="event-date-overlay">15 Sha'ban (February 13, 2026)</div>
                     </div>
                     <div class="event-content">
@@ -761,7 +764,7 @@
 
                 <div class="event-card">
                     <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&h=200&fit=crop" alt="Sacred month">
+                        <img src="https://i.ibb.co/GfDv2TW6/14-End-of-Safar.png" alt="Sacred month">
                         <div class="event-date-overlay">1 Rajab (December 31, 2025)</div>
                     </div>
                     <div class="event-content">
