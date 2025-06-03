@@ -492,7 +492,7 @@
         padding:10px;
     }
     .info-summary-text {
-        font-size: 18px;
+        font-size: 16px;
     }
     .banner {
         background-image: url(./masjid12-1.png);
@@ -530,9 +530,13 @@
             .donation-description-text {
                 font-size: 16px;
             }
-
+.info-summary-text {
+        font-size: 16px;
+        padding: 20px;
+    }
             
         }
+        
 
 .main{
     display: flex;
@@ -654,33 +658,33 @@
             line-height: 1.6;
         }
         
-        /* Info description container with improved responsiveness */
-        .info-description-container {
+        /* Desktop View - Mosque Hero Section */
+        .zuhd-mosque-hero-wrapper {
             position: relative;
             width: 100%;
             height: 100vh;
             background-image: url('/ss1.png');
-            background-size: cover !important;
+            background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .info-description-overlay {
+        .zuhd-mosque-hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.315);
+            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px;
         }
         
-        .info-description-text {
+        .zuhd-mosque-hero-content {
             color: white;
             font-size: 24px;
             max-width: 1200px;
@@ -690,115 +694,126 @@
             line-height: 1.8;
             text-align: center;
         }
-        
-        /* Media queries for responsiveness */
-        @media (max-width: 992px) {
-            .info-description-text {
-                font-size: 22px;
-                padding: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .info-description-text {
-                font-size: 18px;
-                padding: 20px;
-                line-height: 1.6;
-            }
-            
-            .info-description-container {
-                height: auto;
-                min-height: 100vh;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .info-description-text {
-                font-size: 16px;
-                padding: 15px;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .hadith-quote p {
-    color: white;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    font-weight: 300;
-}
-            
- .info-description-text {
-        font-size: 16px;
-        line-height:28px;
-        padding: 10px;
-        padding-bottom: 40px;
-    }
-
-        .zuhd-donation-container{
-            display: flex;
-            flex-direction: column;
-        }
-           .info-description-container {
-            position: relative;
-            width: 100%;
-            height:100vh;
-            background-image: url('/masjid06\ Edit\ 2.png');
-            background-size:top !important;
-            background-position: center;
-            display: flex;
-            }
-        .info-description-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width:100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            text-align: center;
-            height:100vh;
-        }
-       
-        }
-
-        @media (max-width: 480px) {
-             
-         
-        }
-
-          .info-summary-container {
-            margin-top: 60px;
+        /* Desktop View - Donation Details Section */
+        .zuhd-donation-details-wrapper {
             background-color: white;
-            width:100%;
-            margin: auto;
-            padding:80px;
-            border-radius: 8px;
+            width: 100%;
+            padding: 80px;
             text-align: center;
         }
-        .info-summary-text {
+        
+        .zuhd-donation-details-content {
             color: #333;
-            font-size:20px;
-            font-weight:300;
+            font-size: 20px;
+            font-weight: 300;
             line-height: 1.7;
             margin-bottom: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
-        .info-summary-link {
+        
+        .zuhd-donation-process-link {
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
-        .info-summary-link:hover {
+        
+        .zuhd-donation-process-link:hover {
             color: #0056b3;
             text-decoration: underline;
         }
-    
+
+        /* Tablet View */
+        @media (max-width: 992px) {
+            .zuhd-mosque-hero-content {
+                font-size: 22px;
+                padding: 30px;
+                max-width: 900px;
+            }
+            
+            .zuhd-donation-details-wrapper {
+                padding: 60px;
+            }
+            
+            .zuhd-donation-details-content {
+                font-size: 18px;
+                max-width: 900px;
+            }
+        }
+        
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .zuhd-mosque-hero-wrapper {
+                height: 100vh;
+                background-image: url('/masjid06\ Edit\ 2.png');
+                background-size: cover;
+                background-position: top;
+            }
+            
+            .zuhd-mosque-hero-overlay {
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .zuhd-mosque-hero-content {
+                font-size: 18px;
+                line-height: 1.6;
+                padding: 30px 20px;
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .zuhd-donation-details-wrapper {
+                padding: 40px 20px;
+                text-align: center;
+            }
+            
+            .zuhd-donation-details-content {
+                font-size: 16px;
+                line-height: 1.6;
+                text-align: left;
+                max-width: 100%;
+            }
+        }
+
+        /* Small Mobile View */
+        @media (max-width: 480px) {
+            .zuhd-mosque-hero-content {
+                font-size: 16px;
+                padding: 20px 15px;
+                line-height: 1.5;
+                text-align: center;
+            }
+            
+            .zuhd-donation-details-wrapper {
+                padding: 30px 15px;
+            }
+            
+            .zuhd-donation-details-content {
+                font-size: 14px;
+                line-height: 1.5;
+                text-align: center;
+            }
+        }
+
+        /* Utility class for flexible containers */
+        .zuhd-donation-main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
 
         @media (max-width: 768px) {
-           
-           
-            
+            .zuhd-donation-main-container {
+                flex-direction: column;
+            }
         }
     </style>
   </style>
@@ -859,23 +874,25 @@
         </div>
     </div>
 
-
- <div class="info-description-container">
-        <div class="info-description-overlay">
-            <p class="info-description-text">
-                In-kind donations, such as building materials, equipment, or professional services, are also welcome, and can be arranged by contacting the fundraising team (info@zuhd.au). Volunteers can contribute their time and skills to help with fundraising events, community outreach, or other aspects of the project.
-
-                The benefits of donating to this project are manifold. By contributing to the construction of the mosque and Islamic school, donors will be supporting the education and spiritual development of Muslims in the Point Cook area and Muslims in Australia as a whole. The project will also provide a space for the broader community to learn about Islam and build relationships with their Muslim neighbours, promoting interfaith understanding and harmony.
+ <div class="zuhd-donation-main-container">
+        <div class="zuhd-mosque-hero-wrapper">
+            <div class="zuhd-mosque-hero-overlay">
+                <p class="zuhd-mosque-hero-content">
+                    In-kind donations, such as building materials, equipment, or professional services, are also welcome, and can be arranged by contacting the fundraising team (info@zuhd.au). Volunteers can contribute their time and skills to help with fundraising events, community outreach, or other aspects of the project.
+                    <br><br>
+                    The benefits of donating to this project are manifold. By contributing to the construction of the mosque and Islamic school, donors will be supporting the education and spiritual development of Muslims in the Point Cook area and Muslims in Australia as a whole. The project will also provide a space for the broader community to learn about Islam and build relationships with their Muslim neighbours, promoting interfaith understanding and harmony.
+                </p>
+            </div>
+        </div>
+        
+        <div class="zuhd-donation-details-wrapper">
+            <p class="zuhd-donation-details-content">
+                Furthermore, by supporting this project, donors will be investing in the future of the Muslim community in Australia. The facilities will enable the community to grow and thrive, providing a solid foundation for generations to come. <a href="#" class="zuhd-donation-process-link" id="processDonationsLink">Process Donations here</a>.
+            </p>
+            <p class="zuhd-donation-details-content">
+                In summary, the Point Cook Mosque project presented by zuhd.au is an important development for the Muslim community in the area, and donations play a crucial role in its success. Individuals and organizations can contribute to this project through financial donations, in-kind donations, or volunteering, and by doing so, they will be supporting the education and spiritual development of Muslims in the community and investing in the future of the Muslim community in Australia.
             </p>
         </div>
-    </div>
- <div class="info-summary-container">
-        <p class="info-summary-text">
-            Furthermore, by supporting this project, donors will be investing in the future of the Muslim community in Australia. The facilities will enable the community to grow and thrive, providing a solid foundation for generations to come <a href="#" class="info-summary-link" id="processDonationsLink">Process Donations here</a>.
-        </p>
-        <p class="info-summary-text">
-            In summary, the Point Cook Mosque project presented by zuhd.au is an important development for the Muslim community in the area, and donations play a crucial role in its success. Individuals and organizations can contribute to this project through financial donations, in-kind donations, or volunteering, and by doing so, they will be supporting the education and spiritual development of Muslims in the community and investing in the future of the Muslim community in Australia.
-        </p>
     </div>
     <div class="slider-container">
         <div class="slider">
