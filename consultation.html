@@ -36,8 +36,8 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 500px;
-            background-image: url('/banner2.png');
+             height:450px; 
+            background-image: url('https://i.ibb.co/hSXQwYH/banner2.png');
             background-size: cover;
             background-position:center;
             display: flex;
@@ -53,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* background-color: rgba(0, 0, 0, 0.548); */
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         .hero-content {
@@ -76,6 +76,7 @@
             justify-content: center;
             padding: 40px 20px;
             background-color: #f9f9f9;
+            position: relative;
         }
 
         .service-card {
@@ -88,11 +89,22 @@
             border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-card.hidden {
+            display: none;
+        }
+
+        .service-card.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         .icon-container {
@@ -109,8 +121,7 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: #333;
-             line-height:30px;
-
+            line-height: 30px;
         }
 
         .service-card p {
@@ -129,10 +140,41 @@
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            display: inline-block;
         }
 
         .cta-button:hover {
+            background-color: #b8862f;
+            color: white;
+            text-decoration: none;
+        }
+
+        .see-more-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            order: 999;
+        }
+
+        .see-more-btn {
+            padding: 12px 30px;
             background-color: #ca9836;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .see-more-btn:hover {
+            background-color: #b8862f;
+            transform: translateY(-2px);
+        }
+
+        .see-more-btn.hidden {
+            display: none;
         }
 
         /* Promo Sections */
@@ -352,7 +394,9 @@
         }
         
         .muslim-btn:hover {
-            background-color: #ca9836;
+            background-color: #b8862f;
+            color: #fff;
+            text-decoration: none;
         }
         
         /* Solemnized Section */
@@ -383,13 +427,18 @@
             width: 45%;
             min-width: 300px;
             position: relative;
-            /* padding-top: 25%; */
-            height: 0;
-            /* overflow: hidden; */
-            border-radius: 8px;
         }
         
-        .muslim-video-frame {
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -400,7 +449,7 @@
         
         /* Services Section */
         .muslim-services-section {
-            padding: 60px 0;
+            padding: 0px 0;
             text-align: center;
             background-color: #111;
             color: #fff;
@@ -408,7 +457,6 @@
         
         .muslim-services-heading {
             font-size: 28px;
-            padding-top:170px;
             margin-bottom: 40px;
         }
         
@@ -471,7 +519,9 @@
         }
         
         .bd-btn:hover {
-            background-color: #ca9836;
+            background-color: #b8862f;
+            color: white;
+            text-decoration: none;
         }
         
         .bd-center-btn {
@@ -508,8 +558,8 @@
         }
         
         .bd-service-icon {
-    stroke: #ca9836;
-}
+            stroke: #ca9836;
+        }
         .bd-service-card:hover {
             transform: translateY(-5px);
         }
@@ -593,74 +643,55 @@
         }
         
        /* Umrah Section */
-.umrah-section {
-    background-image: url('https://i.ibb.co/jPTLrG6Y/1290x400.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: white;
-    height:80vh;
-    text-align: center;
-    padding: 100px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .umrah-section {
+            background-image: url('https://i.ibb.co/jPTLrG6Y/1290x400.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: white;
+            height:80vh;
+            text-align: center;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.umrah-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Added slight overlay for better text readability */
-    z-index: 1;
-}
+        .umrah-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
 
-.umrah-section .container {
-    position: relative;
-    z-index: 2;
-}
+        .umrah-section .container {
+            position: relative;
+            z-index: 2;
+        }
 
-.umrah-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
+        .umrah-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.umrah-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+        .umrah-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-.umrah-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.bd-btn {
-    display: inline-block;
-    background-color: #ca9836;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.bd-btn:hover {
-    text-decoration: none;
-    color: rgb(2, 2, 2);
-    border: 1px solid #ca9836;
-}
+        .umrah-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
         
         /* Knowledge Hub */
         .knowledge-hub {
@@ -695,24 +726,6 @@
             max-width: 500px;
         }
         
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        
         /* Footer */
         .footer {
             background-color: #f8f8f8;
@@ -722,110 +735,7 @@
             font-size: 14px;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .service-card {
-                width: 100%;
-                max-width: 400px;
-                margin: 15px 0;
-            }
-            
-            .promo-badge {
-                position: relative;
-                top: 0;
-                left: 0;
-                margin: 0 auto 20px;
-            }
-            
-            .soulmate-promo h2 {
-                font-size: 2rem;
-            }
-            
-            .event-details p {
-                font-size: 1.2rem;
-            }
-            
-            .muslim-video-item {
-                width: 100%;
-                padding-top: 56.25%;
-            }
-            
-            .muslim-services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .muslim-credential-item {
-                flex: 100%;
-            }
-            
-            .bd-services-grid {
-                flex-direction: column;
-            }
-            
-            .bd-service-card {
-                margin-bottom: 20px;
-            }
-            
-            .bd-testimonial-card {
-                min-width: 100%;
-            }
-            
-            .video-card {
-                min-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                height: 400px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .service-card {
-                padding: 20px;
-            }
-            
-            .promo-badge {
-                width: 100px;
-                height: 100px;
-                font-size: 0.7rem;
-            }
-            
-            .promo-logo h3 {
-                font-size: 2rem;
-            }
-            
-            .promo-logo h4 {
-                font-size: 1.2rem;
-            }
-            
-            .soulmate-promo h2 {
-                font-size: 1.8rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .event-details p {
-                font-size: 1rem;
-            }
-            .service-card h2{
-                line-height:27px;
-            }
-        }
+        /* Articles */
          #articles-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -909,6 +819,7 @@
 
         .read-more:hover {
             color: #a68439;
+            text-decoration: none;
         }
 
         .read-more::after {
@@ -948,33 +859,6 @@
             fill: white;
         }
 
-        @media (max-width: 768px) {
-            #articles-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .article-card {
-                padding: 25px;
-            }
-            
-            .article-title {
-                font-size: 20px;
-            }
-            
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .whatsapp-icon {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -987,6 +871,7 @@
                 transform: translateY(0);
             }
         }
+
         /* Footer styles */
         .footer {
             background-color: #000;
@@ -1170,26 +1055,97 @@
             font-size: 12px;
             color: #999;
         }
-  @media screen and (max-width: 768px) {
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-card {
+                width: 100%;
+                max-width: 400px;
+                margin: 15px 0;
+            }
+            
+            .promo-badge {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: 0 auto 20px;
+            }
+            
+            .soulmate-promo h2 {
+                font-size: 2rem;
+            }
+            
+            .event-details p {
+                font-size: 1.2rem;
+            }
+            
+            .muslim-video-item {
+                width: 100%;
+            }
+            
+            .muslim-services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .muslim-credential-item {
+                flex: 100%;
+            }
+            
+            .bd-services-grid {
+                flex-direction: column;
+            }
+            
+            .bd-service-card {
+                margin-bottom: 20px;
+            }
+            
+            .bd-testimonial-card {
+                min-width: 100%;
+            }
+            
+            .video-card {
+                min-width: 100%;
+            }
+
+            #articles-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .article-card {
+                padding: 25px;
+            }
+            
+            .article-title {
+                font-size: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+
             .section-title {
                 width: 90%;
                 font-size:18px;
             }
             
-            .scholars-container {
-                width: 90%;
-            }
-            
-            .banner {
-                height: 300px;
-            }
-            
-            .banner-text {
-                font-size: 28px;
-            }
-            
-            
-          
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
@@ -1216,36 +1172,49 @@
                 flex-direction: column;
             }
         }
-.muslim-video-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
 
-.muslim-video-item {
-    flex: 1 1 45%;
-    max-width: 695px;
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
+        @media (max-width: 480px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .promo-badge {
+                width: 100px;
+                height: 100px;
+                font-size: 0.7rem;
+            }
+            
+            .promo-logo h3 {
+                font-size: 2rem;
+            }
+            
+            .promo-logo h4 {
+                font-size: 1.2rem;
+            }
+            
+            .soulmate-promo h2 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .event-details p {
+                font-size: 1rem;
+            }
+            .service-card h2{
+                line-height:27px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1257,40 +1226,72 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Muslim Marriage Expert</h1>
+            <h1>Islamic Counselling</h1>
         </div>
     </header>
 
     <!-- Services Section -->
-    <section class="services">
+    <section class="services" id="servicesSection">
         <div class="service-card">
             <div class="icon-container">
-                <img src="./marriage.svg" alt="Marriage Ceremony Icon" class="service-icon">
+                <img src="/marriage.svg" alt="Marriage Ceremony Icon" class="service-icon">
             </div>
-            <h2>Islamic & Civil Marriage Services</h2>
-            <p>Schedule your Islamic or civil marriage at our office, your chosen venue, or conveniently online.</p>
-<a href="/marriagecermony.html" class="cta-button">Start Now</a>
+            <h2> Marriage Services</h2>
+            <p>Book your Islamic marriage counseling session at our office, at a location of your choice, or conveniently online.</p>
+            <a href="#" class="cta-button">Start Now</a>
         </div>
 
         <div class="service-card">
             <div class="icon-container">
-                <img src="./divorce.svg" alt="Counselling Services Icon" class="service-icon">
+                <img src="https://i.ibb.co/HDTDqTLP/Banner-3.png" alt="Counselling Services Icon" class="service-icon">
             </div>
-            <h2> Divorce Counselling Services</h2>
-            <p>Schedule a counselling session for faith-based guidance combined with proven behavioral strategies.
-
-</p>
-<a href="/marriagecons.html" class="cta-button">Book Appointment Now</a>
+            <h2> Pre-Marriage Services</h2>
+            <p>Book a pre-marital counseling session grounded in Islamic values and guided by effective behavioral techniques.</p>
+            <a href="#" class="cta-button">Book Appointment Now</a>
         </div>
 
-        
+        <div class="service-card">
+            <div class="icon-container">
+                <img src="/divorce.svg" alt="Divorce Services Icon" class="service-icon">
+            </div>
+            <h2>Divorce Services</h2>
+            <p>Book a counseling session rooted in Islamic values and behavioral strategies for marriage, divorce support</p>
+            <a href="#" class="cta-button">Book Appointment Now</a>
+        </div>
+
+        <div class="service-card hidden">
+            <div class="icon-container">
+                <img src="https://i.ibb.co/mrkjWrmM/Banner-2.png" alt="Pre-Marriage Course Icon" class="service-icon">
+            </div>
+            <h2>Conflict Resolution Services</h2>
+            <p>Guidance for a strong Islamic marriage from premarital preparation to conflict resolution, with faith and practical support.</p>
+            <a href="#" class="cta-button">Enroll Now</a>
+        </div>
+
+        <div class="service-card hidden">
+            <div class="icon-container">
+                <img src="https://i.ibb.co/G3dsv657/group-icon-250x250.png" alt="Online Services Icon" class="service-icon">
+            </div>
+            <h2>Youth Counselling Services</h2>
+            <p>Faith-based youth counseling to support emotional, spiritual, and personal growth available online and in person.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+
+        <div class="service-card hidden">
+            <div class="icon-container">
+                <img src="https://i.ibb.co/k6JWHNqx/Banner.png" alt="Family Counselling Icon" class="service-icon">
+            </div>
+            <h2>Family problem resolutions</h2>
+            <p>Strengthen family bonds and resolve conflicts with Islamic guidance and professional counseling support.</p>
+            <a href="#" class="cta-button">Book Session</a>
+        </div>
+
+        <div class="see-more-container">
+            <button class="see-more-btn" id="seeMoreBtn" onclick="toggleServices()">See More</button>
+        </div>
     </section>
 
-   
-
     <hr class="divider">
-
-    
     
     <!-- Trusted Section -->
     <div class="muslim-container">
@@ -1333,19 +1334,18 @@
     <div class="muslim-solemnized-section">
         <div class="muslim-container">
             <h2 class="muslim-solemnized-heading">We make sure your marriage is correctly and legally solemnized.</h2>
-          <div class="muslim-video-container">
-    <div class="muslim-video-item">
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/lJAIosxSdZk" title="The Secret to Barakah in Marriage – A Simple Sunnah Most Forget! 💍✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="muslim-video-item">
-        <div class="video-wrapper">
-           <iframe src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-
+            <div class="muslim-video-container">
+                <div class="muslim-video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/lJAIosxSdZk" title="The Secret to Barakah in Marriage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="muslim-video-item">
+                    <div class="video-wrapper">
+                       <iframe src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection & Haq Mehar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -1386,48 +1386,44 @@
                     <div class="muslim-service-icon">✓</div>
                     <div>Online Islamic Divorce</div>
                 </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Marriage</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Pre-Marriage</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Divorces</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Conflict resolution</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Youth Counselling</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Family problem resolutions</div>
+                </div>
+                 <div class="muslim-service-item">
+                    <div class="muslim-service-icon">✓</div>
+                    <div>Grief Counselling</div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- More Services Section -->
-    <!-- <section class="bd-section bd-services">
-        <div class="bd-container">
-            <h2 class="bd-section-title">More Services We Cover</h2>
-            <p class="bd-section-subtitle">Register for the "Pre-Marriage Course" filled with the secrets to a healthy marriage.<br>Register to learn how to read "Quran", or join him for "Umrah".</p>
-            
-            <div class="bd-services-grid">
-                <div class="bd-service-card">
-                    <svg class="bd-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
-                    <h3 class="bd-service-title">Marriage Counselling</h3>
-                </div>
-                
-              
-                <div class="bd-service-card">
-                    <svg class="bd-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
-                        <line x1="4" y1="15" x2="20" y2="15"></line>
-                    </svg>
-                    <h3 class="bd-service-title">Islamic Divorce</h3>
-                </div>
-                
-                
-            </div>
-            
-            <div class="bd-center-btn">
-                <a href="#" class="bd-btn">Book Your Consultation</a>
-            </div>
-        </div>
-    </section> -->
     
     <!-- Video Section -->
     <section class="bd-section bd-video-section">
         <div class="bd-container">
             <div class="bd-video-container">
                 <div class="bd-responsive-iframe">
-                 <iframe width="695" height="391" src="https://www.youtube.com/embed/5_cIV8gsMJ4" title="Marriage Myths vs Reality: What Islam Really Says | Mufti Muhammad Ibne Adam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 <iframe width="695" height="391" src="https://www.youtube.com/embed/5_cIV8gsMJ4" title="Marriage Myths vs Reality" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -1480,18 +1476,20 @@
             <div class="videos-grid">
                 <div class="video-card">
                     <div class="video-wrapper">
-                      <iframe width="" height="" src="https://www.youtube.com/embed/XDPCqw5e9xI" title="Let’s Dive into Marraige (Part 1) with Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      <iframe width="" height="" src="https://www.youtube.com/embed/XDPCqw5e9xI" title="Let's Dive into Marriage (Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 
                 <div class="video-card">
                     <div class="video-wrapper">
-                       <iframe width="695" height="391" src="https://www.youtube.com/embed/dLB04JUYirQ" title="Let’s Dive into Marriage (Part 2) by Sheikh Hasan Ali" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                       <iframe width="695" height="391" src="https://www.youtube.com/embed/dLB04JUYirQ" title="Let's Dive into Marriage (Part 2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Articles Section -->
     <div class="container" id="articles-container">
         <article class="article-card fade-in">
             <h2 class="article-title">The Marital Questionnaire – Know Your Partner and Yourself</h2>
@@ -1501,9 +1499,6 @@
         </article>
 
         <article class="article-card fade-in">
-            <div class="article-meta">
-                <!-- <span class="read-time">12 minute read</span> -->
-            </div>
             <h2 class="article-title">Requirements of an Islamic Marriage Contract</h2>
             <div class="article-content">
                 Therefore, prolonged bachelorship or intentional celibacy are contrary to Islamic teachings. These practices can lead to social and moral challenges, ultimately impacting the well-being of individuals and the strength of the Muslim community as a whole.
@@ -1514,95 +1509,97 @@
         <article class="article-card fade-in">
             <h2 class="article-title">Rules Related to DIVORCE in Islam</h2>
             <div class="article-content">
-Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionate, the Most Merciful, Master of the Day of Judgment. May peace and blessings be upon His noble Messenger, Muhammad ﷺ, his family, and his companions.            </div>
+                Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionate, the Most Merciful, Master of the Day of Judgment. May peace and blessings be upon His noble Messenger, Muhammad ﷺ, his family, and his companions.            </div>
             <a href="#" class="read-more">Read More</a>
-        </article>
+        </div>
     </div>
 
+    <!-- WhatsApp Float Button -->
     <div class="whatsapp-float" onclick="openWhatsApp()">
         <svg class="whatsapp-icon" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690"/>
         </svg>
     </div>
-<div class="footer">
-    <div class="footer-content">
-        <div class="footer-column">
-            <div class="footer-logo">
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
                 <img src="/images/flogo.png" alt="ZUHD Logo">
+                </div>
+                <p class="footer-text">Be the first to receive all the recent updates, articles, and valuable deals from ZUHD EXCLUSIVELY.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Email address">
+                    <button>Subscribe</button>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/zuhd.au" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com/zuhd.au" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/zuhd_au" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/zuhd.au" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@zuhd.store" class="social-icon">
+                      <i class="fab fa-tiktok"></i>
+                  </a>
+                </div>
             </div>
-            <p class="footer-text">Be the first to receive all the recent updates, articles, and valuable deals from ZUHD EXCLUSIVELY.</p>
-            <div class="newsletter">
-                <input type="email" placeholder="Email address">
-                <button>Subscribe</button>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/zuhd.au" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.twitter.com/zuhd.au" class="social-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/zuhd_au?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkdin.com/zuhd.au" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.tiktok.com/@zuhd.store?_t=ZS-8w1A4y4ZWO9&_r=1" class="social-icon">
-                  <i class="fab fa-tiktok"></i>
-              </a>
-            </div>
-        </div>
-        
-        <div class="footer-column">
-            <h3>ABOUT ACADEMY</h3>
-            <div class="footer-links">
-                <a href="/story.html">About ZUHD</a>
-                <a href="#">ZUHD Lectures</a>
-                <a href="/delivery-info-page.html">Delivery</a>
-                <a href="/tandc.html">Terms and conditions</a>
-                <a href="/return-policy.html">Return Policy</a>
-            </div>
-        </div>
-        
-        <div class="footer-column">
-            <h3>QUICK LINKS</h3>
-            <div class="footer-links">
-              <a href="/index.html">Home</a>
-              <a href="/zuhd.html">Academy</a>
-              <a href="/workshop-sections.html">Workshops</a>
-              <a href="/maktab.html">After School Classes</a>
-              <a href="/mosque.html">Masjid</a>
-            </div>
-        </div>
-        
-        
-        <div class="footer-column">
-            <h3>CONTACT US</h3>
-            <div class="contact-info">
-                <p>Call: <a href="tel:+61291000100">+61 291000100</a></p>
-                <p>Email: <a href="mailto:info@zuhd.au" target="_blank">info@zuhd.au</a></p>
-              </div>
             
-            <div class="preferences">
-                <h3>PREFERENCES</h3>
-                <select class="preference-select">
-                    <option>English</option>
-                    <option>Arabic</option>
-                    <option>Urdu</option>
-                </select>
-                <select class="preference-select">
-                    <option>US Dollar(USD)</option>
-                    <option>Euro(EUR)</option>
-                    <option>Australian Dollar(AUD)</option>
-                </select>
+            <div class="footer-column">
+                <h3>ABOUT ACADEMY</h3>
+                <div class="footer-links">
+                    <a href="#">About ZUHD</a>
+                    <a href="#">ZUHD Lectures</a>
+                    <a href="#">Delivery</a>
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Return Policy</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>QUICK LINKS</h3>
+                <div class="footer-links">
+                  <a href="#">Home</a>
+                  <a href="#">Academy</a>
+                  <a href="#">Workshops</a>
+                  <a href="#">After School Classes</a>
+                  <a href="#">Masjid</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <div class="contact-info">
+                    <p>Call: <a href="tel:+61291000100">+61 291000100</a></p>
+                    <p>Email: <a href="mailto:info@zuhd.au">info@zuhd.au</a></p>
+                  </div>
+                
+                <div class="preferences">
+                    <h3>PREFERENCES</h3>
+                    <select class="preference-select">
+                        <option>English</option>
+                        <option>Arabic</option>
+                        <option>Urdu</option>
+                    </select>
+                    <select class="preference-select">
+                        <option>US Dollar(USD)</option>
+                        <option>Euro(EUR)</option>
+                        <option>Australian Dollar(AUD)</option>
+                    </select>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="footer-divider"></div>
-    
-    <div class="footer-bottom">
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom">
         <div class="payment-methods">
             <div class="payment-method">
                 <img src="/images/Item (1).svg" alt="American Express">
@@ -1631,10 +1628,68 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
         </div>
         <p>© 2025 ZUHD Academy. All rights reserved.</p>
     </div>
-</div>
-    <!-- Scripts -->
+    </div>
+
+    <!-- JavaScript -->
     <script>
-      // Add smooth scrolling for all links
+        // Global variable to track the state
+        let showingAll = false;
+
+        // Improved toggle function with smooth animations
+        function toggleServices() {
+            const allCards = document.querySelectorAll('.service-card');
+            const seeMoreBtn = document.getElementById('seeMoreBtn');
+            const hiddenCards = document.querySelectorAll('.service-card.hidden');
+            const visibleCards = document.querySelectorAll('.service-card:not(.hidden)');
+
+            if (!showingAll) {
+                // Show all cards with animation
+                hiddenCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.remove('hidden');
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        
+                        // Trigger animation
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.3s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    }, index * 100);
+                });
+                
+                seeMoreBtn.textContent = 'See Less';
+                showingAll = true;
+            } else {
+                // Hide cards beyond first 3 with animation
+                allCards.forEach((card, index) => {
+                    if (index >= 3) {
+                        card.style.transition = 'all 0.3s ease';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            card.classList.add('hidden');
+                            card.style.opacity = '';
+                            card.style.transform = '';
+                            card.style.transition = '';
+                        }, 300);
+                    }
+                });
+                
+                seeMoreBtn.textContent = 'See More';
+                showingAll = false;
+                
+                // Scroll back to services section
+                document.getElementById('servicesSection').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Add smooth scrolling for all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1651,9 +1706,9 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
             });
         });
 
-        // Add animation for service cards
+        // Add animation for service cards on scroll
         const serviceCards = document.querySelectorAll('.service-card');
-        const observer = new IntersectionObserver((entries) => {
+        const cardObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = 1;
@@ -1663,16 +1718,23 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
         }, { threshold: 0.1 });
 
         serviceCards.forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
+            if (!card.classList.contains('hidden')) {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                cardObserver.observe(card);
+            }
         });
 
         // Make buttons interactive
         const buttons = document.querySelectorAll('.cta-button, .muslim-btn, .bd-btn');
         buttons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(e) {
+                // Only prevent default if it's a placeholder link
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
+                
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
@@ -1698,13 +1760,13 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
         window.addEventListener('load', checkMobileView);
         window.addEventListener('resize', checkMobileView);
 
-         // Animate cards on scroll
+        // Animate article cards on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const articleObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animationDelay = `${Array.from(document.querySelectorAll('.article-card')).indexOf(entry.target) * 0.2}s`;
@@ -1714,13 +1776,13 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
         }, observerOptions);
 
         document.querySelectorAll('.article-card').forEach(card => {
-            observer.observe(card);
+            articleObserver.observe(card);
         });
 
         // WhatsApp functionality
         function openWhatsApp() {
             // Replace with actual WhatsApp number
-            const phoneNumber = "1234567890";
+            const phoneNumber = "61291000100";
             const message = "Hello! I'm interested in learning more about Islamic marriage guidance.";
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
@@ -1735,7 +1797,7 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
             });
         });
 
-        // Add smooth hover effects
+        // Add smooth hover effects for article cards
         document.querySelectorAll('.article-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-8px)';
@@ -1745,7 +1807,34 @@ Verily, all praise is due to Allah, Lord of the worlds — the Most Compassionat
                 this.style.transform = 'translateY(0)';
             });
         });
+
+        // Newsletter subscription
+        document.querySelector('.newsletter button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter input').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                document.querySelector('.newsletter input').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial state
+            showingAll = false;
+            
+            // Ensure proper initial visibility
+            const allCards = document.querySelectorAll('.service-card');
+            allCards.forEach((card, index) => {
+                if (index >= 3) {
+                    card.classList.add('hidden');
+                }
+            });
+        });
     </script>
-    <script src="navbar.js"></script>
+        <script src="navbar.js"></script>
+
 </body>
 </html>
