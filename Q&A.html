@@ -85,12 +85,24 @@
         }
         
         .right-column {
-width: 30%;   
+            width: 30%;   
             margin-top: 50px;
-     }
+        }
         
         .item {
             margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .item.hidden {
+            display: none;
+        }
+        
+        .item.highlighted {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #C3922E;
         }
         
         .date {
@@ -111,9 +123,51 @@ width: 30%;
             line-height: 1.4;
         }
         
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+            display: none;
+        }
+        
+        .search-stats {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #e8f4f8;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #2c5aa0;
+            display: none;
+        }
+        
+        .clear-search {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 10px;
+            display: none;
+        }
+        
         /* Desktop video styles */
         .lecture-box {
             margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .lecture-box.hidden {
+            display: none;
+        }
+        
+        .lecture-box.highlighted {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #C3922E;
         }
         
         .lecture-box iframe {
@@ -544,74 +598,83 @@ width: 30%;
     </div>
     <div class="container">
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search">
-            <button class="search-button">
+            <input type="text" class="search-input" placeholder="Search for answers, topics, or keywords..." id="searchInput">
+            <button class="search-button" id="searchButton">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
             </button>
+            <button class="clear-search" id="clearSearch">Clear</button>
         </div>
+        
+        <div class="search-stats" id="searchStats"></div>
         
         <div class="content-row">
            <div class="left-column">
-    <div class="section-title">Recent Answers</div>
+    <div class="section-title" id="answersTitle">Recent Answers</div>
+    
+    <div class="no-results" id="noResults">
+        <i class="fas fa-search" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+        <h3>No results found</h3>
+        <p>Try searching with different keywords or browse our recent answers below.</p>
+    </div>
 
-    <div class="item">
+    <div class="item" data-keywords="children parenting muslim raising workshop maulana">
         <div class="date">May 7, 2025</div>
         <div class="title">Explore the enlightening workshop on 'Raising Muslim Children,' led by the esteemed Maulana</div>
         <div class="description">Explore the enlightening workshop on 'Raising Muslim Children,' led by the esteemed Maulana</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="surah fatiha prayer salah importance daily quran">
         <div class="date">May 6, 2025</div>
         <div class="title">What is the importance of Surah Al-Fatiha in daily prayers?</div>
         <div class="description">Surah Al-Fatiha is the opening chapter of the Quran and is recited in every unit of Salah. It holds great significance as a prayer for guidance and mercy.</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="quran final revelation islam prophet muhammad allah">
         <div class="date">May 5, 2025</div>
         <div class="title">Why is the Quran considered the final revelation in Islam?</div>
         <div class="description">The Quran is believed to be the final and complete message of Allah, revealed to Prophet Muhammad (PBUH) as guidance for all of humanity.</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="knowledge seeking quran learning education islam">
         <div class="date">May 4, 2025</div>
         <div class="title">How should Muslims seek knowledge according to the Quran?</div>
-        <div class="description">The Quran encourages believers to seek knowledge and reflect, as seen in verses like “Are those who know equal to those who do not know?” (39:9).</div>
+        <div class="description">The Quran encourages believers to seek knowledge and reflect, as seen in verses like "Are those who know equal to those who do not know?" (39:9).</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="parents kindness respect old age quran family">
         <div class="date">May 3, 2025</div>
         <div class="title">What does the Quran say about treating parents?</div>
-        <div class="description">The Quran emphasizes kindness to parents, especially in old age, as stated in Surah Al-Isra (17:23), “Say not to them a word of disrespect.”</div>
+        <div class="description">The Quran emphasizes kindness to parents, especially in old age, as stated in Surah Al-Isra (17:23), "Say not to them a word of disrespect."</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="taqwa consciousness allah fear piety quran">
         <div class="date">May 2, 2025</div>
         <div class="title">What is the meaning of Taqwa in the Quran?</div>
         <div class="description">Taqwa refers to consciousness of Allah, being mindful of His commands and avoiding what He forbids. It is a central theme throughout the Quran.</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="surah kahf friday benefits reading protection dajjal">
         <div class="date">May 1, 2025</div>
         <div class="title">What are the benefits of reading Surah Al-Kahf on Fridays?</div>
         <div class="description">Reading Surah Al-Kahf on Fridays brings light for the whole week and protects from the trials of Dajjal, according to Hadith and scholarly interpretation.</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="prophet muhammad mercy worlds example quran">
         <div class="date">April 30, 2025</div>
         <div class="title">How does the Quran describe Prophet Muhammad (PBUH)?</div>
         <div class="description">The Quran describes the Prophet (PBUH) as a mercy to the worlds (21:107) and as an excellent example for mankind (33:21).</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="justice fairness quran stand firmly">
         <div class="date">April 29, 2025</div>
         <div class="title">What does the Quran teach about justice?</div>
         <div class="description">The Quran commands believers to stand firmly for justice, even against themselves or family members (Surah An-Nisa 4:135).</div>
     </div>
 
-    <div class="item">
+    <div class="item" data-keywords="reading quran reward letter recitation prophet">
         <div class="date">April 28, 2025</div>
         <div class="title">What is the reward of reading the Quran?</div>
         <div class="description">For every letter recited from the Quran, there is a reward. The Prophet (PBUH) said: "I do not say that Alif-Lam-Meem is one letter, but Alif is a letter, Lam is a letter, and Meem is a letter."</div>
@@ -620,9 +683,9 @@ width: 30%;
 
             
             <div class="right-column">
-                <div class="section-title">Recent Lectures</div>
+                <div class="section-title" id="lecturesTitle">Recent Lectures</div>
                 
-                <div class="lecture-box">
+                <div class="lecture-box" data-keywords="spouse selection marriage mehar muslim">
                     <!-- Desktop view -->
                     <iframe width="100%" height="180" src="https://www.youtube.com/embed/gtLj7jDeD64" title="Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="lecture-title">Spouse Selection &amp; Haq Mehar: What Every Muslim Must Know!</div>
@@ -642,7 +705,7 @@ width: 30%;
                     </div>
                 </div>
                 
-                <div class="lecture-box">
+                <div class="lecture-box" data-keywords="backbiting slander tongue dangers speech">
                     <!-- Desktop view -->
                     <iframe width="100%" height="180" src="https://www.youtube.com/embed/quPr4dPjg2E" title="The Poisonous Tongue: Unveiling the Dangers of Backbiting &amp; Slander by Dr. Mufti AbdurRahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="lecture-title">The Poisonous Tongue: Unveiling the Dangers of Backbiting &amp; Slander by Dr. Mufti AbdurRahman Mangera</div>
@@ -662,7 +725,7 @@ width: 30%;
                     </div>
                 </div>
                 
-                <div class="lecture-box">
+                <div class="lecture-box" data-keywords="heart dead spiritual purification soul">
                     <!-- Desktop view -->
                     <iframe width="100%" height="180" src="https://www.youtube.com/embed/ljADauvZK1U" title="The Fate of a Dead Heart with Dr. Mufti Abdur Rahman Mangera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="lecture-title">The Fate of a Dead Heart with Dr. Mufti Abdur Rahman Mangera</div>
@@ -786,12 +849,6 @@ width: 30%;
             <div class="payment-method">
                 <img src="/images/Item (6).svg" alt="Shop Pay">
             </div>
-            <!-- <div class="payment-method">
-                <img src="/images/Item (1).svg" alt="Union Pay">
-            </div>
-            <div class="payment-method">
-                <img src="/images/Item (1).svg" alt="Visa">
-            </div> -->
         </div>
         <p>© 2025 ZUHD Academy. All rights reserved.</p>
     </div>
@@ -799,6 +856,9 @@ width: 30%;
     <!-- Scripts -->
     <script>
      document.addEventListener('DOMContentLoaded', function() {
+    // ========== Search Functionality ==========
+    initializeSearch();
+    
     // ========== Workshop Cards Animation and Interaction ==========
     initializeWorkshopCards();
     
@@ -814,6 +874,172 @@ width: 30%;
     // ========== Mobile Video Cards Click ==========
     initializeMobileVideoCards();
 });
+
+// ===== Search Functions =====
+function initializeSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const clearButton = document.getElementById('clearSearch');
+    const searchStats = document.getElementById('searchStats');
+    const noResults = document.getElementById('noResults');
+    const answersTitle = document.getElementById('answersTitle');
+    const lecturesTitle = document.getElementById('lecturesTitle');
+    
+    // Search event listeners
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+    
+    // Real-time search as user types
+    searchInput.addEventListener('input', function() {
+        if (this.value.trim().length > 2) {
+            performSearch();
+        } else if (this.value.trim().length === 0) {
+            clearSearch();
+        }
+    });
+    
+    clearButton.addEventListener('click', clearSearch);
+    
+    function performSearch() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        
+        if (searchTerm === '') {
+            clearSearch();
+            return;
+        }
+        
+        const items = document.querySelectorAll('.item');
+        const lectureBoxes = document.querySelectorAll('.lecture-box');
+        let visibleAnswers = 0;
+        let visibleLectures = 0;
+        
+        // Search through Q/A items
+        items.forEach(item => {
+            const title = item.querySelector('.title').textContent.toLowerCase();
+            const description = item.querySelector('.description').textContent.toLowerCase();
+            const keywords = item.getAttribute('data-keywords') || '';
+            
+            const isMatch = title.includes(searchTerm) || 
+                          description.includes(searchTerm) || 
+                          keywords.toLowerCase().includes(searchTerm);
+            
+            if (isMatch) {
+                item.classList.remove('hidden');
+                item.classList.add('highlighted');
+                visibleAnswers++;
+                highlightSearchTerm(item, searchTerm);
+            } else {
+                item.classList.add('hidden');
+                item.classList.remove('highlighted');
+            }
+        });
+        
+        // Search through lecture videos
+        lectureBoxes.forEach(box => {
+            const title = box.querySelector('.lecture-title').textContent.toLowerCase();
+            const keywords = box.getAttribute('data-keywords') || '';
+            
+            const isMatch = title.includes(searchTerm) || 
+                          keywords.toLowerCase().includes(searchTerm);
+            
+            if (isMatch) {
+                box.classList.remove('hidden');
+                box.classList.add('highlighted');
+                visibleLectures++;
+                highlightSearchTerm(box, searchTerm);
+            } else {
+                box.classList.add('hidden');
+                box.classList.remove('highlighted');
+            }
+        });
+        
+        // Update UI based on results
+        updateSearchUI(searchTerm, visibleAnswers, visibleLectures);
+    }
+    
+    function highlightSearchTerm(element, searchTerm) {
+        const titleElement = element.querySelector('.title') || element.querySelector('.lecture-title');
+        const descriptionElement = element.querySelector('.description');
+        
+        if (titleElement) {
+            const originalTitle = titleElement.textContent;
+            const highlightedTitle = originalTitle.replace(
+                new RegExp(searchTerm, 'gi'), 
+                `<mark style="background-color: #ffeb3b; padding: 2px;">$&</mark>`
+            );
+            titleElement.innerHTML = highlightedTitle;
+        }
+        
+        if (descriptionElement) {
+            const originalDescription = descriptionElement.textContent;
+            const highlightedDescription = originalDescription.replace(
+                new RegExp(searchTerm, 'gi'), 
+                `<mark style="background-color: #ffeb3b; padding: 2px;">$&</mark>`
+            );
+            descriptionElement.innerHTML = highlightedDescription;
+        }
+    }
+    
+    function updateSearchUI(searchTerm, visibleAnswers, visibleLectures) {
+        const totalResults = visibleAnswers + visibleLectures;
+        
+        if (totalResults === 0) {
+            noResults.style.display = 'block';
+            searchStats.style.display = 'none';
+        } else {
+            noResults.style.display = 'none';
+            searchStats.style.display = 'block';
+            searchStats.innerHTML = `
+                <i class="fas fa-search"></i> 
+                Found ${totalResults} result${totalResults !== 1 ? 's' : ''} for "<strong>${searchTerm}</strong>"
+                ${visibleAnswers > 0 ? ` - ${visibleAnswers} answer${visibleAnswers !== 1 ? 's' : ''}` : ''}
+                ${visibleLectures > 0 ? ` - ${visibleLectures} lecture${visibleLectures !== 1 ? 's' : ''}` : ''}
+            `;
+        }
+        
+        // Update section titles
+        answersTitle.textContent = visibleAnswers > 0 ? `Search Results - Answers (${visibleAnswers})` : 'Recent Answers';
+        lecturesTitle.textContent = visibleLectures > 0 ? `Related Lectures (${visibleLectures})` : 'Recent Lectures';
+        
+        // Show clear button
+        clearButton.style.display = 'inline-block';
+    }
+    
+    function clearSearch() {
+        searchInput.value = '';
+        const items = document.querySelectorAll('.item');
+        const lectureBoxes = document.querySelectorAll('.lecture-box');
+        
+        // Reset all items
+        items.forEach(item => {
+            item.classList.remove('hidden', 'highlighted');
+            // Remove highlighting
+            const titleElement = item.querySelector('.title');
+            const descriptionElement = item.querySelector('.description');
+            if (titleElement) titleElement.innerHTML = titleElement.textContent;
+            if (descriptionElement) descriptionElement.innerHTML = descriptionElement.textContent;
+        });
+        
+        // Reset all lecture boxes
+        lectureBoxes.forEach(box => {
+            box.classList.remove('hidden', 'highlighted');
+            // Remove highlighting
+            const titleElement = box.querySelector('.lecture-title');
+            if (titleElement) titleElement.innerHTML = titleElement.textContent;
+        });
+        
+        // Reset UI
+        noResults.style.display = 'none';
+        searchStats.style.display = 'none';
+        clearButton.style.display = 'none';
+        answersTitle.textContent = 'Recent Answers';
+        lecturesTitle.textContent = 'Recent Lectures';
+    }
+}
 
 // ===== Workshop Cards Functions =====
 function initializeWorkshopCards() {
@@ -1062,14 +1288,6 @@ function initializeMobileVideoCards() {
         });
     });
 }
-
-// JavaScript functionality can be added here
-// For example, for handling search or displaying dynamic content
-document.querySelector('.search-button').addEventListener('click', function() {
-    const searchTerm = document.querySelector('.search-input').value;
-    console.log('Searching for:', searchTerm);
-    // Add search functionality here
-});
     </script>
     <script src="navbar.js"></script>
 </body>
